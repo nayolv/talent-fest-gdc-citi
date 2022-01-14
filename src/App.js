@@ -1,14 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Melissa from './components/Melissa'
-
-
+import './App.css';
+import { Vicki } from './components/Vicki';
+import Berenice from './components/Berenice';
 
 function App() {
   return (
-    <div className="App">
-     <Melissa />
-    </div>
-  );
+    <Vicki/>
+    <Berenice />
+    <Melissa />
+  )
 }
 
 export default App;
