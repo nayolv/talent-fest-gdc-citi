@@ -9,7 +9,7 @@ const SideBar = () => {
         <section className= "col-3 border-sm">
             <div className="container d-flex"> 
             <ul className="navbar-nav w-100"> {/* "nav nav-pills nav-fill" */}
-            <li className ="nav-item"><a className="nav-link active" href="#">Transferir o pagar</a></li>
+            <li className ="nav-item"><a className="nav-link" href="#">Transferir o pagar</a></li>
             <hr />
             <li className ="nav-item"> <a className="nav-link active" href="#">Dar de alta cuenta, tarjeta, servivio, otros</a></li>
             <hr />
