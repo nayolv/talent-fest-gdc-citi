@@ -1,9 +1,9 @@
 import './App.css';
-import { Vicki } from './components/Vicki';
+import { HeaderNav } from './components/HeaderNav';
 
 function App() {
   return (
-    <Vicki/>
+    <HeaderNav/>
   )
   
 }
