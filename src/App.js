@@ -1,15 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Melissa from './components/Melissa'
-import './App.css';
-import { Vicki } from './components/Vicki';
-import Berenice from './components/Berenice';
+import Footer from "./components/Footer";
+import './Scss/Layout/footer.scss';
 
 function App() {
   return (
-    <Vicki/>
-    <Berenice />
-    <Melissa />
-  )
+    <>
+      <Footer />
+    </>
+  );
 }
 
 export default App;
