@@ -1,5 +1,4 @@
 import React from 'react'
-import "../Scss/Layout/sidebar.scss"
 
 const SideBar = () => {
     return (
