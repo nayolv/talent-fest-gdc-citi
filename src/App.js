@@ -1,12 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import SideBar from "./components/SideBar";
+import { HeaderNav } from './components/HeaderNav';
 import Footer from "./components/Footer";
-import './Scss/Layout/footer.scss';
+import SideBar from "./components/SideBar";
+import './Scss/layout/footer.scss';
+import './Scss/layout/sidebar.scss';
 
 function App() {
   return (
     <>
-    <SideBar />
+    <HeaderNav/>
+    <SideBar/>
     <Footer />
     </>
   );
