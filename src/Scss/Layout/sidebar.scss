@@ -1,0 +1,43 @@
+
+
+
+.nav-link {
+    color: black;
+    font-weight: bold;
+    font-family:'Interstate', 'Interstate_Reg', 'Arial', 'Verdana','Sans Serif';
+    font-size: 14px;
+    display:flex;
+    
+    }
+
+.nav-link:hover {
+        font-weight: bold;
+        font-family:'Interstate', 'Interstate_Reg', 'Arial', 'Verdana','Sans Serif';
+        font-size: 14px;
+        display:flex;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+
+        }
+    
+    .entry-question{
+        font-size: 32px;
+        color: black;
+        font-family: 'Interstate', 'Interstate_Reg', 'Arial', 'Verdana','Sans Serif';
+    }
+    
+     .content{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 60%;
+        margin-left: 5rem;
+    } 
+
+    .col-3.border {
+        margin-left: 2.5rem;
+
+    }
+
+
