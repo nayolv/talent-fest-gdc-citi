@@ -1,0 +1,53 @@
+.menu{
+
+    padding-top: 8.5%;
+    padding-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+
+}
+
+
+.nav-link {
+    color: black;
+    font-weight: bold;
+    font-family:'Interstate', 'Interstate_Reg', 'Arial', 'Verdana','Sans Serif';
+    font-size: 14px;
+    display:flex;
+    
+    }
+
+.nav-link:hover {
+        font-weight: bold;
+        font-family:'Interstate', 'Interstate_Reg', 'Arial', 'Verdana','Sans Serif';
+        font-size: 14px;
+        display:flex;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+
+        }
+    
+    .entry-question{
+        margin-left:3%;
+        margin-bottom: 2%;
+        font-size: calc(1.325rem + .9vw);
+        color: black;
+        font-family: 'Interstate', 'Interstate_Reg', 'Arial', 'Verdana','Sans Serif';
+    }
+    
+     .content{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 60%;
+        margin-left: 5rem;
+    } 
+
+    .col-3.border {
+        margin-left: 2.5rem;
+
+    }
+
+
