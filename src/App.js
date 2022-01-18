@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import SideBar from "./components/SideBar";
 import './Scss/layout/footer.scss';
 import './Scss/layout/sidebar.scss';
+import './Scss/layout/HeaderNav.scss';
 
 function App() {
   return (
