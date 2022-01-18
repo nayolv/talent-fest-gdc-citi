@@ -3,9 +3,10 @@ import React from 'react'
 const SideBar = () => {
     return (
         <>
+        <section className="menu">
         <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
         <hr />
-        <section className= "col-3 border-sm">
+        <div className= "col-3 border-sm">
             <div className="container d-flex"> 
             <ul className="navbar-nav w-100"> {/* "nav nav-pills nav-fill" */}
             <li className ="nav-item"><a className="nav-link active" href="#">Transferir o pagar</a></li>
@@ -27,6 +28,7 @@ const SideBar = () => {
             <li className ="nav-item"><a className="nav-link disabled" href="#">Domiciliar un pago</a></li>
             </ul>
             </div> 
+        </div>
         </section>
         </>
     )
