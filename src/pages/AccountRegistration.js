@@ -18,17 +18,22 @@ const AccountRegistration = () => {
                     </select>
             </div>
 
+            <br/>
+
             <p className="pLabels">Numero de tarjeta:</p>
             <input className='form-control-sm'></input>
             <p className="pLabels">Nombre con el que identificarás este pago (alias):</p>
             <input className='form-control-sm'></input>
 
+        <br />
 
         <p className="pLabels"> Monto máximo que autorizas pagar a este beneficiario:</p>
         <div className="input-group mb-3">  
             <span className="input-group-text">MXN</span>
             <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
          </div>
+
+         <br />
 
          <p className="pLabels">Correo electrónico (opcional):</p>
             <input className='form-control-sm'></input>

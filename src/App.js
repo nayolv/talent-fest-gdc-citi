@@ -1,38 +1,32 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-/* import { Home } from "./pages/Home"; */
+/* import "bootstrap/dist/css/bootstrap.min.css"; */
+ import { HeaderNav } from "./components/HeaderNav";
+import { Home } from "./pages/Home";
 import "./Scss/Layout/home.scss"
-import { HeaderNav } from './components/HeaderNav';
 import Footer from "./components/Footer";
 import './Scss/Layout/footer.scss';
-import './Scss/Layout/sidebar.scss';
 import './Scss/Layout/HeaderNav.scss';
-import Transfers from "./pages/Transfers";
-import SideBar from "./components/SideBar";
-import Page3 from "./pages/Page3";
-import Page4 from "./pages/Page4";
-import CardPayment from "./pages/CardPayment";
-import AccountRegistration from "./pages/AccountRegistration";
-import Entry from "./components/Entry";
+import AccountRegistrations from "./components/Forms/registration.js/AccountRegistrations";
+ import DataTranfer from "./components/Forms/Tranferences/DataTranfer"; 
+import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
+import OwnAccount from "./components/Forms/Tranferences/OwnAccount";
+import DataRegister from "./components/Forms/registration.js/DataRegister";
+
+
+
 
 function App() {
   return (
     <>
-    <HeaderNav/>
-   {/*  <Home /> */}
-    <SideBar/>
-    <Transfers />
-    <Page3 />
+    <HeaderNav />
+    <Home /> 
     <Footer />
-    <Page4 />
-    <CardPayment />
-    <AccountRegistration />
-    <Entry />
+    <DataTranfer /> 
+    <AccountRegistrations/>
+    <ThirdAccount />
+    <OwnAccount />
+    <DataRegister />
     </>
   );
 }
 
 export default App;
-/*
-    <SideBar/>
-
-*/
