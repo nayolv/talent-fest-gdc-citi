@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const NavUser = () => {
     return (
@@ -6,15 +7,15 @@ export const NavUser = () => {
         <ul className="nav nav-pills nav-fill">
           <li className="nav-item">
           <i className="bi bi-house-door"></i>
-            <a className="nav-home" aria-current="page" href="#">
-              Inicio
-            </a>
+            <p className="nav-home" aria-current="page">
+            <Link to="/"> Inicio </Link> 
+            </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-coin"></i>
-            <a className="nav-transfer" href="#">
-              Transferencias y pagos
-            </a>
+            <p className="nav-transfer">
+            <Link to="Services"> Transferencias y pagos </Link>
+            </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-graph-up-arrow"></i>
