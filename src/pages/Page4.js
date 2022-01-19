@@ -13,7 +13,7 @@ const Page4 = () => {
             <div className ="col-md-5">
                     <label>Cuenta de retiro:</label>
                     <select name="seleccione una opción" className="form-control" placeholder="Seleccione una opción">
-                    <option selected>Seleccione una opción</option>
+                    <option defaultValue="Seleccione una opción">Seleccione una opción</option>
                     </select>
             </div>
        
@@ -21,34 +21,34 @@ const Page4 = () => {
             <div className ="col-md-5">
                     <label>Cuenta de déposito:</label>
                     <select name="seleccione una opción" className="form-control" placeholder="Seleccione una opción">
-                    <option selected>Seleccione una opción</option>
+                    <option defaultValue="Seleccione una opción">Seleccione una opción</option>
                     </select>
             </div>
 
             <div className="input-group mb-3">
                  <span className="input-group-text">$</span>
-                 <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
+                 <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
             </div>
 
 
 
             <div className="form-check">
                  <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                 <label className="form-check-label" for="flexCheckDefault">
+                 <label className="form-check-label" >
                 Programar a fecha futura:
                 </label>
             </div>
 
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label className="form-check-label" for="flexCheckChecked">
+                <label className="form-check-label" >
                 Cuenta concentradora
                 </label>
             </div>
 
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label className="form-check-label" for="flexCheckChecked">
+                <label className="form-check-label">
                 Referencias
                 </label>
             </div>
@@ -64,7 +64,7 @@ const Page4 = () => {
 
         <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label className="form-check-label" for="flexCheckChecked">
+                <label className="form-check-label">
                 Notificar al beneficiario(opcional):
                 </label>
             </div>

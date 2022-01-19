@@ -13,7 +13,7 @@ const Transfers = () => {
         <div className ="container">
                 <div className ="col-md-5">
                     <select name="seleccione una opción" className="form-control" placeholder="Seleccione una opción">
-                    <option selected>Seleccione una opción</option>
+                    <option defaultValue={"Seleccione una opción"}>Seleccione una opción</option>
                     <option >Cuenta Citibanamex</option>
                     <option >CuentaCLABE</option>
                     <option >Tarjeta debito o crédito</option>

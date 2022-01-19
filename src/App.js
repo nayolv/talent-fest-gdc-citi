@@ -10,6 +10,8 @@ import Transfers from "./pages/Transfers";
 import SideBar from "./components/SideBar";
 import Page3 from "./pages/Page3";
 import Page4 from "./pages/Page4";
+import CardPayment from "./pages/CardPayment";
+import AccountRegistration from "./pages/AccountRegistration";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
     <Page3 />
     <Footer />
     <Page4 />
+    <CardPayment />
+    <AccountRegistration />
     </>
   );
 }

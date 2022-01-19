@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Page3 = () => {
+const CardPayment = () => {
     return (
         <>
         <form>
-        <h1>Ingresa los datos de la operación</h1>    
-        <p>Podrás transferir a cualquier banco, pagar tarjetas de crédito y servicios, y órdenes de pago.</p>
+        <h1>Pago a tarjetas Citibanamex</h1>    
+        <p>Indica los datos de la transferencia y da click en "Continuar</p>
         <br />
         <br />
         <div className ="container">
@@ -24,7 +24,23 @@ const Page3 = () => {
                     </select>
             </div>
         </div>  
-        <button> Actualizar cuenta(s)</button>
+            <label>Importe:</label>
+            <br />
+            <label>Otra cantidad:</label>
+
+            <div className="input-group mb-3">
+                 <span className="input-group-text">MXN</span>
+                 <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+            </div>
+
+            <div className="form-check">
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <label className="form-check-label" >
+                Programar a fecha futura
+                </label>
+            </div>
+
+
         <hr />
         <div className ="transferButtons">
         <button>Continuar</button>
@@ -35,4 +51,4 @@ const Page3 = () => {
     )
 }
 
-export default Page3
+export default CardPayment
