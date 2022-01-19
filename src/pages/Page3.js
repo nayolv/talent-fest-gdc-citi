@@ -24,11 +24,11 @@ const Page3 = () => {
                     </select>
             </div>
         </div>  
-        <button> Actualizar cuenta(s)</button>
+        <button className="cancel"> Actualizar cuenta(s)</button>
         <hr />
         <div className ="transferButtons">
-        <button>Continuar</button>
-        <button>Cancelar</button>
+        <button type="button" className="continue">Continuar</button>
+        <button type="button" className="cancel">Cancelar</button>
         </div>
         </form>
         </>

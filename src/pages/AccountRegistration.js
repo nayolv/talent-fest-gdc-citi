@@ -17,36 +17,32 @@ const AccountRegistration = () => {
                     <option>Crédito</option>
                     </select>
             </div>
+
+            <p className="pLabels">Numero de tarjeta:</p>
+            <input className='form-control-sm'></input>
+            <p className="pLabels">Nombre con el que identificarás este pago (alias):</p>
+            <input className='form-control-sm'></input>
+
+
+        <p className="pLabels"> Monto máximo que autorizas pagar a este beneficiario:</p>
+        <div className="input-group mb-3">  
+            <span className="input-group-text">MXN</span>
+            <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+         </div>
+
+         <p className="pLabels">Correo electrónico (opcional):</p>
+            <input className='form-control-sm'></input>
+            <p className="pLabels">Confirmar correo electrónico:</p>
+            <input className='form-control-sm'></input>
+
+
+        
        
-
-            <div className ="col-md-5">
-                    <label>Cuenta de deposito:</label>
-                    <select name="seleccione una opción" className="form-control" placeholder="Seleccione una opción">
-                    <option defaultValue="Seleccione una opción">Seleccione una opción</option>
-                    </select>
-            </div>
-        </div>  
-            <label>Importe:</label>
-            <br />
-            <label>Otra cantidad:</label>
-
-            <div className="input-group mb-3">
-                 <span className="input-group-text">MXN</span>
-                 <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
-            </div>
-
-            <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label className="form-check-label" >
-                Programar a fecha futura
-                </label>
-            </div>
-
-
+        </div>
         <hr />
         <div className ="transferButtons">
-        <button>Continuar</button>
-        <button>Cancelar</button>
+        <button type="button" className="continue">Continuar</button>
+        <button type="button" className="cancel">Cancelar</button>
         </div>
         </form>
         </>

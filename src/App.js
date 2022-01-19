@@ -12,6 +12,7 @@ import Page3 from "./pages/Page3";
 import Page4 from "./pages/Page4";
 import CardPayment from "./pages/CardPayment";
 import AccountRegistration from "./pages/AccountRegistration";
+import Entry from "./components/Entry";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
     <Page4 />
     <CardPayment />
     <AccountRegistration />
+    <Entry />
     </>
   );
 }

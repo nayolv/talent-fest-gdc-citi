@@ -73,8 +73,8 @@ const Page4 = () => {
         <hr/>
 
         <div className ="transferButtons">
-        <button>Continuar</button>
-        <button>Cancelar</button>
+        <button type="button" className="continue">Continuar</button>
+        <button type="button" className="cancel">Cancelar</button>
         </div>
         </form>
     </>
