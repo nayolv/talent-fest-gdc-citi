@@ -9,9 +9,9 @@ const SideBar = () => {
         <div className= "col-3 border-sm">
             <div className="container d-flex"> 
             <ul className="navbar-nav w-100"> {/* "nav nav-pills nav-fill" */}
-            <li className ="nav-item"><a className="nav-link active" href="#">Transferir o pagar</a></li>
+            <li className ="nav-item"><p className="nav-link active">Transferir o pagar</p></li>
             <hr />
-            <li className ="nav-item"> <a className="nav-link active" href="#">Dar de alta cuenta, tarjeta, servivio, otros</a></li>
+            <li className ="nav-item"> <p className="nav-link active">Dar de alta cuenta, tarjeta, servivio, otros</p></li>
             <hr />
             <li className ="nav-item"><a className="nav-link disabled" href="#">Modificar altas</a></li>
             <hr />
