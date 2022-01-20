@@ -1,19 +1,16 @@
 import React from 'react'
-import Transfers from '../pages/Transfers'
+import Page3 from '../pages/Page3'
 
-const SideBar = () => {
+const SideBar2 = () => {
     return (
         <>
         
         <section className="menu">
-      
-     {/*    <div className= "col-3 border-sm"> */}
-            <div className="container d-flex"> 
-
+                <div className="container d-flex"> 
             <ul className="navbar-nav w-30"> {/* "nav nav-pills nav-fill" */}
             <li className ="nav-item"><a className="nav-link active" href="#">Transferir o pagar</a></li>
             <hr />
-            <li className ="nav-item"> <p className="nav-link active">Dar de alta cuenta, tarjeta, servivio, otros</p></li>
+            <li className ="nav-item"> <a className="nav-link active" href="#">Dar de alta cuenta, tarjeta, servivio, otros</a></li>
             <hr />
             <li className ="nav-item"><a className="nav-link disabled" href="#">Modificar altas</a></li>
             <hr />
@@ -30,11 +27,10 @@ const SideBar = () => {
             <li className ="nav-item"><a className="nav-link disabled" href="#">Domiciliar un pago</a></li>
             </ul>
             </div> 
-      {/*   </div> */}
-        <Transfers />
+            <Page3 />
         </section>
         </>
     )
 }
 
-export default SideBar
+export default SideBar2

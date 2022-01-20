@@ -25,6 +25,8 @@ const Page4 = () => {
                     </select>
             </div>
 
+            <br />
+
             <div className="input-group mb-3">
                  <span className="input-group-text">$</span>
                  <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
@@ -53,11 +55,13 @@ const Page4 = () => {
                 </label>
             </div>
 
+            <br />
+
         <p>Descripción para identificar la transferencia</p>
        
         <div className='transferText'>
-        <p>transferencia </p>
-        <p>(opcional)</p>
+        <p>transferencia (opcional)</p>
+
         </div>
 
         <input className='form-control-sm'></input>
@@ -73,8 +77,8 @@ const Page4 = () => {
         <hr/>
 
         <div className ="transferButtons">
-        <button>Continuar</button>
-        <button>Cancelar</button>
+        <button type="button" className="continue">Continuar</button>
+        <button type="button" className="cancel">Cancelar</button>
         </div>
         </form>
     </>

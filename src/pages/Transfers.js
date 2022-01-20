@@ -25,8 +25,8 @@ const Transfers = () => {
         </div>   
         <hr />
         <div className ="transferButtons">
-        <button>Continuar</button>
-        <button>Cancelar</button>
+        <button type="button" className="continue">Continuar</button>
+        <button type="button" className="cancel">Cancelar</button>
         </div>
         <p className ="reminder">Recuerda que ningún ejecutivo de Citibanamex nunca te llamará para dar de alta una cuenta, ya sea como prueba, asesoría o</p>
         <p  className ="reminder">para proteger tu dinero. Si recibes llamadas de este tipo cuelga, ya que es un fraude</p>
