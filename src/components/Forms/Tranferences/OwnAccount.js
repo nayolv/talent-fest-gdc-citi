@@ -1,12 +1,13 @@
 import React from 'react'
 import "../../../Scss/Layout/DataTranfer.scss"
+import SideBar from '../../SideBar'
 //import Sidebar4 from '../../Sidebar4'
 
 
 const OwnAccount = () => {
     return (
         <div>
-
+            <SideBar />
              <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
              <hr />
              <>

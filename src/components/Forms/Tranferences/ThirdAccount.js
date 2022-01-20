@@ -1,11 +1,12 @@
 import React from 'react'
 // import Sidebar3 from '../../Sidebar3'
 import "../../../Scss/Layout/DataTranfer.scss"
+import SideBar from '../../SideBar'
 
 const ThirdAccount = () => {
     return (
         <>
-
+        <SideBar />
             <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
             <hr />
             <>

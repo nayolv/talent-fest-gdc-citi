@@ -1,14 +1,22 @@
-import React from 'react'
+import React from "react";
 // import SideBar from '../components/SideBar'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
+import AccountRegister from "../components/Forms/Register/AccountRegister";
+import Transfers from "../components/Forms/Tranferences/Transfers";
+import SideBar from "../components/SideBar";
 
 const Services = () => {
-    return (
+  return (
+    <>
+      {window.location.pathname === "/Services/" ? (
         <>
-        <Outlet /> 
+          <Transfers />
         </>
+      ) : (
+        <Outlet />
+      )}
+    </>
+  );
+};
 
-    )
-}
-
-export default Services
+export default Services;
