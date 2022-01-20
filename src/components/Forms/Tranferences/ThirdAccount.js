@@ -1,9 +1,14 @@
 import React from 'react'
+// import Sidebar3 from '../../Sidebar3'
+import "../../../Scss/Layout/DataTranfer.scss"
 
-const Page4 = () => {
+const ThirdAccount = () => {
     return (
-     
-     <>
+        <>
+
+            <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
+            <hr />
+            <>
         <form>
         <h1>Cuentas Citibanamex</h1>    
         <p>Indica los datos de la transferencia y da click en continuar</p>
@@ -24,6 +29,8 @@ const Page4 = () => {
                     <option defaultValue="Seleccione una opción">Seleccione una opción</option>
                     </select>
             </div>
+
+            <br />
 
             <div className="input-group mb-3">
                  <span className="input-group-text">$</span>
@@ -53,11 +60,13 @@ const Page4 = () => {
                 </label>
             </div>
 
+            <br />
+
         <p>Descripción para identificar la transferencia</p>
        
         <div className='transferText'>
-        <p>transferencia </p>
-        <p>(opcional)</p>
+        <p>transferencia (opcional)</p>
+
         </div>
 
         <input className='form-control-sm'></input>
@@ -73,13 +82,14 @@ const Page4 = () => {
         <hr/>
 
         <div className ="transferButtons">
-        <button>Continuar</button>
-        <button>Cancelar</button>
+        <button type="button" className="continue">Continuar</button>
+        <button type="button" className="cancel">Cancelar</button>
         </div>
         </form>
     </>
-    
+
+        </>
     )
 }
 
-export default Page4
+export default ThirdAccount

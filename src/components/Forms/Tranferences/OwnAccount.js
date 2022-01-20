@@ -1,20 +1,25 @@
 import React from 'react'
+import "../../../Scss/Layout/DataTranfer.scss"
+//import Sidebar4 from '../../Sidebar4'
 
-const AccountRegistration = () => {
+
+const OwnAccount = () => {
     return (
-        <>
+        <div>
+
+             <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
+             <hr />
+             <>
         <form>
-        <h1>Alta de cuenta Citibanamex</h1>    
-        <p>Indica los datos del alta y da click en "Continuar</p>
+        <h1>Pago a tarjetas Citibanamex</h1>    
+        <p>Indica los datos de la transferencia y da click en "Continuar</p>
         <br />
         <br />
         <div className ="container">
             <div className ="col-md-5">
-                    <label>¿Qué dato tienes de la cuenta para darla de alta?</label>
-                    <select name="seleccione una opción" className="form-control" placeholder="Tarjeta de debito o crédito">
+                    <label>Cuenta de retiro:</label>
+                    <select name="seleccione una opción" className="form-control" placeholder="Seleccione una opción">
                     <option defaultValue="Seleccione una opción">Seleccione una opción</option>
-                    <option>Débito</option>
-                    <option>Crédito</option>
                     </select>
             </div>
        
@@ -45,12 +50,13 @@ const AccountRegistration = () => {
 
         <hr />
         <div className ="transferButtons">
-        <button>Continuar</button>
-        <button>Cancelar</button>
+        <button className="continue">Continuar</button>
+        <button type="button" className="cancel">Cancelar</button>
         </div>
         </form>
         </>
+        </div>
     )
 }
 
-export default AccountRegistration
+export default OwnAccount

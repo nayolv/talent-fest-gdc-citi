@@ -1,8 +1,14 @@
 import React from 'react'
+import "../../../Scss/Layout/DataTranfer.scss"
+import "../../../Scss/Layout/sidebar.scss"
 
-const Page3 = () => {
+
+const DataTranfer = () => {
     return (
         <>
+            <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
+            <hr />
+            <>
         <form>
         <h1>Ingresa los datos de la operación</h1>    
         <p>Podrás transferir a cualquier banco, pagar tarjetas de crédito y servicios, y órdenes de pago.</p>
@@ -24,15 +30,17 @@ const Page3 = () => {
                     </select>
             </div>
         </div>  
-        <button> Actualizar cuenta(s)</button>
+        <button className="cancel"> Actualizar cuenta(s)</button>
         <hr />
         <div className ="transferButtons">
-        <button>Continuar</button>
-        <button>Cancelar</button>
+        <button type="button" className="continue">Continuar</button>
+        <button type="button" className="cancel">Cancelar</button>
         </div>
         </form>
+        </>
+
         </>
     )
 }
 
-export default Page3
+export default DataTranfer
