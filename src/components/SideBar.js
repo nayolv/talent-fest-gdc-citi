@@ -1,5 +1,5 @@
 import React from 'react'
-import Transfers from '../pages/Transfers'
+
 
 const SideBar = () => {
     return (
@@ -29,9 +29,7 @@ const SideBar = () => {
             <hr />
             <li className ="nav-item"><a className="nav-link disabled" href="#">Domiciliar un pago</a></li>
             </ul>
-            </div> 
-      {/*   </div> */}
-        <Transfers />
+            </div>
         </section>
         </>
     )

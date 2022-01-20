@@ -1,9 +1,15 @@
 import React from 'react'
-import transfer from '../Scss/Layout/transfer.scss'
 
-const Transfers = () => {
+// import SideBar5 from '../../Sidebar5'
+import '../../../Scss/Layout/DataTranfer.scss'
+
+const DataRegister = () => {
     return (
-        <>
+        <div>
+
+            <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
+             <hr />
+             <>
         <form>
         <h1>Ingresa los datos de la operación</h1>    
         <p>Podrás dar de alta cuentas, tarjetas, celulares, créditos, servicios y ordenes de pago.</p>
@@ -32,7 +38,9 @@ const Transfers = () => {
         <p  className ="reminder">para proteger tu dinero. Si recibes llamadas de este tipo cuelga, ya que es un fraude</p>
         </form>
         </>
+
+        </div>
     )
 }
 
-export default Transfers
+export default DataRegister
