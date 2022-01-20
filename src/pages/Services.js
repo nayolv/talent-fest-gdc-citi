@@ -8,15 +8,7 @@ import SideBar from "../components/SideBar";
 const Services = () => {
     console.log(window.location.pathname);
   return (
-    <>
-      {window.location.pathname === "/services" ? (
-        <>
-          <Transfers />
-        </>
-      ) : (
-        <Outlet />
-      )}
-    </>
+    <Outlet />
   );
 };
 

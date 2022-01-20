@@ -2,10 +2,12 @@ import React from "react";
 
 // import SideBar1 from '../../SideBar'
 import "../../../Scss/Layout/DataTranfer.scss";
+import SideBar from "../../SideBar";
 
 const AccountRegister = () => {
   return (
     <div>
+      <SideBar />
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
       <hr />
       <>

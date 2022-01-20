@@ -1,38 +1,73 @@
-import React from 'react'
-
+import React from "react";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
-    return (
-        <>
-        
-        <section className="menu">
-      
-     {/*    <div className= "col-3 border-sm"> */}
-            <div className="container d-flex"> 
+  return (
+    <>
+      <section className="menu">
+        {/*    <div className= "col-3 border-sm"> */}
+        <div className="container d-flex">
+          <ul className="navbar-nav w-30">
+            {/* "nav nav-pills nav-fill" */}
+            <li>
+          
+              <Link className="nav-link" to="/services">
+                Transferir o pagar
+              </Link>
+            </li>
+            <hr />
+            <li>
+              <Link  className="nav-link" to="/services/register">
+                Dar de alta cuenta, tarjeta, servicio, otros
+              </Link>
+            </li>
+            <hr />
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Modificar altas
+              </Link>
+            </li>
+            <hr />
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Pagar impuestos
+              </Link>
+            </li>
+            <hr />
+            <li className="nav-item">
+              <Link className="nav-link active dropdown-toggle" to="#">
+                Comprobantes
+              </Link>
+            </li>
+            <hr />
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                CDMX
+              </Link>
+            </li>
+            <hr />
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Comprobante electrónico de pago interbancario(CEP)
+              </Link>
+            </li>
+            <hr />
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Ver movimientos de BancaNet
+              </Link>
+            </li>
+            <hr />
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Domiciliar un pago
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </>
+  );
+};
 
-            <ul className="navbar-nav w-30"> {/* "nav nav-pills nav-fill" */}
-            <li className ="nav-item"><a className="nav-link active" href="#">Transferir o pagar</a></li>
-            <hr />
-            <li className ="nav-item"> <p className="nav-link active">Dar de alta cuenta, tarjeta, servivio, otros</p></li>
-            <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Modificar altas</a></li>
-            <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Pagar impuestos</a></li>
-            <hr />
-            <li className ="nav-item"><a className="nav-link active dropdown-toggle" href="#">Comprobantes</a></li>
-            <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">CDMX</a></li>
-            <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Comprobante electrónico de pago interbancario(CEP)</a></li>
-            <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Ver movimientos de BancaNet</a></li>
-            <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Domiciliar un pago</a></li>
-            </ul>
-            </div>
-        </section>
-        </>
-    )
-}
-
-export default SideBar
+export default SideBar;

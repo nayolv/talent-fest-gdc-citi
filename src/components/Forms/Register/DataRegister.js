@@ -2,11 +2,12 @@ import React from 'react'
 
 // import SideBar5 from '../../Sidebar5'
 import '../../../Scss/Layout/DataTranfer.scss'
+import SideBar from '../../SideBar'
 
 const DataRegister = () => {
     return (
         <div>
-
+            <SideBar />
             <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
              <hr />
              <>

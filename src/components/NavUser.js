@@ -19,9 +19,9 @@ export const NavUser = () => {
           </li>
           <li className="nav-item">
           <i className="bi bi-graph-up-arrow"></i>
-            <a className="nav-investment" href="#">
+            <Link className="nav-investment" to="#">
               Inversiones
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
           <i className="bi bi-credit-card"></i>

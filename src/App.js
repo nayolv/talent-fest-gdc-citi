@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Home } from "./pages/Home";
@@ -15,7 +14,6 @@ import DataRegister from "./components/Forms/Register/DataRegister";
 import AccountRegister from "./components/Forms/Register/AccountRegister";
 import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 
-
 function App() {
   return (
     <>
@@ -23,13 +21,18 @@ function App() {
         <HeaderNav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="services/*" element={<Services />}>
-            <Route path="transfers" element={<Transfers />} />
+          <Route path="services/" element={<Services />} >
+          <Route index element={<Transfers />} />
+          <Route exact path="register" element={<DataRegister />} />
+
+            </Route>
+          {/* </Route>
+            <Route index element={<Transfers />} />
             <Route path="own-account" element={<OwnAccount />} />
             <Route path="register" element={<DataRegister />} />
             <Route path="formRegister" element={<AccountRegister />} />
             <Route path="third-account" element={<ThirdAccount />} />
-          </Route>
+          </Route> */}
         </Routes>
         <Footer />
       </Router>
