@@ -1,16 +1,15 @@
 import React from "react";
-
-// import SideBar1 from '../../SideBar'
+import "../../../Scss/Layout/transfer.scss"
 import "../../../Scss/Layout/DataTranfer.scss";
 import SideBar from "../../SideBar";
 
 const AccountRegister = () => {
   return (
-    <div>
-      <SideBar />
+    <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
       <hr />
-      <>
+      <section className="container-saider-form">
+        <SideBar />
         <form>
           <h1>Alta de cuenta Citibanamex</h1>
           <p>Indica los datos del alta y da click en "Continuar</p>
@@ -57,7 +56,7 @@ const AccountRegister = () => {
               />
             </div>
             <br />
-            <p className="pLabels">Correo electrónico (opcional):</p>
+              <p className="pLabels">Correo electrónico (opcional):</p>
             <input className="form-control-sm"></input>
             <p className="pLabels">Confirmar correo electrónico:</p>
             <input className="form-control-sm"></input>
@@ -72,9 +71,8 @@ const AccountRegister = () => {
             </button>
           </div>
         </form>
-      </>
-      {/* <SideBar1/> */}
-    </div>
+      </section>
+    </>
   );
 };
 
