@@ -51,7 +51,7 @@ const AccountRegister = () => {
               />
             </div>
             <br />
-            <p className="pLabels">Correo electrónico (opcional):</p>
+              <p className="pLabels">Correo electrónico (opcional):</p>
             <input className="form-control-sm"></input>
             <p className="pLabels">Confirmar correo electrónico:</p>
             <input className="form-control-sm"></input>
