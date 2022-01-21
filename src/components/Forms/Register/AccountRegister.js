@@ -34,6 +34,15 @@ const AccountRegister = () => {
             <br />
             <p className="pLabels">Numero de tarjeta:</p>
             <input className="form-control-sm"></input>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+              />
+              <label className="form-check-label">Cuenta propia</label>
+            </div>
             <p className="pLabels">
               Nombre con el que identificarás este pago (alias):
             </p>
