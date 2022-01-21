@@ -5,10 +5,8 @@ const SideBar = () => {
   return (
     <>
       <section className="menu">
-        {/*    <div className= "col-3 border-sm"> */}
         <div className="container d-flex">
-          <ul className="navbar-nav w-30">
-            {/* "nav nav-pills nav-fill" */}
+          <ul className="navbar-nav w-60">
             <li>
           
               <Link className="nav-link" to="/services">

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTransfers } from "../../../hooks/useTransfers";
@@ -26,21 +27,25 @@ const Transfers = ({ recoverySelectValue, selectValue, recoverySelectValueRet })
 
   return (
     <>
+     <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
+      <hr className="line"/>
+      <section className="container-saider-form">
       <SideBar />
-      <form>
+        <form className="all-form">
         <h1>Ingresa los datos de la operación</h1>
-        <p>
-          Podrás transferir a cualquier banco, pagar tarjetas de crédito y
-          servicios, y órdenes de pago.
-        </p>
-        <br />
-        <br />
+          <p className="transfer-p">
+            Podrás transferir a cualquier banco, pagar tarjetas de crédito y
+            servicios, y órdenes de pago.
+          </p>
+          <br />
+          <br />
         <div className="container">
           <div className="col-md-5">
             <label>Cuenta de retiro:</label>
             <select
               name="seleccione una opción"
-              className="form-control"
+              className="form-select" 
+              id="inputGroupSelect01"
               placeholder="Seleccione una opción"
               onChange={(e) => {
                 recoverySelectValueRet(e);
@@ -57,15 +62,11 @@ const Transfers = ({ recoverySelectValue, selectValue, recoverySelectValueRet })
                     </option>
                   )
               )}
-            </select>
-          </div>
-
-          <div className="col-md-5">
-            <label>Cuenta de deposito:</label>
-            <select
-              name="seleccione una opción"
-              className="form-control"
-              placeholder="Seleccione una opción"
+              </select>
+            </div>
+            <div className="col-md-5">
+              <label>Cuenta de deposito:</label>
+              <select className="form-select" id="inputGroupSelect01"  placeholder="Seleccione una opción"
               onChange={(e) => {
                 recoverySelectValue(e);
               }}
@@ -81,8 +82,9 @@ const Transfers = ({ recoverySelectValue, selectValue, recoverySelectValueRet })
             </select>
           </div>
         </div>
-        <hr />
-        <div className="transferButtons">
+          <button className="update-account"> <i className="bi bi-caret-right-fill"></i>  Actualizar cuenta(s)</button>
+       
+            <div className="transferButtons">
           <button
             type="button"
             className="continue"
@@ -97,12 +99,12 @@ const Transfers = ({ recoverySelectValue, selectValue, recoverySelectValueRet })
             className="cancel"
             onClick={() => {
               navigate("/");
-            }}
-          >
-            Cancelar
-          </button>
-        </div>
-      </form>
+            }}>
+              <i className="bi bi-caret-right-fill"></i>Cancelar
+            </button>
+          </div>
+        </form>
+      </section>
     </>
   );
 };

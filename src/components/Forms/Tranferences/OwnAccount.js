@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useTransfers } from "../../../hooks/useTransfers";
 import "../../../Scss/Layout/DataTranfer.scss";
+import "../../../Scss/Layout/transfer.scss";
 import SideBar from "../../SideBar";
-//import Sidebar4 from '../../Sidebar4'
+import { useTransfers } from "../../../hooks/useTransfers";
+
 
 const OwnAccount = ({ selectValue, selectValueRetirement }) => {
   const navigate = useNavigate();
@@ -17,23 +18,22 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
   );
 
   return (
-    <div>
-      <SideBar />
-      <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
-      <hr />
       <>
-        <form>
+       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
+      <hr />
+      <section className="container-saider-form">
+        <SideBar />
+        <form className="all-form">
           <h1>Pago a tarjetas Citibanamex</h1>
           <p>Indica los datos de la transferencia y da click en "Continuar</p>
-          <br />
-          <br />
-
+    
           <div className="container">
             <div className="col-md-5">
               <label>Cuenta de retiro:</label>
               <select
                 name="seleccione una opción"
-                className="form-control"
+                className="form-select"
+                id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
                 {resultRetirement.map((item) => (
@@ -48,7 +48,8 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
               <label>Cuenta de deposito:</label>
               <select
                 name="seleccione una opción"
-                className="form-control"
+                className="form-select"
+                id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
                 {result.map((item) => (
@@ -58,14 +59,11 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
             </div>
           </div>
           <label>Importe:</label>
-          <br />
           <label>Otra cantidad:</label>
-
-          <div className="input-group mb-3">
+          <div className="input-group mb-3 input-amount">
             <span className="input-group-text">MXN</span>
             <input
               type="text"
-              className="form-control"
               aria-label="Amount (to the nearest dollar)"
             />
           </div>
@@ -80,7 +78,6 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
             <label className="form-check-label">Programar a fecha futura</label>
           </div>
 
-          <hr />
           <div className="transferButtons">
             <button className="continue">Continuar</button>
             <button
@@ -90,12 +87,13 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
                 navigate("/services");
               }}
             >
-              Cancelar
+
+              <i className="bi bi-caret-right-fill"></i> Cancelar
             </button>
           </div>
         </form>
-      </>
-    </div>
+      </section>
+    </>
   );
 };
 

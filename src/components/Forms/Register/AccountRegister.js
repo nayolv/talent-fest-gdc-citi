@@ -1,3 +1,5 @@
+
+import "../../../Scss/Layout/transfer.scss";
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/DataTranfer.scss";
@@ -19,12 +21,12 @@ const AccountRegister = () => {
 
   
   return (
-    <div>
-      <SideBar />
+    <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
       <hr />
-      <>
-        <form>
+      <section className="container-saider-form">
+        <SideBar />
+        <form className="all-form">
           <h1>Alta de cuenta Citibanamex</h1>
           <p>Indica los datos del alta y da click en "Continuar</p>
           <br />
@@ -34,7 +36,8 @@ const AccountRegister = () => {
               <label>¿Qué dato tienes de la cuenta para darla de alta?</label>
               <select
                 name="seleccione una opción"
-                className="form-control"
+                className="form-select"
+                id="inputGroupSelect01"
                 placeholder="Tarjeta de debito o crédito"
               >
                 <option defaultValue="Seleccione una opción">
@@ -46,34 +49,37 @@ const AccountRegister = () => {
             </div>
             <br />
             <p className="pLabels">Numero de tarjeta:</p>
-            <input className="form-control-sm" type="text"></input>
+
+            <input className="form-control" type="text"></input>
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label className="form-check-label" >
-                Cuenta propia
-                </label>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+              />
+              <label className="form-check-label">Cuenta propia</label>
             </div>
             <p className="pLabels">
               Titular de la cuenta
             </p>
-            <input className="form-control-sm" type="text"></input>
+            <input className="form-control" type="text"></input>
             <br />
-            <p className="pLabels">Monto máximo que autorizas pagar a este beneficiario:</p>
-            <div className="input-group mb-3">
+            <p className="pLabels">
+              Monto máximo que autorizas pagar a este beneficiario:
+            </p>
+            <div className="input-group mb-3 input-amount">
+
               <span className="input-group-text">MXN</span>
-              <input
-                type="text"
-                className="form-control"
-                aria-label="Amount (to the nearest dollar)"
-              />
+              <input type="text" aria-label="Amount (to the nearest dollar)" />
             </div>
             <br />
             <p className="pLabels">Correo electrónico (opcional):</p>
-            <input className="form-control-sm" type="email"></input>
+            <input type="email" className="form-control"></input>
             <p className="pLabels">Confirmar correo electrónico:</p>
-            <input className="form-control-sm" type="email"></input>
+            <input type="email" className="form-control"></input>
+
           </div>
-          <hr />
           <div className="transferButtons">
             <button type="submit" className="continue">
               Continuar
@@ -83,9 +89,8 @@ const AccountRegister = () => {
             </button>
           </div>
         </form>
-      </>
-      {/* <SideBar1/> */}
-    </div>
+      </section>
+    </>
   );
 };
 

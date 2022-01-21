@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTransfers } from '../../../hooks/useTransfers'
 import "../../../Scss/Layout/DataTranfer.scss"
+import "../../../Scss/Layout/transfer.scss";
 import SideBar from '../../SideBar'
 
 const ThirdAccount = ({ selectValueRetirement, selectValue }) => {
@@ -15,94 +16,105 @@ const ThirdAccount = ({ selectValueRetirement, selectValue }) => {
         (item) => item.id === parseInt(selectValue)
       );
     
-
     return (
-        <>
-        <SideBar />
-            <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
-            <hr />
-            <>
-        <form>
-        <h1>Cuentas Citibanamex</h1>    
-        <p>Indica los datos de la transferencia y da click en continuar</p>
-        <br />
-        <br />
-        <div className ="container">
-            <div className ="col-md-5">
-                    <label>Cuenta de retiro:</label>
-                    <select name="seleccione una opción" className="form-control" placeholder="Seleccione una opción">
-                    <option defaultValue="Seleccione una opción">Seleccione una opción</option>
-                    </select>
-            </div>
-       
-
-            <div className ="col-md-5">
-                    <label>Cuenta de déposito:</label>
-                    <select name="seleccione una opción" className="form-control" placeholder="Seleccione una opción">
-                    <option defaultValue="Seleccione una opción">Seleccione una opción</option>
-                    </select>
+      <>
+      <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
+      <hr />
+      <section className="container-saider-form">
+              <SideBar />
+        <form className="all-form">
+          <h1>Cuentas Citibanamex</h1>
+          <p>Indica los datos de la transferencia y da click en continuar</p>
+          <div className="container">
+            <div className="col-md-5">
+              <label>Cuenta de retiro:</label>
+              <select
+                name="seleccione una opción"
+                className="form-select"
+                id="inputGroupSelect01"
+                placeholder="Seleccione una opción"
+              >
+                <option defaultValue="Seleccione una opción">
+                  Seleccione una opción
+                </option>
+              </select>
             </div>
 
-            <br />
-
-            <div className="input-group mb-3">
-                 <span className="input-group-text">$</span>
-                 <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+            <div className="col-md-5">
+              <label>Cuenta de déposito:</label>
+              <select
+                name="seleccione una opción"
+                className="form-select"
+                id="inputGroupSelect01"
+                placeholder="Seleccione una opción"
+              >
+                <option defaultValue="Seleccione una opción">
+                  Seleccione una opción
+                </option>
+              </select>
             </div>
-
-
-
+            <div className="input-group mb-3 input-amount">
+              <span className="input-group-text">$</span>
+              <input
+                type="text"
+                aria-label="Amount (to the nearest dollar)"
+              />
+            </div>
             <div className="form-check">
-                 <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                 <label className="form-check-label" >
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label className="form-check-label">
                 Programar a fecha futura:
-                </label>
+              </label>
             </div>
-
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label className="form-check-label" >
-                Cuenta concentradora
-                </label>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+              />
+              <label className="form-check-label">Cuenta concentradora</label>
             </div>
-
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label className="form-check-label">
-                Referencias
-                </label>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+              />
+              <label className="form-check-label">Referencias</label>
             </div>
-
-            <br />
-
-        <p>Descripción para identificar la transferencia</p>
-       
-        <div className='transferText'>
-        <p>transferencia (opcional)</p>
-
-        </div>
-
-        <input className='form-control-sm'></input>
-
-        <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                <label className="form-check-label">
+            <p>Descripción para identificar la transferencia</p><span className='opcion'>(opcional)</span>
+            <input className="form-control"></input>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+              />
+              <label className="form-check-label">
                 Notificar al beneficiario(opcional):
-                </label>
+              </label>
             </div>
-        </div>
-
-        <hr/>
-
-        <div className ="transferButtons">
-        <button type="button" className="continue">Continuar</button>
-        <button type="button" className="cancel" onClick={()=>{navigate("/services")}}>Cancelar</button>
-        </div>
+          </div>
+          <div className="transferButtons">
+            <button type="button" className="continue">
+              Continuar
+            </button>
+            <button type="button" className="cancel" onClick={()=>{navigate("/services")}}>
+              Cancelar
+            </button>
+          </div>
         </form>
+      </section>
     </>
+  );
+};
 
-        </>
-    )
-}
-
-export default ThirdAccount
+export default ThirdAccount;
