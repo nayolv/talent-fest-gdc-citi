@@ -1,0 +1,100 @@
+.container-saider-form {
+  display: flex;
+
+  .all-form {
+    font-size: 1.3 rem;
+    margin-top: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: -13vw;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: lighter;
+    margin-bottom: 6vh;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .transfer-p{
+    width:80%
+  }
+
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+  select,
+  label {
+    margin-top: 2vh;
+    font-size: 1.3rem;
+    margin-bottom: 3vh;
+  }
+
+  button {
+    font-size: 1.3rem;
+  }
+
+  .reminder {
+    margin-top: 3vh;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+
+  .update-account,
+  .cancel {
+    color: #0d6efd;
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    margin: 1.3vh 0vh 1.3vh;
+    padding: 6px 12px;
+  }
+
+  .continue {
+    display: inline-block;
+    color: #fff;
+    border: none;
+    background-color: #0d6efd;
+    margin: 0px 0pxm 32.3906px;
+    padding: 6px 12px;
+  }
+  .bi-exclamation-circle-fill {
+    color: #0d6efd;
+  }
+
+  .input-amount {
+      width: 50vh;
+      font-size: 1.3rem;
+  }
+  .input-group-text{
+    font-size: 1.5rem;
+  }
+  .form-control{
+    width: 50vh;
+  }
+
+  .form-check-input{
+      margin-top: 2vh;
+      margin-right: 2vh;
+      width: 1.5rem;
+      height: 1.5rem;
+  }
+  .opcion{
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom:2vh;
+  }
+  
+}
