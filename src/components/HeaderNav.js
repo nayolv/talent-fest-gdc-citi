@@ -80,7 +80,7 @@ export const HeaderNav = () => {
       </section>
       <section className="container-welcome">
         <h2 className="welcome"> ¡Hola usuario!</h2>
-        <p>último acceso {date.toDateString()}</p>
+        <p className= "last-access">último acceso {date.toDateString()}</p>
       </section>
       <NavUser/>
     </header>

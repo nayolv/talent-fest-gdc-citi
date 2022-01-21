@@ -15,7 +15,7 @@ const Transfers = () => {
         <SideBar />
         <form className="all-form">
           <h1>Ingresa los datos de la operación</h1>
-          <p>
+          <p className="transfer-p">
             Podrás transferir a cualquier banco, pagar tarjetas de crédito y
             servicios, y órdenes de pago.
           </p>
