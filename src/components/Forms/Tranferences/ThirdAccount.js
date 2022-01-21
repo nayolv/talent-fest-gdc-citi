@@ -1,9 +1,11 @@
-import React from "react";
-// import Sidebar3 from '../../Sidebar3'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import "../../../Scss/Layout/DataTranfer.scss";
+import "../../../Scss/Layout/transfer.scss";
 import SideBar from "../../SideBar";
 
 const ThirdAccount = () => {
+  const navigate = useNavigate();
   return (
     <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
@@ -11,7 +13,7 @@ const ThirdAccount = () => {
       <section className="container-saider-form">
         <SideBar />
 
-        <form>
+        <form className="all-form">
           <h1>Cuentas Citibanamex</h1>
           <p>Indica los datos de la transferencia y da click en continuar</p>
           <div className="container">
@@ -19,7 +21,8 @@ const ThirdAccount = () => {
               <label>Cuenta de retiro:</label>
               <select
                 name="seleccione una opción"
-                className="form-control"
+                className="form-select"
+                id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
                 <option defaultValue="Seleccione una opción">
@@ -32,7 +35,8 @@ const ThirdAccount = () => {
               <label>Cuenta de déposito:</label>
               <select
                 name="seleccione una opción"
-                className="form-control"
+                className="form-select"
+                id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
                 <option defaultValue="Seleccione una opción">
@@ -40,11 +44,10 @@ const ThirdAccount = () => {
                 </option>
               </select>
             </div>
-            <div className="input-group mb-3">
+            <div className="input-group mb-3 input-amount">
               <span className="input-group-text">$</span>
               <input
                 type="text"
-                className="form-control"
                 aria-label="Amount (to the nearest dollar)"
               />
             </div>
@@ -77,11 +80,8 @@ const ThirdAccount = () => {
               />
               <label className="form-check-label">Referencias</label>
             </div>
-            <p>Descripción para identificar la transferencia</p>
-            <div className="transferText">
-              <p>transferencia (opcional)</p>
-            </div>
-            <input className="form-control-sm"></input>
+            <p>Descripción para identificar la transferencia</p><span className='opcion'>(opcional)</span>
+            <input className="form-control"></input>
             <div className="form-check">
               <input
                 className="form-check-input"
@@ -98,7 +98,7 @@ const ThirdAccount = () => {
             <button type="button" className="continue">
               Continuar
             </button>
-            <button type="button" className="cancel">
+            <button type="button" className="cancel" onClick={()=>{navigate("/services")}}>
               Cancelar
             </button>
           </div>
