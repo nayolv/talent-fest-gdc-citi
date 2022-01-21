@@ -37,7 +37,7 @@ const DataRegister = () => {
                 <option>Seleccione una opción</option>
                 {/* <option >Cuenta Citibanamex</option> */}
                 <option value="Registro de cuenta">
-                  Tarjeta debito o crédito
+                  Cuenta Bancaria CitiBanamex
                 </option>
               </select>
             </div>
@@ -57,7 +57,7 @@ const DataRegister = () => {
             >
               Continuar
             </button>
-            <button type="button" className="cancel">
+            <button type="button" className="cancel" onClick={() => {navigate("/services")}}>
               Cancelar
             </button>
           </div>
