@@ -1,0 +1,56 @@
+form{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+
+}
+
+
+h1{
+    font-weight: lighter;
+    margin-bottom: 3%;
+}
+
+p{
+    font-weight: bold;
+}
+
+.container{
+    margin:0;
+    padding:0;
+}
+
+button{
+margin-bottom: 4%;
+
+}
+.reminder{
+    font-weight: normal;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.cancel{
+    color: #0d6efd;
+    display: inline-block;
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    margin: 0px 0pxm 32.3906px;
+    padding: 6px 12px;
+
+}
+
+.continue{
+    display: inline-block;
+    color: #fff;
+    border: none;
+    background-color:  #0d6efd;
+    margin: 0px 0pxm 32.3906px;
+    padding: 6px 12px;
+
+}
