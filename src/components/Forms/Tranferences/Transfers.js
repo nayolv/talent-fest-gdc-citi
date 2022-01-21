@@ -40,10 +40,10 @@ const Transfers = () => {
             </div>
             <div className="col-md-5">
               <label>Cuenta de deposito:</label>
-              <select className="form-select" id="inputGroupSelect01  placeholder="Seleccione una opción"
+              <select className="form-select" id="inputGroupSelect01"  placeholder="Seleccione una opción"
               onChange={(e) => {
                 recoverySelectValue(e);
-              }}">
+              }}>
                 <option defaultValue="Seleccione una opción">
                 </option>
                   {getDataTransfer.map(

@@ -1,7 +1,8 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import "../../../Scss/Layout/DataTranfer.scss"
-import SideBar from '../../SideBar'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../../../Scss/Layout/DataTranfer.scss";
+import "../../../Scss/Layout/transfer.scss";
+import SideBar from "../../SideBar";
 
 const OwnAccount = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const OwnAccount = () => {
       <hr />
       <section className="container-saider-form">
         <SideBar />
-        <form>
+        <form className="all-form">
           <h1>Pago a tarjetas Citibanamex</h1>
           <p>Indica los datos de la transferencia y da click en "Continuar</p>
           <div className="container">
@@ -19,7 +20,8 @@ const OwnAccount = () => {
               <label>Cuenta de retiro:</label>
               <select
                 name="seleccione una opción"
-                className="form-control"
+                className="form-select"
+                id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
                 <option defaultValue="Seleccione una opción">
@@ -31,7 +33,8 @@ const OwnAccount = () => {
               <label>Cuenta de deposito:</label>
               <select
                 name="seleccione una opción"
-                className="form-control"
+                className="form-select"
+                id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
                 <option defaultValue="Seleccione una opción">
@@ -42,11 +45,10 @@ const OwnAccount = () => {
           </div>
           <label>Importe:</label>
           <label>Otra cantidad:</label>
-          <div className="input-group mb-3">
+          <div className="input-group mb-3 input-amount">
             <span className="input-group-text">MXN</span>
             <input
               type="text"
-              className="form-control"
               aria-label="Amount (to the nearest dollar)"
             />
           </div>
@@ -61,8 +63,14 @@ const OwnAccount = () => {
           </div>
           <div className="transferButtons">
             <button className="continue">Continuar</button>
-            <button type="button" className="cancel" onClick={()=>{navigate("/services")}}>
-              Cancelar
+            <button
+              type="button"
+              className="cancel"
+              onClick={() => {
+                navigate("/services");
+              }}
+            >
+              <i className="bi bi-caret-right-fill"></i> Cancelar
             </button>
           </div>
         </form>
