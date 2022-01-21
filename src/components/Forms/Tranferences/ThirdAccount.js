@@ -1,18 +1,27 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import "../../../Scss/Layout/DataTranfer.scss";
+import { useTransfers } from '../../../hooks/useTransfers'
+import "../../../Scss/Layout/DataTranfer.scss"
 import "../../../Scss/Layout/transfer.scss";
-import SideBar from "../../SideBar";
+import SideBar from '../../SideBar'
 
-const ThirdAccount = () => {
-  const navigate = useNavigate();
-  return (
-    <>
+const ThirdAccount = ({ selectValueRetirement, selectValue }) => {
+    const navigate = useNavigate();
+    const { getDataTransfer } = useTransfers();
+
+    const resultRetirement = getDataTransfer.filter(
+        (item) => item.id === parseInt(selectValueRetirement)
+      );
+      const result = getDataTransfer.filter(
+        (item) => item.id === parseInt(selectValue)
+      );
+    
+    return (
+      <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
       <hr />
       <section className="container-saider-form">
-        <SideBar />
-
+              <SideBar />
         <form className="all-form">
           <h1>Cuentas Citibanamex</h1>
           <p>Indica los datos de la transferencia y da click en continuar</p>
