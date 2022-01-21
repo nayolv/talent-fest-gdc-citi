@@ -13,8 +13,16 @@ import OwnAccount from "./components/Forms/Tranferences/OwnAccount";
 import DataRegister from "./components/Forms/Register/DataRegister";
 import AccountRegister from "./components/Forms/Register/AccountRegister";
 import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
+import { useState } from "react";
 
 function App() {
+  const [selectValueDeposit, setSelectValueDeposit] = useState("");
+
+
+  const recoverySelectValue = (e) => {
+    //let index = e.target.selectedIndex;
+    selectValueDeposit(e.target.value);
+  };
   return (
     <>
       <Router>
@@ -22,9 +30,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="services/" element={<Services />}>
-            <Route index element={<Transfers />} />
+            <Route index element={<Transfers recoverySelectValue={recoverySelectValue} selectValue={selectValueDeposit} />} />
             <Route exact path="register" element={<DataRegister />} />
-            <Route path="own-account" element={<OwnAccount />} />
+            <Route path="own-account" element={<OwnAccount selectValue={selectValueDeposit} />} />
             <Route path="third-account" element={<ThirdAccount />} />
             <Route path="formRegister" element={<AccountRegister />} />
           </Route>

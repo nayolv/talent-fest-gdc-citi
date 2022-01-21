@@ -3,9 +3,23 @@ import { useTransfers } from "../../../hooks/useTransfers";
 import "../../../Scss/Layout/transfer.scss";
 import SideBar from "../../SideBar";
 
-const Transfers = () => {
+const Transfers = ({ recoverySelectValue, selectValueDeposit}) => {
   const navigate = useNavigate();
-  const { selectValue, recoverySelectValue, getDataTransfer } = useTransfers();
+  const { getDataTransfer } = useTransfers();
+  const result = getDataTransfer.filter(
+    (item) => item.id === parseInt(selectValueDeposit)
+  );
+
+  const handleClick = () => {
+    const typeAccount = result.map((item) => item.typeAccount).toString();
+    if (typeAccount === "") {
+      alert("Debes llenar el formulario");
+    } else if (typeAccount === "false") {
+      navigate("/services/third-account");
+    } else if (typeAccount === "true") {
+      navigate("/services/own-account");
+    }
+  };
 
   return (
     <>
@@ -32,7 +46,7 @@ const Transfers = () => {
               {getDataTransfer.map(
                 (item) =>
                   item.typeAccount && (
-                    <option key={item.id} value="cuenta-propia">
+                    <option key={item.id} value={item.id}>
                       {item.name}
                     </option>
                   )
@@ -53,11 +67,11 @@ const Transfers = () => {
               <option defaultValue="Seleccione una opción">
                 Seleccione una opción
               </option>
-
-              {getDataTransfer.map(
-                (item) => 
-                 <option key={item.id} value="cuenta-propia">{item.name}</option>
-              )}
+              {getDataTransfer.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.name}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -67,13 +81,7 @@ const Transfers = () => {
             type="button"
             className="continue"
             onClick={() => {
-              if (!selectValue) {
-                alert("Debes llenar el formulario");
-              } else if (selectValue === "cuenta-propia") {
-                navigate("/services/own-account");
-              } else if (selectValue === "cuenta-tercero") {
-                navigate("/services/third-account");
-              }
+              handleClick();
             }}
           >
             Continuar
