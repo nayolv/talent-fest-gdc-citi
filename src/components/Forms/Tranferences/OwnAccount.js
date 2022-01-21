@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { useTransfers } from "../../../hooks/useTransfers";
 import "../../../Scss/Layout/DataTranfer.scss";
 import SideBar from "../../SideBar";
+//import Sidebar4 from '../../Sidebar4'
 
-const OwnAccount = ({ selectValueDeposit }) => {
+const OwnAccount = ({ selectValue, selectValueRetirement }) => {
   const navigate = useNavigate();
   const { getDataTransfer } = useTransfers();
-
+  
+  const resultRetirement = getDataTransfer.filter(
+    (item) => item.id === parseInt(selectValueRetirement)
+  );
   const result = getDataTransfer.filter(
-    (item) => item.id === parseInt(selectValueDeposit)
+    (item) => item.id === parseInt(selectValue)
   );
 
   return (
@@ -23,6 +27,7 @@ const OwnAccount = ({ selectValueDeposit }) => {
           <p>Indica los datos de la transferencia y da click en "Continuar</p>
           <br />
           <br />
+
           <div className="container">
             <div className="col-md-5">
               <label>Cuenta de retiro:</label>
@@ -31,8 +36,11 @@ const OwnAccount = ({ selectValueDeposit }) => {
                 className="form-control"
                 placeholder="Seleccione una opción"
               >
-
-             <option value="Falta"></option>
+                {resultRetirement.map((item) => (
+                  <option key={item.id} defaultValue={item.name}>
+                    {item.name}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -43,11 +51,9 @@ const OwnAccount = ({ selectValueDeposit }) => {
                 className="form-control"
                 placeholder="Seleccione una opción"
               >
-                  {result.map(item=>(
-                    <option key={item.id} defaultValue={item.name}>
-                    {item.name}
-                  </option>
-               ))}
+                {result.map((item) => (
+                  <option key={item.id} defaultValue={item.name}>{item.name} </option>
+                ))}
               </select>
             </div>
           </div>

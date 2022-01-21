@@ -1,12 +1,21 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-// import Sidebar3 from '../../Sidebar3'
+import { useTransfers } from '../../../hooks/useTransfers'
 import "../../../Scss/Layout/DataTranfer.scss"
 import SideBar from '../../SideBar'
 
-const ThirdAccount = () => {
+const ThirdAccount = ({ selectValueRetirement, selectValue }) => {
     const navigate = useNavigate();
+    const { getDataTransfer } = useTransfers();
+
+    const resultRetirement = getDataTransfer.filter(
+        (item) => item.id === parseInt(selectValueRetirement)
+      );
+      const result = getDataTransfer.filter(
+        (item) => item.id === parseInt(selectValue)
+      );
     
+
     return (
         <>
         <SideBar />

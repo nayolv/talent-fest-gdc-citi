@@ -1,17 +1,20 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTransfers } from "../../../hooks/useTransfers";
 import "../../../Scss/Layout/transfer.scss";
 import SideBar from "../../SideBar";
 
-const Transfers = ({ recoverySelectValue, selectValueDeposit}) => {
+const Transfers = ({ recoverySelectValue, selectValue, recoverySelectValueRet }) => {
   const navigate = useNavigate();
   const { getDataTransfer } = useTransfers();
+
   const result = getDataTransfer.filter(
-    (item) => item.id === parseInt(selectValueDeposit)
+    (item) => item.id === parseInt(selectValue)
   );
 
   const handleClick = () => {
     const typeAccount = result.map((item) => item.typeAccount).toString();
+    
     if (typeAccount === "") {
       alert("Debes llenar el formulario");
     } else if (typeAccount === "false") {
@@ -39,6 +42,9 @@ const Transfers = ({ recoverySelectValue, selectValueDeposit}) => {
               name="seleccione una opción"
               className="form-control"
               placeholder="Seleccione una opción"
+              onChange={(e) => {
+                recoverySelectValueRet(e);
+              }}
             >
               <option defaultValue="Seleccione una opción">
                 Seleccione una opción
