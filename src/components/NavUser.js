@@ -25,21 +25,21 @@ export const NavUser = () => {
           </li>
           <li className="nav-item">
           <i className="bi bi-credit-card"></i>
-            <a className="nav-others" href="#">
+            <p className="nav-others">
              Otros productos
-            </a>
+            </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-gear"></i>
-            <a className="nav-setting" href="#">
+            <p className="nav-setting">
               Configuración
-            </a>
+            </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-question-circle"></i>
-            <a className="nav-help" href="#">
+            <p className="nav-help">
               Ayuda
-            </a>
+            </p>
           </li>
         </ul>
       </section>
