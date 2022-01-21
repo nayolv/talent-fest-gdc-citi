@@ -1,9 +1,10 @@
-import React from "react";
-import "../../../Scss/Layout/DataTranfer.scss";
-import SideBar from "../../SideBar";
-//import Sidebar4 from '../../Sidebar4'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import "../../../Scss/Layout/DataTranfer.scss"
+import SideBar from '../../SideBar'
 
 const OwnAccount = () => {
+  const navigate = useNavigate();
   return (
     <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
@@ -60,7 +61,7 @@ const OwnAccount = () => {
           </div>
           <div className="transferButtons">
             <button className="continue">Continuar</button>
-            <button type="button" className="cancel">
+            <button type="button" className="cancel" onClick={()=>{navigate("/services")}}>
               Cancelar
             </button>
           </div>

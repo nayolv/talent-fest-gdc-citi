@@ -1,5 +1,6 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
+import UseRegister from "../../../hooks/Register/UseRegister";
 // import SideBar5 from '../../Sidebar5'
 import "../../../Scss/Layout/DataTranfer.scss";
 import SideBar from "../../SideBar";
@@ -12,6 +13,8 @@ const DataRegister = () => {
       <section className="container-saider-form">
         <SideBar />
         <form className="all-form">
+  const { typeRegister, newRegister } = UseRegister();
+  const navigate = useNavigate();
           <h1>Ingresa los datos de la operación</h1>
           <p>
             Podrás dar de alta cuentas, tarjetas, celulares, créditos, servicios
@@ -20,16 +23,27 @@ const DataRegister = () => {
           <p>¿Qué deseas dar de alta?</p>
           <div className="container">
             <div className="col-md-5">
-              <select className="form-select" id="inputGroupSelect01">
-                <option defaultValue={"Seleccione una opción"}>
+              <select className="form-select" id="inputGroupSelect01"  placeholder="Seleccione una opción"
+                onChange={(e) => {
+                  newRegister(e);
+                }}>
+                <option defaultValue={"Seleccione una opción"} >
                   Seleccione una opción
                 </option>
-                <option>Cuenta Citibanamex</option>
+               <option value="Registro de cuenta">
+                  Tarjeta debito o crédito
+                </option>
               </select> 
             </div>
           </div>
           <div className="transferButtons">
-            <button type="button" className="continue">
+            <button type="button" className="continue" onClick={() => {
+                if (typeRegister === "") {
+                  alert("selecciona uan opción");
+                } else if (typeRegister === "Registro de cuenta") {
+                  navigate("/services/formRegister");
+                }
+              }}>
               Continuar
             </button>
             <button type="button" className="cancel">

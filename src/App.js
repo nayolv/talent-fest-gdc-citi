@@ -21,18 +21,13 @@ function App() {
         <HeaderNav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="services/" element={<Services />} >
-          <Route index element={<Transfers />} />
-          <Route exact path="register" element={<DataRegister />} />
-
-            </Route>
-          {/* </Route>
+          <Route path="services/" element={<Services />}>
             <Route index element={<Transfers />} />
+            <Route exact path="register" element={<DataRegister />} />
             <Route path="own-account" element={<OwnAccount />} />
-            <Route path="register" element={<DataRegister />} />
-            <Route path="formRegister" element={<AccountRegister />} />
             <Route path="third-account" element={<ThirdAccount />} />
-          </Route> */}
+            <Route path="formRegister" element={<AccountRegister />} />
+          </Route>
         </Routes>
         <Footer />
       </Router>
