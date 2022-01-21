@@ -35,13 +35,10 @@ const AccountRegister = () => {
             <p className="pLabels">Numero de tarjeta:</p>
             <input className="form-control-sm"></input>
             <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckChecked"
-              />
-              <label className="form-check-label">Cuenta propia</label>
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <label className="form-check-label" >
+                Cuenta propia
+                </label>
             </div>
             <p className="pLabels">
               Nombre con el que identificarás este pago (alias):
@@ -49,7 +46,6 @@ const AccountRegister = () => {
             <input className="form-control-sm"></input>
             <br />
             <p className="pLabels">
-              {" "}
               Monto máximo que autorizas pagar a este beneficiario:
             </p>
             <div className="input-group mb-3">

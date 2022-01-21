@@ -1,9 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 // import Sidebar3 from '../../Sidebar3'
 import "../../../Scss/Layout/DataTranfer.scss"
 import SideBar from '../../SideBar'
 
 const ThirdAccount = () => {
+    const navigate = useNavigate();
+    
     return (
         <>
         <SideBar />
@@ -84,7 +87,7 @@ const ThirdAccount = () => {
 
         <div className ="transferButtons">
         <button type="button" className="continue">Continuar</button>
-        <button type="button" className="cancel">Cancelar</button>
+        <button type="button" className="cancel" onClick={()=>{navigate("/services")}}>Cancelar</button>
         </div>
         </form>
     </>
