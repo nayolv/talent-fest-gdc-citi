@@ -14,7 +14,7 @@ import DataRegister from "./components/Forms/Register/DataRegister";
 import AccountRegister from "./components/Forms/Register/AccountRegister";
 import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 import { useTransfers } from "./hooks/useTransfers";
-import { useState } from "react";
+import { VerificationOwnTransference } from "./components/Forms/Tranferences/VerificationOwnTransference";
 
 function App() {
   const {
@@ -42,10 +42,11 @@ function App() {
                   selectValue={selectValue}
                   getDataTransfer={getDataTransfer}
                   result={result}
+                  resultRetirement={resultRetirement}
                 />
               }
             />
-            <Route exact path="register" element={<DataRegister />} />
+            <Route path="register" element={<DataRegister />} />
             <Route
               path="own-account"
               element={
@@ -55,6 +56,8 @@ function App() {
                 />
               }
             />
+            <Route path="verification-own-account" element={<VerificationOwnTransference />} />
+
             <Route
               path="third-account"
               element={
