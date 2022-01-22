@@ -1,0 +1,18 @@
+:root{
+--oscuros:black;
+--claros: white;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--color);
+}
+body.light{
+--background-color:var(--claros);
+--color:var(--oscuros)
+}
+
+body.dark{
+    --background-color:var(--oscuros);
+--color:var(--claros)
+}

@@ -9,7 +9,7 @@ export const Main = () => {
       <div className="main-container">
       <OfertasHome />
       <LateralMenuHome />
-      <ModalSia/ >
+      <ModalSia />
       </div>
       
     </main>
