@@ -16,7 +16,7 @@ export const VerificationOwnTransference = () => {
             "Aceptar para enviar tu operación.
           </p>
           <section>
-            <table className="table-verification-own">
+            <table className="table">
               <tbody>
                 <tr>
                   <td>Jacob</td>

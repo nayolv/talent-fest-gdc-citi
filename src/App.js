@@ -14,7 +14,7 @@ import DataRegister from "./components/Forms/Register/DataRegister";
 import AccountRegister from "./components/Forms/Register/AccountRegister";
 import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 import { useTransfers } from "./hooks/useTransfers";
-import useRegister from "./hooks/Register/useRegister";
+import useRegister from "./hooks/Register/UseRegister";
 import DataVerification from "./components/Forms/Register/DataVerification";
 import { VerificationOwnTransference } from "./components/Forms/Tranferences/VerificationOwnTransference";
 
