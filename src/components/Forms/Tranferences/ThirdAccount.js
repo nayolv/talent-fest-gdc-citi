@@ -5,17 +5,15 @@ import "../../../Scss/Layout/DataTranfer.scss"
 import "../../../Scss/Layout/transfer.scss";
 import SideBar from '../../SideBar'
 
-const ThirdAccount = ({ selectValueRetirement, selectValue }) => {
+const ThirdAccount = ({ selectValueRetirement, selectValue, getDataTransfer, result, resultRetirement }) => {
     const navigate = useNavigate();
-    const { getDataTransfer } = useTransfers();
-
+/*
     const resultRetirement = getDataTransfer.filter(
         (item) => item.id === parseInt(selectValueRetirement)
       );
       const result = getDataTransfer.filter(
         (item) => item.id === parseInt(selectValue)
-      );
-    
+      );*/
     return (
       <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
@@ -28,31 +26,38 @@ const ThirdAccount = ({ selectValueRetirement, selectValue }) => {
           <div className="container">
             <div className="col-md-5">
               <label>Cuenta de retiro:</label>
+
               <select
                 name="seleccione una opción"
                 className="form-select"
                 id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
-                <option defaultValue="Seleccione una opción">
-                  Seleccione una opción
+                {resultRetirement.map(item=>(
+                    <option key={item.id} defaultValue={`${item.name} - ${item.displayAccountNumber.slice(-3)}`}>
+                    {item.name} - {item.displayAccountNumber.slice(-3)}
                 </option>
+                ))}
               </select>
+
             </div>
 
             <div className="col-md-5">
               <label>Cuenta de déposito:</label>
+
               <select
                 name="seleccione una opción"
                 className="form-select"
                 id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
-                <option defaultValue="Seleccione una opción">
-                  Seleccione una opción
-                </option>
+                 {result.map((item) => (
+                  <option key={item.id} defaultValue={item.name}>{item.client} - {item.name} - {item.displayAccountNumber.slice(-3)}</option>
+                ))}
               </select>
+
             </div>
+
             <div className="input-group mb-3 input-amount">
               <span className="input-group-text">$</span>
               <input

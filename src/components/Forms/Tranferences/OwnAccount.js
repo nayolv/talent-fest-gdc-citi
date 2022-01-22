@@ -3,19 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/DataTranfer.scss";
 import "../../../Scss/Layout/transfer.scss";
 import SideBar from "../../SideBar";
-import { useTransfers } from "../../../hooks/useTransfers";
 
-
-const OwnAccount = ({ selectValue, selectValueRetirement }) => {
+const OwnAccount = ({ result, resultRetirement }) => {
   const navigate = useNavigate();
-  const { getDataTransfer } = useTransfers();
-  
-  const resultRetirement = getDataTransfer.filter(
-    (item) => item.id === parseInt(selectValueRetirement)
-  );
-  const result = getDataTransfer.filter(
-    (item) => item.id === parseInt(selectValue)
-  );
 
   return (
       <>
@@ -30,6 +20,7 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
           <div className="container">
             <div className="col-md-5">
               <label>Cuenta de retiro:</label>
+
               <select
                 name="seleccione una opción"
                 className="form-select"
@@ -37,15 +28,17 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
                 placeholder="Seleccione una opción"
               >
                 {resultRetirement.map((item) => (
-                  <option key={item.id} defaultValue={item.name}>
-                    {item.name}
+                  <option key={item.id} defaultValue={`${item.name} - ${item.displayAccountNumber.slice(-3)}`}>
+                    {item.name} - {item.displayAccountNumber.slice(-3)}
                   </option>
                 ))}
               </select>
+
             </div>
 
             <div className="col-md-5">
               <label>Cuenta de deposito:</label>
+
               <select
                 name="seleccione una opción"
                 className="form-select"
@@ -53,9 +46,10 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
                 placeholder="Seleccione una opción"
               >
                 {result.map((item) => (
-                  <option key={item.id} defaultValue={item.name}>{item.name} </option>
+                  <option key={item.id} defaultValue={item.name}>{item.client} - {item.name} - {item.displayAccountNumber.slice(-3)}</option>
                 ))}
               </select>
+
             </div>
           </div>
           <label>Importe:</label>

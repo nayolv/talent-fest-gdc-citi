@@ -13,19 +13,18 @@ import OwnAccount from "./components/Forms/Tranferences/OwnAccount";
 import DataRegister from "./components/Forms/Register/DataRegister";
 import AccountRegister from "./components/Forms/Register/AccountRegister";
 import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
+import { useTransfers } from "./hooks/useTransfers";
 import { useState } from "react";
 
 function App() {
-  const [selectValue, setSelectValue] = useState("");
-  const [selectValueRetirement, setSelectValueRetirement] = useState("");
-
-  const recoverySelectValue = (e) => {
-    setSelectValue(e.target.value);
-  };
-
-  const recoverySelectValueRet = (e) => {
-    setSelectValueRetirement(e.target.value);
-  };
+  const {
+    recoverySelectValue,
+    recoverySelectValueRet,
+    selectValue,
+    getDataTransfer,
+    result,
+    resultRetirement,
+  } = useTransfers();
 
   return (
     <>
@@ -41,6 +40,8 @@ function App() {
                   recoverySelectValueRet={recoverySelectValueRet}
                   recoverySelectValue={recoverySelectValue}
                   selectValue={selectValue}
+                  getDataTransfer={getDataTransfer}
+                  result={result}
                 />
               }
             />
@@ -49,8 +50,8 @@ function App() {
               path="own-account"
               element={
                 <OwnAccount
-                  selectValueRetirement={selectValueRetirement}
-                  selectValue={selectValue}
+                  result={result}
+                  resultRetirement={resultRetirement}
                 />
               }
             />
@@ -58,8 +59,8 @@ function App() {
               path="third-account"
               element={
                 <ThirdAccount
-                  selectValueRetirement={selectValueRetirement}
-                  selectValue={selectValue}
+                  result={result}
+                  resultRetirement={resultRetirement}
                 />
               }
             />
