@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/DataTranfer.scss";
 import "../../../Scss/Layout/transfer.scss";
@@ -6,17 +6,21 @@ import SideBar from "../../SideBar";
 
 const OwnAccount = ({ result, resultRetirement }) => {
   const navigate = useNavigate();
+  const [importe, setImporte] = useState(0);
+  const handleChange = (e) => {
+    setImporte(e.target.value);
+  };
 
   return (
-      <>
-       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
+    <>
+      <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
       <hr />
       <section className="container-saider-form">
         <SideBar />
         <form className="all-form">
           <h1>Pago a tarjetas Citibanamex</h1>
           <p>Indica los datos de la transferencia y da click en "Continuar</p>
-    
+
           <div className="container">
             <div className="col-md-5">
               <label>Cuenta de retiro:</label>
@@ -28,12 +32,16 @@ const OwnAccount = ({ result, resultRetirement }) => {
                 placeholder="Seleccione una opción"
               >
                 {resultRetirement.map((item) => (
-                  <option key={item.id} defaultValue={`${item.name} - ${item.displayAccountNumber.slice(-3)}`}>
+                  <option
+                    key={item.id}
+                    defaultValue={`${
+                      item.name
+                    } - ${item.displayAccountNumber.slice(-3)}`}
+                  >
                     {item.name} - {item.displayAccountNumber.slice(-3)}
                   </option>
                 ))}
               </select>
-
             </div>
 
             <div className="col-md-5">
@@ -46,10 +54,12 @@ const OwnAccount = ({ result, resultRetirement }) => {
                 placeholder="Seleccione una opción"
               >
                 {result.map((item) => (
-                  <option key={item.id} defaultValue={item.name}>{item.client} - {item.name} - {item.displayAccountNumber.slice(-3)}</option>
+                  <option key={item.id} defaultValue={item.name}>
+                    {item.client} - {item.name} -
+                    {item.displayAccountNumber.slice(-3)}
+                  </option>
                 ))}
               </select>
-
             </div>
           </div>
           <label>Importe:</label>
@@ -57,8 +67,9 @@ const OwnAccount = ({ result, resultRetirement }) => {
           <div className="input-group mb-3 input-amount">
             <span className="input-group-text">MXN</span>
             <input
-              type="text"
+              type="number"
               aria-label="Amount (to the nearest dollar)"
+              onChange={handleChange}
             />
           </div>
 
@@ -73,7 +84,16 @@ const OwnAccount = ({ result, resultRetirement }) => {
           </div>
 
           <div className="transferButtons">
-            <button className="continue">Continuar</button>
+            <button
+              className="continue"
+              onClick={(e) => {
+                e.preventDefault();
+                console.log(importe);
+                navigate("/services/verification-own-account")
+              }}
+            >
+              Continuar
+            </button>
             <button
               type="button"
               className="cancel"
@@ -81,7 +101,6 @@ const OwnAccount = ({ result, resultRetirement }) => {
                 navigate("/services");
               }}
             >
-
               <i className="bi bi-caret-right-fill"></i> Cancelar
             </button>
           </div>

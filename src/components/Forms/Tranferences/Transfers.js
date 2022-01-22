@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/transfer.scss";
 import SideBar from "../../SideBar";
@@ -7,12 +8,24 @@ const Transfers = ({
   recoverySelectValueRet,
   getDataTransfer,
   result,
+  resultRetirement,
 }) => {
   const navigate = useNavigate();
+  const [errorRet, setErrorRet] = useState("");
+  const [error, setError] = useState("");
 
   const handleClick = () => {
     const typeAccount = result.map((item) => item.typeAccount).toString();
-    if (typeAccount === "false") {
+    const typeAccountRet = resultRetirement
+      .map((item) => item.typeAccount)
+      .toString();
+
+    if (!typeAccount) {
+      setError("El campo de cuenta de depósito no puede quedar vacío");
+    }
+    if (!typeAccountRet) {
+      setErrorRet("El campo de cuenta de retiro no puede quedar vacío");
+    } else if (typeAccount === "false") {
       navigate("/services/third-account");
     } else if (typeAccount === "true") {
       navigate("/services/own-account");
@@ -31,7 +44,7 @@ const Transfers = ({
         <form
           className="all-form"
           onSubmit={(e) => {
-            e.preventDefault()
+            e.preventDefault();
             handleClick();
           }}
         >
@@ -55,20 +68,19 @@ const Transfers = ({
                 onChange={(e) => {
                   recoverySelectValueRet(e);
                 }}
-                required >
-                <option defaultValue="">
-                  Seleccione una opción
-                </option>
+              >
+                <option defaultValue="">Seleccione una opción</option>
                 {getDataTransfer.map(
                   (item) =>
                     item.typeAccount && (
                       <option key={item.id} value={item.id}>
-                        {item.name} - {item.displayAccountNumber.slice(-3)}{" "}
+                        {item.name} - {item.displayAccountNumber.slice(-3)}
                         Disponible: MXN{item.balance}
                       </option>
                     )
                 )}
               </select>
+              <p>{errorRet}</p>
               <div className="invalid-feedback">
                 Please select a valid state.
               </div>
@@ -94,6 +106,7 @@ const Transfers = ({
                   </option>
                 ))}
               </select>
+              <p>{error}</p>
             </div>
           </div>
           <button className="update-account">

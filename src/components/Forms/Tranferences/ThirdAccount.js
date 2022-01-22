@@ -5,7 +5,7 @@ import "../../../Scss/Layout/DataTranfer.scss"
 import "../../../Scss/Layout/transfer.scss";
 import SideBar from '../../SideBar'
 
-const ThirdAccount = ({ selectValueRetirement, selectValue, getDataTransfer, result, resultRetirement }) => {
+const ThirdAccount = ({ result, resultRetirement }) => {
     const navigate = useNavigate();
 /*
     const resultRetirement = getDataTransfer.filter(
@@ -14,6 +14,7 @@ const ThirdAccount = ({ selectValueRetirement, selectValue, getDataTransfer, res
       const result = getDataTransfer.filter(
         (item) => item.id === parseInt(selectValue)
       );*/
+
     return (
       <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>

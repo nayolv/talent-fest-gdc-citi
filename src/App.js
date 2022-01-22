@@ -16,6 +16,7 @@ import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 import { useTransfers } from "./hooks/useTransfers";
 import useRegister from "./hooks/Register/useRegister";
 import DataVerification from "./components/Forms/Register/DataVerification";
+import { VerificationOwnTransference } from "./components/Forms/Tranferences/VerificationOwnTransference";
 
 function App() {
   const {
@@ -52,6 +53,7 @@ function App() {
                   selectValue={selectValue}
                   getDataTransfer={getDataTransfer}
                   result={result}
+                  resultRetirement={resultRetirement}
                 />
               }
             />
@@ -74,6 +76,8 @@ function App() {
                 />
               }
             />
+            <Route path="verification-own-account" element={<VerificationOwnTransference />} />
+
             <Route
               path="third-account"
               element={
