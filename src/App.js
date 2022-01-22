@@ -14,9 +14,20 @@ import DataRegister from "./components/Forms/Register/DataRegister";
 import AccountRegister from "./components/Forms/Register/AccountRegister";
 import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 import { useTransfers } from "./hooks/useTransfers";
+import useRegister from "./hooks/Register/useRegister";
+import DataVerification from "./components/Forms/Register/DataVerification";
 import { VerificationOwnTransference } from "./components/Forms/Tranferences/VerificationOwnTransference";
 
 function App() {
+  const {
+    typeRegister,
+    newRegister,
+    sendData,
+    dataRegister,
+    handleInputChange,
+    checked,
+    handleChecked
+  } = useRegister();
   const {
     recoverySelectValue,
     recoverySelectValueRet,
@@ -46,7 +57,16 @@ function App() {
                 />
               }
             />
-            <Route path="register" element={<DataRegister />} />
+            <Route
+              exact
+              path="register"
+              element={
+                <DataRegister
+                  typeRegister={typeRegister}
+                  newRegister={newRegister}
+                />
+              }
+            />
             <Route
               path="own-account"
               element={
@@ -67,7 +87,27 @@ function App() {
                 />
               }
             />
-            <Route path="formRegister" element={<AccountRegister />} />
+            <Route
+              path="formRegister"
+              element={
+                <AccountRegister
+                  sendData={sendData}
+                  dataRegister={dataRegister}
+                  handleInputChange={handleInputChange}
+                  checked={checked}
+                  handleChecked={handleChecked}
+                />
+              }
+            />
+            <Route
+              path="verification"
+              element={
+                <DataVerification
+                dataRegister={dataRegister}
+                checked={checked}
+                />
+              }
+            />
           </Route>
         </Routes>
         <Footer />
