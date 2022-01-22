@@ -1,41 +1,32 @@
 import "../../../Scss/Layout/transfer.scss";
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/DataTranfer.scss";
 import SideBar from "../../SideBar";
 
-const AccountRegister = () => {
+const AccountRegister = ({
+  sendData,
+  dataRegister,
+  handleInputChange,
+  checked,
+  handleChecked,
+}) => {
   const navigate = useNavigate();
-  const [dataRegister, setDataRegister] = useState({
-    client: "",
-    name: "",
-    displayAccountNumber: "",
-    typeAccount: false,
-    maximumAmount: 0,
-    email: "",
-  });
-
-  const handleInputChange = (e) => {
-    //console.log(e.target.value);
-    setDataRegister({
-      ...dataRegister,
-      [e.target.name]: e.target.value,
-    });
-    //console.log(dataRegister);
-  };
-
-  const sendData = (e)=>{
-    e.preventDefault();
-    console.log(dataRegister)
-  } 
+  /*   const [checked, setChecked] = useState(false);
+  const handleChecked = (e) => {
+    setChecked((!checked))
+    console.log(e.target.checked)
+}; */
 
   return (
     <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
       <hr />
-      <section className="container-saider-form" >
+      <section className="container-saider-form">
         <SideBar />
-        <form className="all-form"  onSubmit={sendData} >
+        <form className="all-form" onSubmit={(e)=> {
+          sendData(e)
+        navigate('/services/verification')}}>
           <h1>Alta de cuenta Citibanamex</h1>
           <p>Indica los datos del alta y da click en "Continuar</p>
           <br />
@@ -64,14 +55,19 @@ const AccountRegister = () => {
               type="text"
               name="displayAccountNumber"
               onChange={handleInputChange}
+              required
             ></input>
             <div className="form-check">
               <input
                 className="form-check-input"
                 type="checkbox"
                 id="flexCheckChecked"
-                name="typeAccount"
-                onChange={handleInputChange}
+                //name="typeAccount"
+                //checked={checked}
+                onChange={(e) => {
+                  handleChecked(e);
+                  console.log(checked);
+                }}
               />
               <label className="form-check-label">Cuenta propia</label>
             </div>
@@ -104,13 +100,10 @@ const AccountRegister = () => {
               onChange={handleInputChange}
             ></input>
             <p className="pLabels">Confirmar correo electrónico:</p>
-            <input
-              type="email"
-              className="form-control"
-            ></input>
+            <input type="email" className="form-control"></input>
           </div>
           <div className="transferButtons">
-            <button type="submit" className="continue" >
+            <button type="submit" className="continue">
               Continuar
             </button>
             <button

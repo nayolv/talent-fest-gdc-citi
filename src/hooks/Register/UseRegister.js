@@ -1,12 +1,35 @@
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
-function UseRegister() {
+function useRegister() {
     const [typeRegister, setTypeRegiste] = useState('')
-    const [typeAccount, setTypeAccount] = useState(true)
+    const [checked, setChecked] = useState(true);
+    const [dataRegister, setDataRegister] = useState({
+        client: "",
+        name: "",
+        displayAccountNumber: "",
+        maximumAmount: 0,
+        email: "",
+      });
+    
 
-    const ownAccount = (e) => {
-        setTypeAccount(true)
-    }
+    const handleChecked = (e) => {
+        setChecked(!e.target.checked)
+      //  console.log(checked)
+    } 
+    
+    const handleInputChange = (e) => {
+        setDataRegister({
+            ...dataRegister, 
+          [e.target.name]: e.target.value,
+        // typeAccount: checked
+        });
+        //console.log(dataRegister);
+      };
+    
+      const sendData = (e)=>{
+        e.preventDefault();
+        console.log(dataRegister)
+      } 
 
     const newRegister = (e) => {
         setTypeRegiste(e.target.value);
@@ -14,11 +37,14 @@ function UseRegister() {
 
     
   return {
-      typeAccount,
-      ownAccount,
       newRegister,
-      typeRegister
+      typeRegister,
+      sendData,
+      dataRegister,
+      handleInputChange,
+      checked,
+      handleChecked
   }
 }
 
-export default UseRegister;
+export default useRegister;
