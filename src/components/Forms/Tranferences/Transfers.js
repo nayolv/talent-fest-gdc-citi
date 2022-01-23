@@ -12,8 +12,8 @@ const Transfers = ({
   getDataTransfer,
   result,
   resultRetirement,
-  mapeoRetirement, 
-  mapeo
+  mapeoRetirement,
+  mapeo,
 }) => {
   const navigate = useNavigate();
   const [errorRet, setErrorRet] = useState("");
@@ -27,9 +27,11 @@ const Transfers = ({
 
     if (!typeAccount) {
       setError("El campo de cuenta de depósito no puede quedar vacío");
+      throw Error("El campo de cuenta de depósito no puede quedar vacío");
     }
     if (!typeAccountRet) {
       setErrorRet("El campo de cuenta de retiro no puede quedar vacío");
+      throw Error("El campo de cuenta de retiro no puede quedar vacío");
     } else if (typeAccount === "false") {
       navigate("/services/third-account");
     } else if (typeAccount === "true") {
@@ -81,7 +83,7 @@ const Transfers = ({
                   (item) =>
                     item.typeAccount && (
                       <option key={item.id} value={item.id}>
-                        {item.name} - {item.displayAccountNumber.slice(-3)} 
+                        {item.name} - {item.displayAccountNumber.slice(-3)}
                         Disponible: MXN{item.balance}
                       </option>
                     )

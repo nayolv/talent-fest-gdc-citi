@@ -1,17 +1,14 @@
 import React from "react";
 import SideBar from "../../SideBar";
-import "../../../Scss/Layout/VerificationOwnTransference.scss";
 import { useNavigate } from "react-router-dom";
 import { ModalTransf } from "../../modal/ModalTransf";
-
-export const VerificationOwnTransference = ({
+import '../../../Scss/Layout/Verification.scss'
+export const Verification = ({
   importe,
   mapeoRet,
   mapeoDep,
   balanceDeposito,
-  patchApiOwn,
   newBalance,
-  patchApiOwnDep,
 }) => {
   const navigate = useNavigate();
 
@@ -74,7 +71,7 @@ export const VerificationOwnTransference = ({
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
               onClick={() => {
-                navigate("/services/confirmation-own-account");
+                navigate("/services/confirmation");
                 balanceDeposito(mapeoRet.balance, importe);
                 newBalance(mapeoDep.balance, importe);
               }}

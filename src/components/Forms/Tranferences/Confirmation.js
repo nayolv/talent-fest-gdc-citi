@@ -1,9 +1,9 @@
 import React from "react";
 import SideBar from "../../SideBar";
-import "../../../Scss/Layout/ConfirmationOwn.scss";
+import "../../../Scss/Layout/Confirmation.scss";
 import { useNavigate } from "react-router-dom";
 
-export const ConfirmationOwn = ({ importe, mapeoRet, mapeoDep, balanceDep, balance, patchApiOwn, patchApiOwnDep }) => {
+export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance, patchApiOwn, patchApiOwnDep }) => {
   const navigate = useNavigate();
   patchApiOwn(mapeoRet.id);
   patchApiOwnDep(mapeoDep.id)
@@ -43,9 +43,7 @@ export const ConfirmationOwn = ({ importe, mapeoRet, mapeoDep, balanceDep, balan
                     {mapeoDep.client} - {mapeoDep.name} -
                     {mapeoDep.displayAccountNumber.slice(-3)}
                     <br />
-                    <span>
-                      Saldo: MXN{balance}
-                    </span>
+                   {mapeoDep.typeAccount?(<span>Saldo: MXN{balance}</span>):(null)}
                   </td>
                 </tr>
               </tbody>
