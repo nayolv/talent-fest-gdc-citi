@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+$banamex-blue: #056dae;
+$shadow-gray: #bebaba;
+$size-titles: 20px;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: white;
+}
+main {
+  padding: {
+    left: 9rem;
+    right: 2rem;
+    top: 10rem;
+    bottom: 7rem;
+  }
+
+  .main-container {
+    display: flex;
+    .container-home {
+      .offers-container {
+        .cards-offer-home {
+          margin: {
+            top: 20px;
+          }
+          display: flex;
+          width: 90%;
+          .card-home {
+            border: {
+              radius: 10px;
+            }
+            margin-right: 10px;
+            img {
+              width: 100%;
+              height: 60px;
+              border: {
+                radius: 10px 10px 0px 0px;
+              }
+            }
+          }
+          .text-promotion-container {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            width: 100%;
+            height: 60px;
+            box-shadow: 0px 2px 5px 0px $shadow-gray;
+            border: {
+              radius: 0px 0px 10px 10px;
+            }
+            p {
+              width: 100%;
+              margin-bottom: -5px;
+            }
+            .title-card-home {
+              font: {
+                weight: bold;
+              }
+            }
+          }
+        }
+
+        .middle-home-banner-container {
+          margin-top: 50px;
+          img {
+            width: 100%;
+            height: 100px;
+            border: {
+              radius: 5px;
+            }
+          }
+        }
+      }
+
+      .container-acconts {
+        margin-top: 50px;
+        h3 {
+          font: {
+            size: $size-titles;
+          }
+        }
+
+        .acconts-client-home-container {
+          background-color: white;
+          margin: {
+            top: 20px;
+          }
+          box-shadow: 0px 5px 3px 0px $shadow-gray;
+          border: {
+            radius: 5px;
+            left: {
+              style: solid;
+              color: $banamex-blue;
+              width: 0.45rem;
+            }
+          }
+          padding: 1rem;
+          height: 10rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .card-home-container {
+            display: flex;
+            align-items: center;
+            img {
+              height: 50px;
+              border: {
+                radius: 5px;
+              }
+            }
+            section {
+              width: 50%;
+              margin: {
+                top: 1rem;
+                left: 10px;
+              }
+              a {
+                color: $banamex-blue;
+                font: {
+                  size: 1rem;
+                  weight: bold;
+                }
+                margin: {
+                  bottom: -5px;
+                }
+              }
+              .account-number {
+                color: black;
+                font: {
+                  weight: bold;
+                  size: 20px;
+                }
+              }
+            }
+          }
+
+          .avalaible-container {
+            
+            p {
+              text-align: end;
+              color:black;
+              margin: {
+                bottom: -5px;
+            
+              }
+              font: {
+                size: 1.3rem;
+
+              }
+            }
+            section {
+              display: flex;
+              align-items: center;
+              .balance {
+                color: black;
+                font: {
+                  weight: bold;
+                  size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menu-lateral-home-container {
+    width: 25%;
+    margin-left: 10px;
+    h2 {
+      font: {
+        size: $size-titles;
+      }
+    }
+    .btns-lateral-container {
+      .lateral-btns-home-container {
+        display: flex;
+        flex-wrap: wrap;
+        button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: $banamex-blue;
+          color: white;
+          padding: 5px;
+          font: {
+            size: 1rem;
+            weight: 500;
+          }
+          width: 18vh;
+          height: 18vh;
+          margin: {
+            right: 5px;
+            bottom: 5px;
+            top: 5px;
+          }
+          border: {
+            radius: 10px;
+            style: none;
+          }
+          i {
+            font: {
+              size: 30px;
+            }
+          }
+        }
+      }
+      .second-laterl-btns-home-container {
+        button {
+          display: flex;
+          align-items: center;
+          i {
+            margin: {
+              right: 5px;
+            }
+            color: $banamex-blue;
+          }
+          box-shadow: 0px 2px 5px 0px $shadow-gray;
+          border: {
+            radius: 5px;
+            style: none;
+          }
+          margin: {
+            bottom: 10px;
+            top: 10px;
+          }
+          font: {
+            size: 1.2rem;
+            weight: 500;
+          }
+          width: 23.6rem;
+          height: 4.1rem;
+          text-align: start;
+          padding: {
+            right: 1rem;
+            top: 0.5rem;
+            bottom: 0.5rem;
+          }
+        }
+      }
+      .image-lateral-container {
+        img {
+          width: 100%;
+        }
+        section {
+          background-color: rgb(219, 219, 219);
+          text-align: center;
+          font: {
+            size: 1.1rem;
+            weight: 500;
+          }
+          button {
+            background-color: $banamex-blue;
+            color: white;
+            font: {
+              size:1.3rem;
+              weight: 400;
+            }
+            border: {
+              style: none;
+              radius: 5px;
+            }
+            padding: {
+              left: 0.7rem;
+              right: 0.7rem;
+              top: 0.2rem;
+              bottom: 0.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+a:focus,
+a:hover {
+  outline: 1px dotted;
+}
+a:focus-visible {
+  outline: 3px solid;
+}
+
