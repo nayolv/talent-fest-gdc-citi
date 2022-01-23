@@ -72,7 +72,7 @@ const AccountRegister = ({
                 checked={checked}
                 onChange={(e) => {
                   handleChecked();
-                  console.log(!checked)
+                  console.log(!checked)//Negar check
 
                 }}
               />

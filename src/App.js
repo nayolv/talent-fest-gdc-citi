@@ -4,7 +4,7 @@ import "./Scss/Layout/home.scss";
 import "./Scss/Layout/footer.scss";
 import "./Scss/Layout/sidebar.scss";
 import "./Scss/Layout/HeaderNav.scss";
-import "../src/App.css"
+import "../src/App.css";
 import { Home } from "./pages/Home";
 import { HeaderNav } from "./components/HeaderNav";
 import Footer from "./components/Footer";
@@ -40,6 +40,17 @@ function App() {
     resultRetirement,
     handleChange,
     importe,
+    mapeoRetirement,
+    mapeoRet,
+    mapeo,
+    mapeoDep,
+    balanceDep,
+    balanceDeposito,
+    patchApiOwn,
+    balance,
+    newBalance,
+    patchApiOwnDep,
+
   } = useTransfers();
 
   return (
@@ -47,7 +58,10 @@ function App() {
       <Router>
         <HeaderNav />
         <Routes>
-          <Route path="/" element={<Home resultRetirement={resultRetirement} />} />
+          <Route
+            path="/"
+            element={<Home resultRetirement={resultRetirement} />}
+          />
           <Route path="services/" element={<Services />}>
             <Route
               index
@@ -59,6 +73,8 @@ function App() {
                   getDataTransfer={getDataTransfer}
                   result={result}
                   resultRetirement={resultRetirement}
+                  mapeoRetirement={mapeoRetirement}
+                  mapeo={mapeo}
                 />
               }
             />
@@ -76,10 +92,10 @@ function App() {
               path="own-account"
               element={
                 <OwnAccount
-                  result={result}
-                  resultRetirement={resultRetirement}
                   handleChange={handleChange}
                   importe={importe}
+                  mapeoRet={mapeoRet}
+                  mapeoDep={mapeoDep}
                 />
               }
             />
@@ -87,19 +103,26 @@ function App() {
               path="verification-own-account"
               element={
                 <VerificationOwnTransference
-                  result={result}
-                  resultRetirement={resultRetirement}
+                  mapeoRet={mapeoRet}
+                  mapeoDep={mapeoDep}
                   importe={importe}
+                  balanceDeposito={balanceDeposito}
+                  newBalance={newBalance}
                 />
               }
             />
-             <Route
+            <Route
               path="confirmation-own-account"
               element={
                 <ConfirmationOwn
-                  result={result}
-                  resultRetirement={resultRetirement}
+                  mapeoRet={mapeoRet}
+                  mapeoDep={mapeoDep}
                   importe={importe}
+                  balanceDep={balanceDep}
+                  balance={balance}
+                  patchApiOwn={patchApiOwn}
+                  patchApiOwnDep={patchApiOwnDep}
+
                 />
               }
             />

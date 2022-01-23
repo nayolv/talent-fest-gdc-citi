@@ -12,7 +12,8 @@ const Transfers = ({
   getDataTransfer,
   result,
   resultRetirement,
-  deposito
+  mapeoRetirement, 
+  mapeo
 }) => {
   const navigate = useNavigate();
   const [errorRet, setErrorRet] = useState("");
@@ -50,6 +51,8 @@ const Transfers = ({
           onSubmit={(e) => {
             e.preventDefault();
             handleClick();
+            mapeoRetirement();
+            mapeo();
           }}
         >
           <h1>Ingresa los datos de la operación</h1>

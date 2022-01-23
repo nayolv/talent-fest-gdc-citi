@@ -1,11 +1,16 @@
-import React from 'react';
-import SideBar from '../../SideBar';
-import '../../../Scss/Layout/ConfirmationOwn.scss'
+import React from "react";
+import SideBar from "../../SideBar";
+import "../../../Scss/Layout/ConfirmationOwn.scss";
+import { useNavigate } from "react-router-dom";
 
-export const ConfirmationOwn = ({ result, importe, resultRetirement }) => {
+export const ConfirmationOwn = ({ importe, mapeoRet, mapeoDep, balanceDep, balance, patchApiOwn, patchApiOwnDep }) => {
+  const navigate = useNavigate();
+  patchApiOwn(mapeoRet.id);
+  patchApiOwnDep(mapeoDep.id)
+
   return (
-  <>
-<h1 className="entry-question"> ¿Qué deseas hacer?</h1>
+    <>
+      <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
       <hr />
       <section className="container-saider-form">
         <SideBar />
@@ -13,35 +18,40 @@ export const ConfirmationOwn = ({ result, importe, resultRetirement }) => {
           <h2>Pago a tarjetas Citibanamex</h2>
 
           <section className="table-container">
-          <p><i id='check' className="bi bi-check-lg" /> Tu pago ha sido aplicado</p>
-          <p>Número de autorización 112545</p>
-          
+            <p>
+              <i id="check" className="bi bi-check-lg" /> Tu pago ha sido
+              aplicado
+            </p>
+            <p>Número de autorización 112545</p>
+
             <table className="table">
               <tbody>
                 <tr>
                   <td>Cuenta de retiro:</td>
-                  {result.map((item) => (
-                    <td key={item.id}>
-                      {item.name} - {item.displayAccountNumber.slice(-3)}
-                      <br />
-                      <span> Disponible: MXN{item.balance - parseInt(importe)}</span>
-                    </td>
-                  ))}
+                  <td>
+                    {mapeoRet.name} - {mapeoRet.displayAccountNumber.slice(-3)}
+                    <br />
+                    <span>
+                      {" "}
+                      Disponible: MXN{balanceDep}
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td>Cuenta de despósito:</td>
-                  {resultRetirement.map((item) => (
-                    <td key={item.id}>
-                      {item.client} - {item.name} -
-                      {item.displayAccountNumber.slice(-3)}
-                      <br />
-                      <span>Saldo: MXN{item.balance + parseInt(importe)}</span>
-                    </td>
-                  ))}
+                  <td>
+                    {mapeoDep.client} - {mapeoDep.name} -
+                    {mapeoDep.displayAccountNumber.slice(-3)}
+                    <br />
+                    <span>
+                      Saldo: MXN{balance}
+                    </span>
+                  </td>
                 </tr>
               </tbody>
             </table>
           </section>
+
           <section className="table-container">
             <h3>Detalle de la transferencia</h3>
             <table className="table">
@@ -61,9 +71,21 @@ export const ConfirmationOwn = ({ result, importe, resultRetirement }) => {
               </tbody>
             </table>
           </section>
-
+          <section className="btns-confirmation-own">
+            <button
+              onClick={() => {
+                navigate("/services");
+              }}
+            >
+              Hacer otra transferencia
+            </button>
+            <button id="print">
+              <i className="bi bi-caret-right-fill" />
+              Imprimir
+            </button>
           </section>
-          </section>
-  </>
+        </section>
+      </section>
+    </>
   );
 };
