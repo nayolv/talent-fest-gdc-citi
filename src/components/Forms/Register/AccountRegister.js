@@ -30,6 +30,7 @@ const AccountRegister = ({
           className="all-form"
           onSubmit={(e) => {
             sendData(e);
+            navigate('/services/verification')
           }}
         >
 
@@ -72,8 +73,7 @@ const AccountRegister = ({
                 checked={checked}
                 onChange={(e) => {
                   handleChecked();
-                  console.log(!checked)
-
+                  // console.log(!checked)
                 }}
               />
               <label className="form-check-label">Cuenta propia</label>
