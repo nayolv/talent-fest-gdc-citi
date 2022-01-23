@@ -8,7 +8,7 @@ export const OfertasHome = () => {
  return (
     <div className="container-home ">
       <section className="offers-container">
-        <h1>Ofertas Citibanamex</h1>
+        <h2>Ofertas Citibanamex</h2>
 
         <section className="cards-offer-home">
 
@@ -44,7 +44,7 @@ export const OfertasHome = () => {
       </section>
 
       <section className="container-acconts">
-      <h2>Cuentas de efectivo</h2>
+      <p>Cuentas de efectivo</p>
 
       {ownAccounts.map(item=>(
         <section key={item.id} className="acconts-client-home-container">

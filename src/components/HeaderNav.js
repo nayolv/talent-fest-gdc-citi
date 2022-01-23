@@ -79,7 +79,7 @@ export const HeaderNav = () => {
         <p className="text-logout">Cerrar sesión</p>
       </section>
       <section className="container-welcome">
-        <h2 className="welcome"> ¡Hola usuario!</h2>
+        <h1 className="welcome"> ¡Hola usuario!</h1>
         <p className= "last-access">último acceso {date.toDateString()}</p>
       </section>
       <NavUser/>
