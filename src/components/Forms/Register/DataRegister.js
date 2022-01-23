@@ -1,14 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import UseRegister from "../../../hooks/Register/UseRegister";
+// import UseRegister from "../../../hooks/Register/useRegister";
 import "../../../Scss/Layout/transfer.scss";
 import "../../../Scss/Layout/DataTranfer.scss";
 import "../../../Scss/Layout/Modal.scss"
 import SideBar from "../../SideBar";
 import { ModalSia } from "../../modal/ModalSia";
 
-const DataRegister = () => {
-  const { typeRegister, newRegister } = UseRegister();
+const DataRegister = ({
+  typeRegister,
+  newRegister
+}) => {
+  // const { typeRegister, newRegister } = UseRegister();
   const navigate = useNavigate();
   return (
     <>
@@ -56,9 +59,14 @@ const DataRegister = () => {
             >
               Continuar
             </button>
-            <button type="button" className="cancel" onClick={() => {navigate("/services")}}>
+            <button
+              type="button"
+              className="cancel"
+              onClick={() => {
+                navigate("/services");
+              }}
+            >
               <i className="bi bi-caret-right-fill"></i>Cancelar
-
             </button>
           </div>
           <p className="reminder">
