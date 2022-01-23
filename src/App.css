@@ -14,23 +14,18 @@ body {
 
 
 body.light{
+--background-color-nav:var(--navBarlight);
 --background-color:var(--whiteBack);
 --color:var(--oscuros)
 }
 
 body.dark{
     --background-color:var(--oscuros);
---color:var(--claros)
+    --color:var(--claros);
+    --background-color-nav:var(--navBarDark);
 }
 
 header {
-    background-color: #056dae;
+    background-color:var(--background-color-nav);
 }
 
-header.light{
-    --background-color:var(--navBarlight);
-    }
-    
-   header.dark{
-        --background-color:var(--navBarDark);
-    }
