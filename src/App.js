@@ -26,7 +26,8 @@ function App() {
     dataRegister,
     handleInputChange,
     checked,
-    handleChecked
+    handleChecked,
+    postDataAccount 
   } = useRegister();
   const {
     recoverySelectValue,
@@ -105,6 +106,7 @@ function App() {
                 <DataVerification
                 dataRegister={dataRegister}
                 checked={checked}
+                postDataAccount ={postDataAccount }
                 />
               }
             />

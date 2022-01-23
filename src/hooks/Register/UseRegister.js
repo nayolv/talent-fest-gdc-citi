@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { dataApi } from "../../api/dataApi";
 
 function useRegister() {
     const [typeRegister, setTypeRegiste] = useState('')
@@ -10,7 +11,6 @@ function useRegister() {
         maximumAmount: 0,
         email: "",
       });
-    
 
     const handleChecked = (e) => {
         setChecked(!e.target.checked)
@@ -23,7 +23,18 @@ function useRegister() {
           [e.target.name]: e.target.value,
         // typeAccount: checked
         });
-        //console.log(dataRegister);
+      };
+
+    const postDataAccount = async () => {
+        await dataApi.post("https://api-talent-fest.herokuapp.com/clientData", {
+          id: "",
+          client: dataRegister.client,
+          name: dataRegister.name,
+          displayAccountNumber: dataRegister.displayAccountNumber,
+          maximumAmount:dataRegister.maximumAmount,
+          email: dataRegister.email,
+          typeAccount: checked
+        });
       };
     
       const sendData = (e)=>{
@@ -43,7 +54,8 @@ function useRegister() {
       dataRegister,
       handleInputChange,
       checked,
-      handleChecked
+      handleChecked,
+      postDataAccount 
   }
 }
 
