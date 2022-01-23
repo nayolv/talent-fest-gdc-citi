@@ -1,3 +1,27 @@
-#check{
-    color: green;
+#check {
+  color: green;
+}
+.btns-confirmation-own {
+  button {
+    margin: 0.50rem;
+    font: {
+        weight: 500;
+    }
+    padding: {
+        top: 0.50rem;
+        bottom: 0.50rem;
+        left: 1rem;
+        right: 1rem;
+    }
+    border: {
+        style: none;
+    };
+    background-color: #40698a;
+    color: white;
+  }
+  #print {
+   
+    background-color: transparent;
+    color: #40698A;
+  }
 }
