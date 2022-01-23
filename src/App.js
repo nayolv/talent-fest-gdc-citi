@@ -17,6 +17,7 @@ import { useTransfers } from "./hooks/useTransfers";
 import useRegister from "./hooks/Register/UseRegister";
 import DataVerification from "./components/Forms/Register/DataVerification";
 import { VerificationOwnTransference } from "./components/Forms/Tranferences/VerificationOwnTransference";
+import { ConfirmationOwn } from "./components/Forms/Tranferences/ConfirmationOwn";
 
 function App() {
   const {
@@ -27,8 +28,12 @@ function App() {
     handleInputChange,
     checked,
     handleChecked,
+<<<<<<< HEAD
     postDataAccount 
+=======
+>>>>>>> 9f5ac29f1621846648212152f97e01f71d006e13
   } = useRegister();
+
   const {
     recoverySelectValue,
     recoverySelectValueRet,
@@ -36,6 +41,8 @@ function App() {
     getDataTransfer,
     result,
     resultRetirement,
+    handleChange,
+    importe,
   } = useTransfers();
 
   return (
@@ -43,7 +50,7 @@ function App() {
       <Router>
         <HeaderNav />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home resultRetirement={resultRetirement} />} />
           <Route path="services/" element={<Services />}>
             <Route
               index
@@ -74,11 +81,31 @@ function App() {
                 <OwnAccount
                   result={result}
                   resultRetirement={resultRetirement}
+                  handleChange={handleChange}
+                  importe={importe}
                 />
               }
             />
-            <Route path="verification-own-account" element={<VerificationOwnTransference />} />
-
+            <Route
+              path="verification-own-account"
+              element={
+                <VerificationOwnTransference
+                  result={result}
+                  resultRetirement={resultRetirement}
+                  importe={importe}
+                />
+              }
+            />
+             <Route
+              path="confirmation-own-account"
+              element={
+                <ConfirmationOwn
+                  result={result}
+                  resultRetirement={resultRetirement}
+                  importe={importe}
+                />
+              }
+            />
             <Route
               path="third-account"
               element={
@@ -104,9 +131,14 @@ function App() {
               path="verification"
               element={
                 <DataVerification
+<<<<<<< HEAD
                 dataRegister={dataRegister}
                 checked={checked}
                 postDataAccount ={postDataAccount }
+=======
+                  dataRegister={dataRegister}
+                  checked={checked}
+>>>>>>> 9f5ac29f1621846648212152f97e01f71d006e13
                 />
               }
             />

@@ -4,11 +4,25 @@ import "../../../Scss/Layout/DataTranfer.scss";
 import "../../../Scss/Layout/transfer.scss";
 import SideBar from "../../SideBar";
 
-const OwnAccount = ({ result, resultRetirement }) => {
+const OwnAccount = ({ result, resultRetirement, handleChange, importe }) => {
   const navigate = useNavigate();
-  const [importe, setImporte] = useState(0);
-  const handleChange = (e) => {
-    setImporte(e.target.value);
+  const [errorVacio, setErrorVacio] = useState("");
+  const [errorMayorImporte, setErrorMayorImporte] = useState("");
+
+  const handleClick = () => {
+    const balance = parseInt(result.map((item) => item.balance).toString());
+    if (importe === 0) {
+      setErrorVacio("El campo no puede quedar vacío");
+      throw Error("El campo no puede quedar vacío");
+    }
+    if (parseInt(importe) > balance) {
+      setErrorMayorImporte(
+        "El importe no puede ser mayor al total de la cuenta"
+      );
+      throw Error("El importe no puede ser mayor al total de la cuenta");
+    }else{
+      navigate("/services/verification-own-account");
+    }
   };
 
   return (
@@ -38,7 +52,8 @@ const OwnAccount = ({ result, resultRetirement }) => {
                       item.name
                     } - ${item.displayAccountNumber.slice(-3)}`}
                   >
-                    {item.name} - {item.displayAccountNumber.slice(-3)}
+                    {item.name} - {item.displayAccountNumber.slice(-3)}{" "}
+                    Disponible: MXN{item.balance}
                   </option>
                 ))}
               </select>
@@ -62,6 +77,7 @@ const OwnAccount = ({ result, resultRetirement }) => {
               </select>
             </div>
           </div>
+
           <label>Importe:</label>
           <label>Otra cantidad:</label>
           <div className="input-group mb-3 input-amount">
@@ -71,6 +87,8 @@ const OwnAccount = ({ result, resultRetirement }) => {
               aria-label="Amount (to the nearest dollar)"
               onChange={handleChange}
             />
+            <p>{errorVacio}</p>
+            <p>{errorMayorImporte}</p>
           </div>
 
           <div className="form-check">
@@ -88,8 +106,7 @@ const OwnAccount = ({ result, resultRetirement }) => {
               className="continue"
               onClick={(e) => {
                 e.preventDefault();
-                console.log(importe);
-                navigate("/services/verification-own-account")
+                handleClick();
               }}
             >
               Continuar

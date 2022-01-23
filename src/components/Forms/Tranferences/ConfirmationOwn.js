@@ -1,25 +1,21 @@
-import React from "react";
-import SideBar from "../../SideBar";
-import "../../../Scss/Layout/VerificationOwnTransference.scss";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import SideBar from '../../SideBar';
+import '../../../Scss/Layout/ConfirmationOwn.scss'
 
-export const VerificationOwnTransference = ({ result, resultRetirement, importe }) => {
-  const navigate= useNavigate();
-
+export const ConfirmationOwn = ({ result, importe, resultRetirement }) => {
   return (
-    <>
-      <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
+  <>
+<h1 className="entry-question"> ¿Qué deseas hacer?</h1>
       <hr />
       <section className="container-saider-form">
         <SideBar />
         <section className="all-form">
           <h2>Pago a tarjetas Citibanamex</h2>
-         
+
           <section className="table-container">
-          <p>
-            Confirma los datos que ingresaste y si son correctos, haz clic en
-            "Aceptar para enviar tu operación.
-          </p>
+          <p><i id='check' className="bi bi-check-lg" /> Tu pago ha sido aplicado</p>
+          <p>Número de autorización 112545</p>
+          
             <table className="table">
               <tbody>
                 <tr>
@@ -28,7 +24,7 @@ export const VerificationOwnTransference = ({ result, resultRetirement, importe 
                     <td key={item.id}>
                       {item.name} - {item.displayAccountNumber.slice(-3)}
                       <br />
-                      <span>MXN {item.balance}</span>
+                      <span> Disponible: MXN{item.balance - parseInt(importe)}</span>
                     </td>
                   ))}
                 </tr>
@@ -38,6 +34,8 @@ export const VerificationOwnTransference = ({ result, resultRetirement, importe 
                     <td key={item.id}>
                       {item.client} - {item.name} -
                       {item.displayAccountNumber.slice(-3)}
+                      <br />
+                      <span>Saldo: MXN{item.balance + parseInt(importe)}</span>
                     </td>
                   ))}
                 </tr>
@@ -63,15 +61,9 @@ export const VerificationOwnTransference = ({ result, resultRetirement, importe 
               </tbody>
             </table>
           </section>
-          
-          <section className="btns-ver-own">
-            <button id="aceptar" onClick={()=>{navigate("/services/confirmation-own-account")}}>Aceptar</button>
-            <button onClick={() => navigate(-1)} ><i className="bi bi-caret-right-fill"/>Regresar</button>
-            <button onClick={()=>{navigate("/services")}}><i className="bi bi-caret-right-fill" />Cancelar</button>
+
           </section>
-        
-        </section>
-      </section>
-    </>
+          </section>
+  </>
   );
 };
