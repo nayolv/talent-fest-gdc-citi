@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "../../SideBar";
 import { useNavigate } from "react-router-dom";
-import { ModalTransf } from "../../modal/ModalTransf";
+import { ModalAlert } from "../../modal/ModalAlert";
 import '../../../Scss/Layout/Verification.scss'
 export const Verification = ({
   importe,
@@ -93,7 +93,7 @@ export const Verification = ({
           </section>
         </section>
       </section>
-      <ModalTransf />
+      <ModalAlert body={"Transferencia exitosa"} />
     </>
   );
 };

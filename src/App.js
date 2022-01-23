@@ -53,10 +53,11 @@ function App() {
     patchApiOwnDep,
   } = useTransfers();
 
+
   return (
     <>
       <Router>
-        <HeaderNav />
+        <HeaderNav getDataTransfer={getDataTransfer} />
         <Routes>
           <Route
             path="/"
