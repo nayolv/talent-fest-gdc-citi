@@ -8,7 +8,6 @@ import { ModalSia } from "../../modal/ModalSia";
 
 const AccountRegister = ({
   sendData,
-  dataRegister,
   handleInputChange,
   checked,
   handleChecked,
@@ -42,6 +41,7 @@ const AccountRegister = ({
                 placeholder="Tarjeta de debito o crédito"
                 name="name"
                 onChange={handleInputChange}
+                required
               >
                 <option defaultValue="Seleccione una opción">
                   Seleccione una opción
@@ -79,6 +79,7 @@ const AccountRegister = ({
               type="text"
               name="client"
               onChange={handleInputChange}
+              required
             ></input>
             <br />
             <p className="pLabels">
@@ -91,6 +92,7 @@ const AccountRegister = ({
                 aria-label="Amount (to the nearest dollar)"
                 name="maximumAmount"
                 onChange={handleInputChange}
+                required
               />
             </div>
             <br />
@@ -100,9 +102,11 @@ const AccountRegister = ({
               className="form-control"
               name="email"
               onChange={handleInputChange}
+              required
             ></input>
             <p className="pLabels">Confirmar correo electrónico:</p>
-            <input type="email" className="form-control"></input>
+            <input type="email" className="form-control"
+            required></input>
           </div>
           <div className="transferButtons">
             <button type="submit" className="continue">
