@@ -18,8 +18,8 @@ import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 import { useTransfers } from "./hooks/useTransfers";
 import useRegister from "./hooks/Register/UseRegister";
 import DataVerification from "./components/Forms/Register/DataVerification";
-import { VerificationOwnTransference } from "./components/Forms/Tranferences/VerificationOwnTransference";
-import { ConfirmationOwn } from "./components/Forms/Tranferences/ConfirmationOwn";
+import { Verification } from "./components/Forms/Tranferences/Verification";
+import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
 
 function App() {
   const {
@@ -51,7 +51,6 @@ function App() {
     balance,
     newBalance,
     patchApiOwnDep,
-
   } = useTransfers();
 
   return (
@@ -101,9 +100,9 @@ function App() {
               }
             />
             <Route
-              path="verification-own-account"
+              path="verification"
               element={
-                <VerificationOwnTransference
+                <Verification
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
                   importe={importe}
@@ -113,9 +112,9 @@ function App() {
               }
             />
             <Route
-              path="confirmation-own-account"
+              path="confirmation"
               element={
-                <ConfirmationOwn
+                <Confirmation
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
                   importe={importe}
@@ -123,19 +122,22 @@ function App() {
                   balance={balance}
                   patchApiOwn={patchApiOwn}
                   patchApiOwnDep={patchApiOwnDep}
-
                 />
               }
             />
+
             <Route
               path="third-account"
               element={
                 <ThirdAccount
-                  result={result}
-                  resultRetirement={resultRetirement}
+                  handleChange={handleChange}
+                  importe={importe}
+                  mapeoRet={mapeoRet}
+                  mapeoDep={mapeoDep}
                 />
               }
             />
+
             <Route
               path="formRegister"
               element={

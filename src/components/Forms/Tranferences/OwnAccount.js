@@ -4,7 +4,6 @@ import "../../../Scss/Layout/DataTranfer.scss";
 import "../../../Scss/Layout/transfer.scss";
 import "../../../Scss/Layout/Modal.scss";
 import SideBar from "../../SideBar";
-import { useTransfers } from "../../../hooks/useTransfers";
 import { ModalSia } from "../../modal/ModalSia";
 
 const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
@@ -13,7 +12,6 @@ const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
   const [errorMayorImporte, setErrorMayorImporte] = useState("");
 
   const handleClick = () => {
-    /*const balance = parseInt(result.map((item) => item.balance).toString());*/
     if (importe === 0) {
       setErrorVacio("El campo no puede quedar vacío");
       throw Error("El campo no puede quedar vacío");
@@ -24,7 +22,7 @@ const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
       );
       throw Error("El importe no puede ser mayor al total de la cuenta");
     } else {
-      navigate("/services/verification-own-account");
+      navigate("/services/verification");
     }
   };
 
@@ -66,7 +64,6 @@ const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
               >
                 <option>
                   {mapeoDep.name} - {mapeoDep.displayAccountNumber.slice(-3)}
-                  {/* Disponible: MXN{mapeoDep.balance} */}
                 </option>
               </select>
             </div>
