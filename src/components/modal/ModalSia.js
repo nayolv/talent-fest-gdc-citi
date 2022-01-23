@@ -3,6 +3,7 @@ import React from "react";
 export const ModalSia = () => {
   let clickedClass = "clicked";
   const body = document.body;
+  //const header = document.header;
   const lightTheme = "light";
   const darkTheme = "dark";
   let theme;
@@ -13,12 +14,13 @@ export const ModalSia = () => {
 
   if (theme === lightTheme || theme === darkTheme) {
     body.classList.add(theme);
+    //header.classList.add(theme);
   } else {
     body.classList.add(lightTheme);
+    //header.classList.add(lightTheme);
   }
     
 const switchTheme = (e) => {
-     console.log("aqui estoy ponme negro")
         if(theme ===  darkTheme ) {
             body.classList.replace(darkTheme, lightTheme);
             e.target.classList.remove(clickedClass);

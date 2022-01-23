@@ -1,8 +1,9 @@
 import React from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTransfers } from "../../../hooks/useTransfers";
 import "../../../Scss/Layout/transfer.scss";
+import "../../../Scss/Layout/Modal.scss";
+import { ModalSia } from "../../modal/ModalSia";
 import SideBar from "../../SideBar";
 
 const Transfers = ({ recoverySelectValue, selectValue, recoverySelectValueRet }) => {
@@ -104,6 +105,7 @@ const Transfers = ({ recoverySelectValue, selectValue, recoverySelectValueRet })
             </button>
           </div>
         </form>
+        <ModalSia />
       </section>
     </>
   );

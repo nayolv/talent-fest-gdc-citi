@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useTransfers } from '../../../hooks/useTransfers'
 import "../../../Scss/Layout/DataTranfer.scss"
 import "../../../Scss/Layout/transfer.scss";
+import "../../../Scss/Layout/Modal.scss";
+import { ModalSia } from '../../modal/ModalSia';
 import SideBar from '../../SideBar'
 
 const ThirdAccount = ({ selectValueRetirement, selectValue }) => {
@@ -112,6 +114,7 @@ const ThirdAccount = ({ selectValueRetirement, selectValue }) => {
             </button>
           </div>
         </form>
+        <ModalSia />
       </section>
     </>
   );

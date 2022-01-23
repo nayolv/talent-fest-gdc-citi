@@ -3,7 +3,9 @@ import "../../../Scss/Layout/transfer.scss";
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/DataTranfer.scss";
+import "../../../Scss/Layout/Modal.scss"
 import SideBar from "../../SideBar";
+import { ModalSia } from "../../modal/ModalSia";
 
 const AccountRegister = () => {
   const navigate = useNavigate();
@@ -89,6 +91,7 @@ const AccountRegister = () => {
             </button>
           </div>
         </form>
+        <ModalSia  />
       </section>
     </>
   );

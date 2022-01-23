@@ -2,8 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/DataTranfer.scss";
 import "../../../Scss/Layout/transfer.scss";
+import "../../../Scss/Layout/Modal.scss"
 import SideBar from "../../SideBar";
 import { useTransfers } from "../../../hooks/useTransfers";
+import { ModalSia } from "../../modal/ModalSia";
 
 
 const OwnAccount = ({ selectValue, selectValueRetirement }) => {
@@ -92,6 +94,7 @@ const OwnAccount = ({ selectValue, selectValueRetirement }) => {
             </button>
           </div>
         </form>
+        <ModalSia />
       </section>
     </>
   );
