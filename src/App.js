@@ -28,10 +28,7 @@ function App() {
     handleInputChange,
     checked,
     handleChecked,
-<<<<<<< HEAD
     postDataAccount 
-=======
->>>>>>> 9f5ac29f1621846648212152f97e01f71d006e13
   } = useRegister();
 
   const {
@@ -131,14 +128,9 @@ function App() {
               path="verification"
               element={
                 <DataVerification
-<<<<<<< HEAD
                 dataRegister={dataRegister}
                 checked={checked}
                 postDataAccount ={postDataAccount }
-=======
-                  dataRegister={dataRegister}
-                  checked={checked}
->>>>>>> 9f5ac29f1621846648212152f97e01f71d006e13
                 />
               }
             />
