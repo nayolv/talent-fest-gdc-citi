@@ -25,7 +25,7 @@ function useRegister() {
     
       const sendData = (e)=>{
         e.preventDefault();
-        console.log(dataRegister)
+        //console.log(dataRegister)
       } 
 
     const newRegister = (e) => {
