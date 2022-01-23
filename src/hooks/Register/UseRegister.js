@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function useRegister() {
     const [typeRegister, setTypeRegiste] = useState('')
-    const [checked, setChecked] = useState(true);
+    const [checked, setChecked] = useState(false);
     const [dataRegister, setDataRegister] = useState({
         client: "",
         name: "",
@@ -12,18 +12,15 @@ function useRegister() {
       });
     
 
-    const handleChecked = (e) => {
-        setChecked(!e.target.checked)
-      //  console.log(checked)
+    const handleChecked = () => {
+        setChecked(!checked);//Valor por default
     } 
     
     const handleInputChange = (e) => {
         setDataRegister({
             ...dataRegister, 
           [e.target.name]: e.target.value,
-        // typeAccount: checked
         });
-        //console.log(dataRegister);
       };
     
       const sendData = (e)=>{

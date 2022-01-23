@@ -10,10 +10,6 @@ export const VerificationOwnTransference = ({
 }) => {
   const navigate = useNavigate();
 
-const retirementBalance = () => {
-
-}
-
   return (
     <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>

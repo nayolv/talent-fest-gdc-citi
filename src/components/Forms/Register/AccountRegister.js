@@ -2,7 +2,7 @@ import "../../../Scss/Layout/transfer.scss";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/DataTranfer.scss";
-import "../../../Scss/Layout/Modal.scss"
+import "../../../Scss/Layout/Modal.scss";
 import SideBar from "../../SideBar";
 import { ModalSia } from "../../modal/ModalSia";
 
@@ -26,9 +26,13 @@ const AccountRegister = ({
       <hr />
       <section className="container-saider-form">
         <SideBar />
-        <form className="all-form" onSubmit={(e)=> {
-          sendData(e)
-        navigate('/services/verification')}}>
+        <form
+          className="all-form"
+          onSubmit={(e) => {
+            sendData(e);
+          }}
+        >
+
           <h1>Alta de cuenta Citibanamex</h1>
           <p>Indica los datos del alta y da click en "Continuar</p>
           <br />
@@ -64,11 +68,12 @@ const AccountRegister = ({
                 className="form-check-input"
                 type="checkbox"
                 id="flexCheckChecked"
-                //name="typeAccount"
-                //checked={checked}
+                name="controlled"
+                checked={checked}
                 onChange={(e) => {
-                  handleChecked(e);
-                  console.log(checked);
+                  handleChecked();
+                  console.log(!checked)
+
                 }}
               />
               <label className="form-check-label">Cuenta propia</label>
@@ -119,7 +124,7 @@ const AccountRegister = ({
             </button>
           </div>
         </form>
-        <ModalSia  />
+        <ModalSia />
       </section>
     </>
   );
