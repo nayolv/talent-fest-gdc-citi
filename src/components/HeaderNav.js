@@ -5,7 +5,7 @@ import { NavUser } from "./NavUser";
 export const HeaderNav = () => {
   const date = new Date();
   return (
-    <header>
+    <header className="header-nav">
       <section className="section-nav">
         <p>{date.toUTCString()}</p>
 

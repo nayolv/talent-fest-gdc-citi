@@ -12,22 +12,20 @@ body {
     color: var(--color);
 }
 body.light{
+--background-color-nav:var(--navBarlight);
 --background-color:var(--whiteBack);
 --color:var(--oscuros)
 }
 
 body.dark{
     --background-color:var(--oscuros);
---color:var(--navBarDark);
+
+    --color:var(--claros);
+    --background-color-nav:var(--navBarDark);
 }
-header{
-    background-color: #056dae;  
+
+header {
+    background-color:var(--background-color-nav);
 }
-body.light{
-    --background-color:var(--navBarlight);
-    }
-    
-    body.dark{
-        --background-color:var(--oscuros);
-    --color:var(--claros)
-    }
+
+

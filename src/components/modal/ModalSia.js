@@ -3,7 +3,6 @@ import React from "react";
 export const ModalSia = () => {
   let clickedClass = "clicked";
   const body = document.body;
-  //const header = document.header;
   const lightTheme = "light";
   const darkTheme = "dark";
   let theme;
@@ -14,10 +13,9 @@ export const ModalSia = () => {
 
   if (theme === lightTheme || theme === darkTheme) {
     body.classList.add(theme);
-    //header.classList.add(theme);
+   
   } else {
     body.classList.add(lightTheme);
-    //header.classList.add(lightTheme);
   }
     
 const switchTheme = (e) => {
@@ -54,7 +52,7 @@ const switchTheme = (e) => {
       <div
         className="modal fade modal-sia"
         id="accesibilityModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="accesibilityModal"
         aria-hidden="true"
       >
