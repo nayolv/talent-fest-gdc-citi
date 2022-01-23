@@ -59,7 +59,7 @@ const AccountRegister = ({
             <p className="pLabels">Numero de tarjeta:</p>
             <input
               className="form-control"
-              type="text"
+              type="number"
               name="displayAccountNumber"
               onChange={handleInputChange}
               required

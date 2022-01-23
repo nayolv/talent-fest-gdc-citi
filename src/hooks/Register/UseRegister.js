@@ -6,7 +6,7 @@ function useRegister() {
     const [dataRegister, setDataRegister] = useState({
         client: "",
         name: "",
-        displayAccountNumber: "",
+        displayAccountNumber: 0,
         maximumAmount: 0,
         email: "",
       });

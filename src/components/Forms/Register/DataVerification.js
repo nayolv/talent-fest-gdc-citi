@@ -29,6 +29,7 @@ const DataVerification = ({ dataRegister, checked }) => {
       maximumAmount: dataRegister.maximumAmount,
       email: dataRegister.email,
       typeAccount: checked,
+      balance: 10000
     });
   };
 
