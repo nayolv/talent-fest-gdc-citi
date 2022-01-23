@@ -9,6 +9,7 @@ const Transfers = ({
   getDataTransfer,
   result,
   resultRetirement,
+  deposito
 }) => {
   const navigate = useNavigate();
   const [errorRet, setErrorRet] = useState("");
@@ -74,7 +75,7 @@ const Transfers = ({
                   (item) =>
                     item.typeAccount && (
                       <option key={item.id} value={item.id}>
-                        {item.name} - {item.displayAccountNumber.slice(-3)}
+                        {item.name} - {item.displayAccountNumber.slice(-3)} 
                         Disponible: MXN{item.balance}
                       </option>
                     )

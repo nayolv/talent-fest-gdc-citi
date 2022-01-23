@@ -30,7 +30,10 @@ export const useTransfers = () => {
     (item) => item.id === parseInt(selectValueRetirement)
   );
 
-  
+  const [importe, setImporte] = useState(0);
+  const handleChange = (e) => {
+    setImporte(e.target.value);
+  };
 
   return {
     selectValue,
@@ -39,6 +42,8 @@ export const useTransfers = () => {
     recoverySelectValueRet,
     getDataTransfer,
     result,
-    resultRetirement
+    resultRetirement,
+    handleChange,
+    importe
   };
 };
