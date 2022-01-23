@@ -22,7 +22,7 @@ const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
       );
       throw Error("El importe no puede ser mayor al total de la cuenta");
     } else {
-      navigate("/services/verification");
+      navigate("/services/verification-transfer");
     }
   };
 

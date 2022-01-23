@@ -100,7 +100,7 @@ function App() {
               }
             />
             <Route
-              path="verification"
+              path="verification-transfer"
               element={
                 <Verification
                   mapeoRet={mapeoRet}
