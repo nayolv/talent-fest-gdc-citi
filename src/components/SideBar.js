@@ -1,36 +1,72 @@
 import React from 'react'
 import "../Scss/Layout/sidebar.scss"
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
-    return (
-        <>
-        <h1 className ="entry-question"> ¿Qué deseas hacer?</h1>
-        <hr />
-        <section className= "col-3 border-sm">
-            <div className="container d-flex"> 
-            <ul className="navbar-nav w-100"> {/* "nav nav-pills nav-fill" */}
-            <li className ="nav-item"><a className="nav-link active" href="#">Transferir o pagar</a></li>
+  return (
+    <>
+      <section className="menu">
+        <div className="container d-flex">
+          <ul className="navbar-nav w-60">
+            <li>
+          
+              <Link className="nav-link" to="/services">
+                Transferir o pagar
+              </Link>
+            </li>
             <hr />
-            <li className ="nav-item"> <a className="nav-link active" href="#">Dar de alta cuenta, tarjeta, servivio, otros</a></li>
+            <li>
+              <Link  className="nav-link" to="/services/register">
+                Dar de alta cuenta, tarjeta, servicio, otros
+              </Link>
+            </li>
             <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Modificar altas</a></li>
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Modificar altas
+              </Link>
+            </li>
             <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Pagar impuestos</a></li>
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Pagar impuestos
+              </Link>
+            </li>
             <hr />
-            <li className ="nav-item"><a className="nav-link active dropdown-toggle" href="#">Comprobantes</a></li>
+            <li className="nav-item">
+              <Link className="nav-link active dropdown-toggle" to="#">
+                Comprobantes
+              </Link>
+            </li>
             <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">CDMX</a></li>
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                CDMX
+              </Link>
+            </li>
             <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Comprobante electrónico de pago interbancario(CEP)</a></li>
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Comprobante electrónico de pago interbancario(CEP)
+              </Link>
+            </li>
             <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Ver movimientos de BancaNet</a></li>
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Ver movimientos de BancaNet
+              </Link>
+            </li>
             <hr />
-            <li className ="nav-item"><a className="nav-link disabled" href="#">Domiciliar un pago</a></li>
-            </ul>
-            </div> 
-        </section>
-        </>
-    )
-}
+            <li className="nav-item">
+              <Link className="nav-link disabled" to="#">
+                Domiciliar un pago
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </>
+  );
+};
 
-export default SideBar
+export default SideBar;
