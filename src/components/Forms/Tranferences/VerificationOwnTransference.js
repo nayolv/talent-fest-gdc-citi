@@ -3,8 +3,12 @@ import SideBar from "../../SideBar";
 import "../../../Scss/Layout/VerificationOwnTransference.scss";
 import { useNavigate } from "react-router-dom";
 
-export const VerificationOwnTransference = ({ result, resultRetirement, importe }) => {
-  const navigate= useNavigate();
+export const VerificationOwnTransference = ({
+  result,
+  resultRetirement,
+  importe,
+}) => {
+  const navigate = useNavigate();
 
   return (
     <>
@@ -14,12 +18,12 @@ export const VerificationOwnTransference = ({ result, resultRetirement, importe 
         <SideBar />
         <section className="all-form">
           <h2>Pago a tarjetas Citibanamex</h2>
-         
+
           <section className="table-container">
-          <p>
-            Confirma los datos que ingresaste y si son correctos, haz clic en
-            "Aceptar para enviar tu operación.
-          </p>
+            <p>
+              Confirma los datos que ingresaste y si son correctos, haz clic en
+              "Aceptar para enviar tu operación.
+            </p>
             <table className="table">
               <tbody>
                 <tr>
@@ -63,13 +67,29 @@ export const VerificationOwnTransference = ({ result, resultRetirement, importe 
               </tbody>
             </table>
           </section>
-          
+
           <section className="btns-ver-own">
-            <button id="aceptar" onClick={()=>{navigate("/services/confirmation-own-account")}}>Aceptar</button>
-            <button onClick={() => navigate(-1)} ><i className="bi bi-caret-right-fill"/>Regresar</button>
-            <button onClick={()=>{navigate("/services")}}><i className="bi bi-caret-right-fill" />Cancelar</button>
+            <button
+              id="aceptar"
+              onClick={() => {
+                navigate("/services/confirmation-own-account");
+              }}
+            >
+              Aceptar
+            </button>
+            <button onClick={() => navigate(-1)}>
+              <i className="bi bi-caret-right-fill" />
+              Regresar
+            </button>
+            <button
+              onClick={() => {
+                navigate("/services");
+              }}
+            >
+              <i className="bi bi-caret-right-fill" />
+              Cancelar
+            </button>
           </section>
-        
         </section>
       </section>
     </>

@@ -1,6 +1,9 @@
+import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/transfer.scss";
+import "../../../Scss/Layout/Modal.scss";
+import { ModalSia } from "../../modal/ModalSia";
 import SideBar from "../../SideBar";
 
 const Transfers = ({
@@ -129,6 +132,7 @@ const Transfers = ({
             </button>
           </div>
         </form>
+        <ModalSia />
       </section>
     </>
   );
