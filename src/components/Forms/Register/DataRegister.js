@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 // import UseRegister from "../../../hooks/Register/useRegister";
 import "../../../Scss/Layout/transfer.scss";
 import "../../../Scss/Layout/DataTranfer.scss";
+import "../../../Scss/Layout/Modal.scss"
 import SideBar from "../../SideBar";
+import { ModalSia } from "../../modal/ModalSia";
 
 const DataRegister = ({
   typeRegister,
@@ -74,6 +76,7 @@ const DataRegister = ({
             Si recibes llamadas de este tipo cuelga, ya que es un fraude.
           </p>
         </form>
+        <ModalSia />
       </section>
     </>
   );

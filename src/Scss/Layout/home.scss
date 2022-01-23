@@ -12,21 +12,16 @@ body {
   background-color: white;
 }
 main {
-  
   padding: {
-    left: 10rem;
-    right: 10rem;
-    top: 7rem;
+    left: 9rem;
+    right: 2rem;
+    top: 10rem;
     bottom: 7rem;
   }
-  h1 {
-    font: {
-      size: $size-titles;
-    }
-  }
+
   .main-container {
     display: flex;
-    .container-home{
+    .container-home {
       .offers-container {
         .cards-offer-home {
           margin: {
@@ -68,7 +63,7 @@ main {
             }
           }
         }
-  
+
         .middle-home-banner-container {
           margin-top: 50px;
           img {
@@ -88,7 +83,7 @@ main {
             size: $size-titles;
           }
         }
-  
+
         .acconts-client-home-container {
           background-color: white;
           margin: {
@@ -108,7 +103,7 @@ main {
           display: flex;
           justify-content: space-between;
           align-items: center;
-  
+
           .card-home-container {
             display: flex;
             align-items: center;
@@ -143,7 +138,7 @@ main {
               }
             }
           }
-  
+
           .avalaible-container {
             p {
               text-align: end;
@@ -169,8 +164,7 @@ main {
         }
       }
     }
-    }
-    
+  }
 
   .menu-lateral-home-container {
     width: 25%;
@@ -192,16 +186,16 @@ main {
           color: white;
           padding: 5px;
           font: {
-            size: 12px;
+            size: 1rem;
             weight: 500;
           }
-          width: 110px;
-          height: 110px;
+          width: 18vh;
+          height: 18vh;
           margin: {
             right: 5px;
             bottom: 5px;
             top: 5px;
-          };
+          }
           border: {
             radius: 10px;
             style: none;
@@ -230,10 +224,10 @@ main {
           }
           margin: {
             bottom: 10px;
-            top:10px;
-          };
+            top: 10px;
+          }
           font: {
-            size: 15px;
+            size: 0.9rem;
             weight: 500;
           }
           width: 100%;
@@ -253,15 +247,15 @@ main {
           background-color: rgb(219, 219, 219);
           text-align: center;
           font: {
-            size: 15px;
+            size: 1.1rem;
             weight: 500;
           }
           button {
             background-color: $banamex-blue;
             color: white;
             font: {
-              size: 0.9rem;
-              weight: 500;
+              size:1.3rem;
+              weight: 400;
             }
             border: {
               style: none;
@@ -286,4 +280,16 @@ a:hover {
 }
 a:focus-visible {
   outline: 3px solid;
+}
+
+.btn-accesibility {
+  border: none;
+  background-color: transparent;
+  width: 8vw;
+  height: 8vw;
+
+  img {
+    width: 7vw;
+    height: 7vw;
+  }
 }

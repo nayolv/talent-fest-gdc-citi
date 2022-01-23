@@ -4,6 +4,7 @@ import "./Scss/Layout/home.scss";
 import "./Scss/Layout/footer.scss";
 import "./Scss/Layout/sidebar.scss";
 import "./Scss/Layout/HeaderNav.scss";
+import "../src/App.css"
 import { Home } from "./pages/Home";
 import { HeaderNav } from "./components/HeaderNav";
 import Footer from "./components/Footer";
