@@ -7,10 +7,13 @@ $size-titles: 20px;
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
+  
 }
+
 body {
   background-color: white;
 }
+
 main {
   padding: {
     left: 9rem;
@@ -55,6 +58,7 @@ main {
             p {
               width: 100%;
               margin-bottom: -5px;
+              
             }
             .title-card-home {
               font: {
@@ -113,12 +117,15 @@ main {
                 radius: 5px;
               }
             }
+           
+
             section {
               width: 50%;
               margin: {
                 top: 1rem;
                 left: 10px;
               }
+              
               a {
                 color: $banamex-blue;
                 font: {
@@ -253,7 +260,7 @@ main {
             background-color: $banamex-blue;
             color: white;
             font: {
-              size:1.3rem;
+              size: 1.3rem;
               weight: 400;
             }
             border: {
