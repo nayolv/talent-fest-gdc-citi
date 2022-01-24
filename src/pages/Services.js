@@ -7,7 +7,7 @@ const Services = () => {
   const {changeColor, setChangeColor} = React.useContext(ThemeContext)
 
   return (
-    <div style = { {background: changeColor.background} } >
+    <div className= "container-form container" style = { {background: changeColor.background} } >
     <Outlet />
     </div>
   );

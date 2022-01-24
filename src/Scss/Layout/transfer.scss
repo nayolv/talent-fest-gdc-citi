@@ -1,5 +1,7 @@
 .container-saider-form {
   display: flex;
+  width: 88vw;
+  flex-direction: row;
 
   .all-form {
     font-size: 1.3 rem;
@@ -11,7 +13,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: -13vw;
+    margin-left: -4vw;
   }
 
   h1 {
@@ -25,8 +27,8 @@
     font-size: 1.3rem;
   }
 
-  .transfer-p{
-    width:80%
+  .transfer-p {
+    width: 80%;
   }
 
   .container {
@@ -38,7 +40,6 @@
     margin-top: 2vh;
     font-size: 1.3rem;
     margin-bottom: 3vh;
-  
   }
 
   button {
@@ -76,28 +77,26 @@
   }
 
   .input-amount {
-      width: 50vh;
-      font-size: 1.3rem;
+    width: 50vh;
+    font-size: 1.3rem;
   }
-  .input-group-text{
+  .input-group-text {
     font-size: 1.5rem;
-
   }
-  .form-control{
+  .form-control {
     width: 50vh;
   }
 
-  .form-check-input{
-      margin-top: 2vh;
-      margin-right: 2vh;
-      width: 1.5rem;
-      height: 1.5rem;
+  .form-check-input {
+    margin-top: 2vh;
+    margin-right: 2vh;
+    width: 1.5rem;
+    height: 1.5rem;
   }
-  .opcion{
+  .opcion {
     font-style: italic;
     font-size: 1rem;
-    margin-bottom:2vh;
-    
+    margin-bottom: 2vh;
   }
 }
 
