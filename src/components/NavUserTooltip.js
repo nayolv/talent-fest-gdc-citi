@@ -15,30 +15,30 @@ export const NavUserTooltip = () => {
           <li className="nav-item">
           <i className="bi bi-coin"></i>
             <p className="nav-transfer">
-            <Link to="services"> Transferencias y pagos </Link>
+            <Link to="services" id="tooltip" data-info="Transferencias y pagos"> Transferencias y pagos </Link>
             </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-graph-up-arrow"></i>
-            <Link className="nav-investment" to="#">
+            <Link className="nav-investment" to="#" id="tooltip" data-info="Inversiones">
               Inversiones
             </Link>
           </li>
           <li className="nav-item">
           <i className="bi bi-credit-card"></i>
-            <p className="nav-others">
+            <p className="nav-others" id="tooltip" data-info="Otros productos">
              Otros productos
             </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-gear"></i>
-            <p className="nav-setting">
+            <p className="nav-setting" id="tooltip" data-info="Configuración">
               Configuración
             </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-question-circle"></i>
-            <p className="nav-help">
+            <p className="nav-help" id="tooltip" data-info="Ayuda">
               Ayuda
             </p>
           </li>
