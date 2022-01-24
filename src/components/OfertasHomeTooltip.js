@@ -9,7 +9,7 @@ export const OfertasHomeTooltip = () => {
  return (
     <div className="container-home ">
       <section className="offers-container">
-        <h2>Ofertas Citibanamex</h2>
+        <h2 id="tooltip" data-info="Ofertas Citibanamex">Ofertas Citibanamex</h2>
 
         <section className="cards-offer-home">
 
