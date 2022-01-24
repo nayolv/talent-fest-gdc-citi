@@ -1,10 +1,12 @@
-import { NavUser } from "./NavUser";
+import { NavUserTooltip } from "./NavUserTooltip";
+import '../Scss/Layout/Tooltip.scss'
 
-export const HeaderNav = ({ getDataTransfer }) => {
+export const HeaderNavTooltip = ({ getDataTransfer }) => {
   const date = new Date();
 
   let user;
   const getUser = () => {
+    // eslint-disable-next-line array-callback-return
     getDataTransfer.map((item) => {
       if (item.typeAccount) {
         user = item.client;
@@ -16,7 +18,7 @@ export const HeaderNav = ({ getDataTransfer }) => {
   return (
     <header className="header-nav">
       <section className="section-nav">
-        <p className ="date">{date.toUTCString()}</p>
+        <p className="date" id="tooltip" data-info={date.toUTCString()}>{date.toUTCString()}</p>
 
         <ul className="nav nav-pills">
           <li className="nav-item">
@@ -24,6 +26,8 @@ export const HeaderNav = ({ getDataTransfer }) => {
               className="nav-link active"
               aria-current="page"
               href="https://www.banamex.com/es/localizador-sucursales.html"
+              id="tooltipHeader" 
+              data-info='SUCURSALES'
             >
               SUCURSALES
             </a>
@@ -34,6 +38,8 @@ export const HeaderNav = ({ getDataTransfer }) => {
               className="nav-link dropdown-toggle"
               data-bs-toggle="dropdown"
               href="#"
+              id="tooltipHeader" 
+              data-info='CONTÁCTANOS'
               role="button"
               aria-expanded="false"
             >
@@ -64,6 +70,8 @@ export const HeaderNav = ({ getDataTransfer }) => {
             <a
               className="nav-link nav-help"
               href="https://www.banamex.com/SoporteBanamex/index.html?lid=MX|BNP3|MULTISALDOS-TextoBotton-02102017-AyudaBNP-irLearningCenter-ES"
+              id="tooltipHeader" 
+              data-info='AYUDA'
             >
               AYUDA
             </a>
@@ -80,7 +88,9 @@ export const HeaderNav = ({ getDataTransfer }) => {
         <ul>
           <li className="float">
             |
-            <a className="bancanet" href="https://www.banamex.com/">
+            <a className="bancanet" href="https://www.banamex.com/"
+                 id="tooltip" 
+                 data-info='BancaNet'>
               BancaNet
             </a>
           </li>
@@ -90,10 +100,11 @@ export const HeaderNav = ({ getDataTransfer }) => {
         <p className="text-logout">Cerrar sesión</p> */}
       </section>
       <section className="container-welcome">
-        <h2 className="welcome"> ¡Hola {user}!</h2>
+        <h2 className="welcome"  id="tooltip" 
+                 data-info={`¡Hola${user}!`}> ¡Hola {user}!</h2>
         {/* <p className= "last-access">último acceso {date.toDateString()}</p> */}
       </section>
-      <NavUser />
+      <NavUserTooltip />
     </header>
   );
 };

@@ -21,7 +21,7 @@ const SideBar = () => {
               </Link>
             </li>
             <hr />
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link disabled" to="#">
                 Modificar altas
               </Link>
@@ -61,7 +61,7 @@ const SideBar = () => {
               <Link className="nav-link disabled" to="#">
                 Domiciliar un pago
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </section>
