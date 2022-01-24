@@ -79,6 +79,7 @@ export const Verification = ({
           </section>
           <section className="btns-ver-own">
             <button
+              className="continue"
               id="aceptar"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
@@ -91,11 +92,12 @@ export const Verification = ({
             >
               Aceptar
             </button>
-            <button onClick={() => navigate(-1)}>
+            <button className="cancel" onClick={() => navigate(-1)}>
               <i className="bi bi-caret-right-fill" />
               Regresar
             </button>
             <button
+              className="cancel"
               onClick={() => {
                 navigate("/services");
               }}

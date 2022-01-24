@@ -1,6 +1,7 @@
 import React from "react";
 import SideBar from "../../SideBar";
 import "../../../Scss/Layout/Confirmation.scss";
+import "../../../Scss/Layout/Modal.scss";
 import { useNavigate } from "react-router-dom";
 import { ModalSia } from "../../modal/ModalSia";
 import "../../../Scss/Layout/Modal.scss";
@@ -30,11 +31,11 @@ export const Confirmation = ({
           <h2>Pago a tarjetas Citibanamex</h2>
 
           <section className="table-container">
-            <p>
+            <p className="sm">
               <i id="check" className="bi bi-check-lg" /> Tu pago ha sido
               aplicado
             </p>
-            <p>Número de autorización 112545</p>
+            <p className="sm">Número de autorización 112545</p>
 
             <table className="table">
               <tbody>
@@ -88,6 +89,7 @@ export const Confirmation = ({
           </section>
           <section className="btns-confirmation-own">
             <button
+            className="continue"
               onClick={() => {
                 navigate("/services");
               }}
