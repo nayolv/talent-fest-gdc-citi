@@ -21,47 +21,6 @@ const SideBar = () => {
               </Link>
             </li>
             <hr />
-            {/* <li className="nav-item">
-              <Link className="nav-link disabled" to="#">
-                Modificar altas
-              </Link>
-            </li>
-            <hr />
-            <li className="nav-item">
-              <Link className="nav-link disabled" to="#">
-                Pagar impuestos
-              </Link>
-            </li>
-            <hr />
-            <li className="nav-item">
-              <Link className="nav-link active dropdown-toggle" to="#">
-                Comprobantes
-              </Link>
-            </li>
-            <hr />
-            <li className="nav-item">
-              <Link className="nav-link disabled" to="#">
-                CDMX
-              </Link>
-            </li>
-            <hr />
-            <li className="nav-item">
-              <Link className="nav-link disabled" to="#">
-                Comprobante electrónico de pago interbancario(CEP)
-              </Link>
-            </li>
-            <hr />
-            <li className="nav-item">
-              <Link className="nav-link disabled" to="#">
-                Ver movimientos de BancaNet
-              </Link>
-            </li>
-            <hr />
-            <li className="nav-item">
-              <Link className="nav-link disabled" to="#">
-                Domiciliar un pago
-              </Link>
-            </li> */}
           </ul>
         </div>
       </section>

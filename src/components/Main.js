@@ -2,7 +2,7 @@ import React from "react";
 import { LateralMenuHome } from "./LateralMenuHome";
 import { ModalSia } from "./modal/ModalSia";
 import { OfertasHome } from "./OfertasHome";
- import { ThemeContext} from "./modal/Context" 
+import { ThemeContext} from "./modal/Context" 
 
 export const Main = ({ resultRetirement, isTooltipOn, tooltipOn }) => {
 
@@ -12,8 +12,8 @@ export const Main = ({ resultRetirement, isTooltipOn, tooltipOn }) => {
 
     <main   style = { {background: changeColor.background} } >
       <div className="main-container" >
-      <OfertasHome resultRetirement={resultRetirement} tooltipOn={tooltipOn}/>
-      <LateralMenuHome tooltipOn={tooltipOn}/>
+      <OfertasHome resultRetirement={resultRetirement} tooltipOn={ tooltipOn }/>
+      <LateralMenuHome tooltipOn={ tooltipOn }/>
       <ModalSia isTooltipOn={ isTooltipOn } />
       </div>
       

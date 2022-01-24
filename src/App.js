@@ -6,7 +6,8 @@ import "./Scss/Layout/footer.scss";
 import "./Scss/Layout/sidebar.scss";
 import "./Scss/Layout/HeaderNav.scss";
 import "../src/App.css";
-import './Scss/Layout/CorfimRegister.scss'
+import './Scss/Layout/CorfimRegister.scss';
+import './Scss/Layout/Tooltip.scss';
 import { Home } from "./pages/Home";
 import { HeaderNav } from "./components/HeaderNav";
 import Footer from "./components/Footer";
@@ -21,10 +22,7 @@ import useRegister from "./hooks/Register/UseRegister";
 import { Verification } from "./components/Forms/Tranferences/Verification";
 import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
 import { Context } from "./components/modal/Context";
-import { HomeTootltip } from "./pages/HomeTootltip";
 import DataVerification from "./components/Forms/Register/DataVerification";
-import { HeaderNavTooltip } from "./components/HeaderNavTooltip";
-import FooterTooltip from "./components/FooterTooltip";
 
 function App() {
   const {
