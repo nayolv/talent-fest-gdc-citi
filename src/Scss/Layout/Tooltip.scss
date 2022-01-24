@@ -1,26 +1,32 @@
 #tooltip {
-  background-color: yellow;
   border-bottom: 1px dashed gray;
   cursor: pointer;
   position: relative;
-  display: inline-block;
+  line-height: 2rem;
 }
 #tooltip::before {
-    //display: none; /* Lo ocultamos*/
     visibility: hidden;
     content: attr(data-info);
     color: white;
-    font-size: 2em;
-    padding: 4px 8px;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 2.5rem;
+    padding: .80rem;
     background: rgba(0, 0, 0, 0.877);
     border-radius: 5px;
     position: absolute; /* Lo posicionamos de modo absoluto dentro del span */
+<<<<<<< HEAD
      top: -2em;
      left: 2px;
     min-width: 350px;
     z-index: 999;
+=======
+     top: -1em;
+     min-width: auto;
+     z-index: 999;
+>>>>>>> dc0fb90bd290e536b0eddd4df5964ad388dc35ee
 }
 #tooltip:hover::before {
-    //display: block;
     visibility: visible;
+  
 }
