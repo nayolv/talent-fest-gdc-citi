@@ -4,13 +4,22 @@ import "../../../Scss/Layout/Confirmation.scss";
 import "../../../Scss/Layout/Modal.scss";
 import { useNavigate } from "react-router-dom";
 import { ModalSia } from "../../modal/ModalSia";
-import "../../../Scss/Layout/Modal.scss"
+import "../../../Scss/Layout/Modal.scss";
 
-
-export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance, patchApiOwn, patchApiOwnDep }) => {
+export const Confirmation = ({
+  importe,
+  mapeoRet,
+  mapeoDep,
+  balanceDep,
+  balance,
+  patchApiOwn,
+  patchApiOwnDep,
+  descriptionTransfer,
+  hour
+}) => {
   const navigate = useNavigate();
   patchApiOwn(mapeoRet.id);
-  patchApiOwnDep(mapeoDep.id)
+  patchApiOwnDep(mapeoDep.id);
 
   return (
     <>
@@ -35,10 +44,7 @@ export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance,
                   <td>
                     {mapeoRet.name} - {mapeoRet.displayAccountNumber.slice(-3)}
                     <br />
-                    <span>
-                      {" "}
-                      Disponible: MXN{balanceDep}
-                    </span>
+                    <span> Disponible: MXN{balanceDep}</span>
                   </td>
                 </tr>
                 <tr>
@@ -47,7 +53,9 @@ export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance,
                     {mapeoDep.client} - {mapeoDep.name} -
                     {mapeoDep.displayAccountNumber.slice(-3)}
                     <br />
-                   {mapeoDep.typeAccount?(<span>Saldo: MXN{balance}</span>):(null)}
+                    {mapeoDep.typeAccount ? (
+                      <span>Saldo: MXN{balance}</span>
+                    ) : null}
                   </td>
                 </tr>
               </tbody>
@@ -68,8 +76,14 @@ export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance,
                 </tr>
                 <tr>
                   <td>Hora de aplicación:</td>
-                  <td>18:16:25</td>
+                  <td>{hour}</td>
                 </tr>
+                {mapeoDep.typeAccount === false ? (
+                  <tr>
+                    <td>Descripción:</td>
+                    <td>{descriptionTransfer}</td>
+                  </tr>
+                ) : null}
               </tbody>
             </table>
           </section>

@@ -6,7 +6,8 @@ import "./Scss/Layout/footer.scss";
 import "./Scss/Layout/sidebar.scss";
 import "./Scss/Layout/HeaderNav.scss";
 import "../src/App.css";
-import './Scss/Layout/CorfimRegister.scss'
+import './Scss/Layout/CorfimRegister.scss';
+import './Scss/Layout/Tooltip.scss';
 import { Home } from "./pages/Home";
 import { HeaderNav } from "./components/HeaderNav";
 import Footer from "./components/Footer";
@@ -21,10 +22,7 @@ import useRegister from "./hooks/Register/UseRegister";
 import { Verification } from "./components/Forms/Tranferences/Verification";
 import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
 import { Context } from "./components/modal/Context";
-import { HomeTootltip } from "./pages/HomeTootltip";
 import DataVerification from "./components/Forms/Register/DataVerification";
-import { HeaderNavTooltip } from "./components/HeaderNavTooltip";
-import FooterTooltip from "./components/FooterTooltip";
 
 function App() {
   const {
@@ -57,6 +55,12 @@ function App() {
     balance,
     newBalance,
     patchApiOwnDep,
+    descriptionTransfer,
+    recoveryDescription,
+    hora,
+    hour,
+    getHour
+
   } = useTransfers();
 
   const [tooltipOn, setTooltipOn] = useState(true);
@@ -69,15 +73,17 @@ function App() {
     <>
     <Context>
       <Router>
-        {tooltipOn ? (<HeaderNav getDataTransfer={getDataTransfer} />):(<HeaderNavTooltip getDataTransfer={getDataTransfer} />)}
+        {/* {tooltipOn ? (<HeaderNav getDataTransfer={getDataTransfer} />):(<HeaderNavTooltip getDataTransfer={getDataTransfer} />)} */}
+        <HeaderNav getDataTransfer={getDataTransfer} tooltipOn={tooltipOn} />
         <Routes>
-         {tooltipOn ? ( <Route
+      {/*    {tooltipOn ? ( <Route
             path="/"
             element={<Home resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
           />) : ( <Route
             path="/"
             element={<HomeTootltip resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
-          />)}
+          />)} */}
+          <Route path="/" element={<Home resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} tooltipOn={tooltipOn} />}/>
           <Route path="services/" element={<Services />}>
             <Route
               index
@@ -112,6 +118,7 @@ function App() {
                   importe={importe}
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
+                  hora={hora}
                 />
               }
             />
@@ -124,6 +131,9 @@ function App() {
                   importe={importe}
                   balanceDeposito={balanceDeposito}
                   newBalance={newBalance}
+                  descriptionTransfer={descriptionTransfer}
+                  getHour={getHour}
+                  hora={hora}
                 />
               }
             />
@@ -138,6 +148,8 @@ function App() {
                   balance={balance}
                   patchApiOwn={patchApiOwn}
                   patchApiOwnDep={patchApiOwnDep}
+                  descriptionTransfer={descriptionTransfer}
+                  hour={hour}
                 />
               }
             />
@@ -150,6 +162,7 @@ function App() {
                   importe={importe}
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
+                  recoveryDescription={recoveryDescription}
                 />
               }
             />
@@ -172,13 +185,13 @@ function App() {
                 <DataVerification
                 dataRegister={dataRegister}
                 checked={checked}
-                postDataAccount ={postDataAccount }
+                postDataAccount ={postDataAccount}
                 />
               }
             />
           </Route>
         </Routes>
-        {tooltipOn ? (<Footer />):(<FooterTooltip />)}
+        <Footer tooltipOn={tooltipOn} />
       </Router>
       </Context>
     </>

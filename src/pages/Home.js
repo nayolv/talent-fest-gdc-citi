@@ -1,12 +1,13 @@
 import React from 'react'
 import { Main } from '../components/Main'
+// import '../Scss/Layout/Tooltip.scss'
 
 
-export const Home = ({ isTooltipOn }) => {
+export const Home = ({ tooltipOn, isTooltipOn }) => {
 
     return (
         < >
-        <Main isTooltipOn={ isTooltipOn } />
+        <Main tooltipOn={tooltipOn} isTooltipOn={isTooltipOn} />
         </>
     )
 }

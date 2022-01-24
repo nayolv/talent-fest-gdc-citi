@@ -12,8 +12,12 @@ export const Verification = ({
   mapeoDep,
   balanceDeposito,
   newBalance,
+  descriptionTransfer,
+  hora,
+  getHour
 }) => {
   const navigate = useNavigate();
+  
 
   return (
     <>
@@ -62,12 +66,17 @@ export const Verification = ({
                 </tr>
                 <tr>
                   <td>Hora de aplicación:</td>
-                  <td>18:16:25</td>
+                  <td>{hora}</td>
                 </tr>
+                {mapeoDep.typeAccount === false ? (
+                  <tr>
+                    <td>Descripción:</td>
+                    <td>{descriptionTransfer}</td>
+                  </tr>
+                ) : null}
               </tbody>
             </table>
           </section>
-
           <section className="btns-ver-own">
             <button
               className="continue"
@@ -78,6 +87,7 @@ export const Verification = ({
                 navigate("/services/confirmation");
                 balanceDeposito(mapeoRet.balance, importe);
                 newBalance(mapeoDep.balance, importe);
+                getHour(hora)
               }}
             >
               Aceptar
@@ -97,7 +107,7 @@ export const Verification = ({
             </button>
           </section>
         </section>
-      <ModalSia />
+        <ModalSia />
       </section>
       <ModalAlert body={"Transferencia exitosa"} />
     </>
