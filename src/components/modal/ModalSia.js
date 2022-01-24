@@ -39,20 +39,6 @@ export const ModalSia = ({ isTooltipOn }) => {
     window.location.reload();
   };
 
-  const activeZoom = () => {
-    const nodeList = document.querySelectorAll(
-      "h1, h2, p, a, input, label, link, .continue, .cancel, .update-account, td, h3, #print, .sm, imputGroupSelect01, select"
-    );
-    for (let i = 0; i < nodeList.length; i++) {
-      nodeList[i].classList.add("zoom-Txt");
-    }
-  };
-
-  const handleAction = () => {
-    isTooltipOn();
-    activeZoom();
-  }
-
   return (
     <>
       <button
@@ -71,7 +57,7 @@ export const ModalSia = ({ isTooltipOn }) => {
         className="modal fade modal-sia"
         id="accesibilityModal"
         tabIndex="-1"
-        aria-label="accesibilityModal"
+        aria-labelledby="accesibilityModal"
         aria-hidden="true"
       >
         <div className="modal-dialog">
@@ -97,26 +83,11 @@ export const ModalSia = ({ isTooltipOn }) => {
                 <br />
                 (Contraste)
               </button>
-              {/* <button
-                className="btn-sia"
-                data-bs-dismiss="modal"
-                onClick={() => {
-                  activeZoom();
-                }}
-              >
-                <img
-                  src="https://i.ibb.co/wgpxC7D/Dise-o-sin-t-tulo-17-1.png"
-                  alt="zoom al texto"
-                />
-                Zoom al Formulario
-              </button> */}
               <button
                 className="btn-sia"
                 data-bs-dismiss="modal"
                 onClick={(e) => {
                   e.preventDefault();
-                  //handleAction(e);
-                  activeZoom();
                   isTooltipOn();
                 }}
               >
@@ -143,13 +114,7 @@ export const ModalSia = ({ isTooltipOn }) => {
         </div>
       </div>
 
-      <div
-        className="modal fade"
-        id="modal2"
-        tabIndex="-1"
-        aria-hidden="true"
-        aria-label="modalTitle2"
-      >
+      <div className="modal fade" id="modal2" tabIndex="-1" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered /* modal-dialog-scrollable */">
           <div className="modal-content">
             <div className="modal-header">
@@ -161,8 +126,9 @@ export const ModalSia = ({ isTooltipOn }) => {
               ></button>
             </div>
             <div className="modal-body">
+              <p>Selecciona el color de tu preferencia</p>
               <input
-              aria-label="input de color"
+                aria-label="EligeColor"
                 type="color"
                 onChange={(e) =>
                   setChangeColor({ ...changeColor, background: e.target.value })
