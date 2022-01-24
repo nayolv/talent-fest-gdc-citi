@@ -25,6 +25,8 @@ export const HeaderNavTooltip = ({ getDataTransfer }) => {
               className="nav-link active"
               aria-current="page"
               href="https://www.banamex.com/es/localizador-sucursales.html"
+              id="tooltipHeader" 
+              data-info='SUCURSALES'
             >
               SUCURSALES
             </a>
@@ -35,6 +37,8 @@ export const HeaderNavTooltip = ({ getDataTransfer }) => {
               className="nav-link dropdown-toggle"
               data-bs-toggle="dropdown"
               href="#"
+              id="tooltipHeader" 
+              data-info='CONTÁCTANOS'
               role="button"
               aria-expanded="false"
             >
@@ -65,6 +69,8 @@ export const HeaderNavTooltip = ({ getDataTransfer }) => {
             <a
               className="nav-link nav-help"
               href="https://www.banamex.com/SoporteBanamex/index.html?lid=MX|BNP3|MULTISALDOS-TextoBotton-02102017-AyudaBNP-irLearningCenter-ES"
+              id="tooltipHeader" 
+              data-info='AYUDA'
             >
               AYUDA
             </a>
@@ -81,7 +87,9 @@ export const HeaderNavTooltip = ({ getDataTransfer }) => {
         <ul>
           <li className="float">
             |
-            <a className="bancanet" href="https://www.banamex.com/">
+            <a className="bancanet" href="https://www.banamex.com/"
+                 id="tooltip" 
+                 data-info='BancaNet'>
               BancaNet
             </a>
           </li>
@@ -91,7 +99,8 @@ export const HeaderNavTooltip = ({ getDataTransfer }) => {
         <p className="text-logout">Cerrar sesión</p> */}
       </section>
       <section className="container-welcome">
-        <h2 className="welcome"> ¡Hola {user}!</h2>
+        <h2 className="welcome"  id="tooltip" 
+                 data-info={`¡Hola${user}!`}> ¡Hola {user}!</h2>
         {/* <p className= "last-access">último acceso {date.toDateString()}</p> */}
       </section>
       <NavUserTooltip />

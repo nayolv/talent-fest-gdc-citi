@@ -93,6 +93,7 @@ export const OfertasHomeTooltip = () => {
               </section>
             </section>
 
+<<<<<<< HEAD
             <section className="avalaible-container">
               <p id="tooltip" data-info="Disponible:">
                 Disponible:
@@ -122,6 +123,21 @@ export const OfertasHomeTooltip = () => {
                 </p>
               </section>
             </section>
+=======
+        <section className="avalaible-container">
+          <p id="tooltip" data-info="Disponible:">Disponible:</p>
+          <section>
+            <p className="balance" id="tooltip" data-info={`${item.maximumAmount}`}>{item.maximumAmount}</p> 
+            <p id="tooltip" data-info="MXN">MXN</p>
+          </section>
+        </section>
+
+        <section className="avalaible-container">
+          <p id="tooltip" data-info="Saldo:">Saldo:</p>
+          <section>
+            <p className="balance" id="tooltip" data-info={`${item.balance}`}>{item.balance}</p> 
+            <p id="tooltip" data-info="MXN">MXN</p>
+>>>>>>> 9a071f85e089857d18057a023c619232eef8cd49
           </section>
         ))}
       </section>
