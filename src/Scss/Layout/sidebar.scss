@@ -1,0 +1,58 @@
+.menu {
+  margin-top: 5vh;
+  padding-bottom: 10%;
+  margin-left: 5%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+
+  .d-flex {
+    width: 65%;
+
+    .nav-link {
+      font-weight: 600;
+      font-family: "Interstate", "Interstate_Reg", "Arial", "Verdana",
+        "Sans Serif";
+      font-size:1.3rem;
+      display: flex;
+      margin-left: 2vh;
+      color: #366dae;
+    }
+
+    .nav-link:hover {
+      font-weight: bold;
+      font-family: "Interstate", "Interstate_Reg", "Arial", "Verdana",
+        "Sans Serif";
+      font-size: 1.5rem;
+      display: flex;
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+      height: 120%;
+      width: 101%;
+    }
+
+    .disabled{
+      color:dimgray;
+    }
+    .nav-item{
+        margin-left: 2vh;
+    }
+
+    hr{ 
+        width: 100%;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      height: 60%;
+      margin-left: 5rem;
+    }
+
+    .col-3.border {
+      margin-left: 2.5rem;
+    }
+  }
+}
