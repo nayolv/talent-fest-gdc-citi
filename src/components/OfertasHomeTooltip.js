@@ -63,13 +63,8 @@ export const OfertasHomeTooltip = () => {
         <section className="avalaible-container">
           <p id="tooltip" data-info="Disponible:">Disponible:</p>
           <section>
-<<<<<<< HEAD
-            <p className="balance" id="tooltip" data-info={`**${item.maximumAmount}`}>{item.maximumAmount}</p> 
-            <p id="tooltip" data-info="MXN">MXN</p>
-=======
             <p className="balance">{item.maximumAmount}</p> 
             <p id="tooltip" data-info={`${item.maximumAmount}MXN`}>MXN</p>
->>>>>>> 149764fff13c04250bedc90ce82e6892c22ad165
           </section>
         </section>
 
