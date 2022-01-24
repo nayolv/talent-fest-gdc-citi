@@ -3,6 +3,8 @@ import SideBar from "../../SideBar";
 import { useNavigate } from "react-router-dom";
 import { dataApi } from "../../../api/dataApi";
 import { ModalTransf } from "../../modal/ModalTransf";
+import { ModalSia } from "../../modal/ModalSia";
+import "../../../Scss/Layout/Modal.scss"
 
 const DataVerification = ({ dataRegister, checked }) => {
   const navigate = useNavigate();
@@ -85,6 +87,7 @@ const DataVerification = ({ dataRegister, checked }) => {
             </button>
           </div>
         </section>
+        <ModalSia />
       </section>
       <ModalTransf body={'Registro de cuenta exitoso'} />
     </>
