@@ -7,20 +7,6 @@ import { ModalTransf } from "../../modal/ModalTransf";
 const DataVerification = ({ dataRegister, checked }) => {
   const navigate = useNavigate();
 
-  //console.log(dataRegister);
-  //console.log(checked)
-
-  /*   const newCard = {
-    client: dataRegister.client,
-      name: dataRegister.name,
-      displayAccountNumber: dataRegister.displayAccountNumber,
-      maximumAmount:dataRegister.maximumAmount,
-      email: dataRegister.email,
-      typeAccount: checked
-  }
- */
-  //console.log(newCard)
-
   const postDataAccount = async () => {
     await dataApi.post("https://api-talent-fest.herokuapp.com/clientData", {
       id: "",

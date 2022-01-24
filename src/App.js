@@ -30,6 +30,7 @@ function App() {
     handleInputChange,
     checked,
     handleChecked,
+    postDataAccount 
   } = useRegister();
 
   const {
@@ -154,8 +155,9 @@ function App() {
               path="verification"
               element={
                 <DataVerification
-                  dataRegister={dataRegister}
-                  checked={checked}
+                dataRegister={dataRegister}
+                checked={checked}
+                postDataAccount ={postDataAccount }
                 />
               }
             />

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { dataApi } from "../../api/dataApi";
 
 function useRegister() {
     const [typeRegister, setTypeRegiste] = useState('')
@@ -10,7 +11,6 @@ function useRegister() {
         maximumAmount: 0,
         email: "",
       });
-    
 
     const handleChecked = () => {
         setChecked(!checked);//Valor por default
@@ -40,7 +40,8 @@ function useRegister() {
       dataRegister,
       handleInputChange,
       checked,
-      handleChecked
+      handleChecked,
+      postDataAccount 
   }
 }
 
