@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
+import { ThemeContext } from "./Context"
+/* import {Body} from "./Body" */
 
 export const ModalSia = () => {
   let clickedClass = "clicked";
   const body = document.body;
-  //const header = document.header;
   const lightTheme = "light";
   const darkTheme = "dark";
   let theme;
@@ -14,11 +15,11 @@ export const ModalSia = () => {
 
   if (theme === lightTheme || theme === darkTheme) {
     body.classList.add(theme);
-    //header.classList.add(theme);
+   
   } else {
     body.classList.add(lightTheme);
-    //header.classList.add(lightTheme);
   }
+
     
 const switchTheme = (e) => {
         if(theme ===  darkTheme ) {
@@ -37,6 +38,13 @@ const switchTheme = (e) => {
         }
       }
 
+
+      const {changeColor, setChangeColor} = React.useContext(ThemeContext)
+
+      const refreshPage = ()=>{
+        window.location.reload();
+     }
+
   return (
     <>
       <button
@@ -54,7 +62,7 @@ const switchTheme = (e) => {
       <div
         className="modal fade modal-sia"
         id="accesibilityModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="accesibilityModal"
         aria-hidden="true"
       >
@@ -68,7 +76,8 @@ const switchTheme = (e) => {
                 aria-label="cerrar"
               ></button>
             </div>
-            <div className="modal-body">
+            <div 
+            className="modal-body">
               <button className={theme === "dark" ? clickedClass:""} id="darkmode" onClick={(e) => { switchTheme(e)}}>
                 <img src="https://i.ibb.co/0QC1rGZ/luna.png" alt="luna" />
                 Modo oscuro
@@ -82,7 +91,7 @@ const switchTheme = (e) => {
                 />
                 Zoom al Texto
               </button>
-              <button className="btn-sia">
+              <button className="btn-sia" data-bs-toggle="modal" data-bs-target="#modal2" data-bs-dismiss="modal">
                 <img
                   src="https://i.ibb.co/F0g1Cg4/screen.png"
                   alt="elija el color de la pantalla"
@@ -92,6 +101,25 @@ const switchTheme = (e) => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className ="modal fade" id="modal2" tabIndex="-1" aria-hidden="true" aria-labelledby="modalTitle2">
+      <div className ="modal-dialog modal-dialog-centered /* modal-dialog-scrollable */">
+        <div className ="modal-content">
+          <div className ="modal-header">
+            <button type= "button" className= "btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          <div className ="modal-body">
+          <input type="color" onChange={e => setChangeColor({...changeColor, background: e.target.value})}></input> 
+ 
+            </div>  
+          <div className ="modal-footer">
+          <button type= "button" className= "btn btn-secondary" data-bs-dismiss="modal" >cerrar</button>
+          <a className ="btn btn-primary" href="#accesibilityModal" data-bs-toggle="modal" data-bs-dismiss="modal" role="button"onClick={refreshPage} >Limpiar</a>
+          </div>
+
+        </div>
+      </div>
       </div>
     </>
   );
