@@ -1,14 +1,15 @@
-import React from "react";
-// import SideBar from '../components/SideBar'
 import { Outlet } from "react-router-dom";
-import AccountRegister from "../components/Forms/Register/AccountRegister";
-import Transfers from "../components/Forms/Tranferences/Transfers";
-import SideBar from "../components/SideBar";
+import React from "react";
+import { ThemeContext } from "../components/modal/Context";
 
 const Services = () => {
-    console.log(window.location.pathname);
+
+  const {changeColor, setChangeColor} = React.useContext(ThemeContext)
+
   return (
+    <div style = { {background: changeColor.background} } >
     <Outlet />
+    </div>
   );
 };
 

@@ -2,11 +2,12 @@ $color1: #ffffff;
 $color2: #0a0a0a;
 $color3: #056dae;
 
+
 header {
   background: $color3;
   width: 100%;
   height: 23vh;
-
+  position: sticky;
   .section-nav {
     display: flex;
     justify-content: space-between;
@@ -14,7 +15,6 @@ header {
     background: $color2;
     width: 100%;
     height: 5vh;
-    color: $color1;
     font-family: "Interstate", "Interstate_Reg", Arial, Verdana, Sans Serif;
     font-size: 2vh;
     line-height: 18px;
@@ -23,6 +23,11 @@ header {
       align-self: center;
       margin-top: 2vh;
       margin: 7vw;
+    
+    }
+
+    .date{
+      color:white;
     }
     .nav-pills .nav-link.active {
       color: $color1;
@@ -45,6 +50,9 @@ header {
   }
 
   .conteiner-nav-bar {
+    padding: {
+      top: 5vh
+    };
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -81,13 +89,14 @@ header {
     }
     .bancanet{
         margin-left: 2vh;
+        font-size: 3.3vh;
     }
     .logo-out {
       width: 4.5vh;
       margin-left: 50vw;
     }
     .text-logout {
-      font-size: 2.3vh;
+      font-size: 2.8vh;
       align-items: center;
       color: $color1;
       margin-top: 1.5vh;
@@ -98,15 +107,15 @@ header {
   .container-welcome {
     display: flex;
     color: $color1;
-    justify-content: space-around;
+    justify-content: flex-end;
     height: 6vh;
 
     .welcome {
-      margin-right:50vw;
+      margin-right:5vw;
     }
 
     p {
-      font-size: 2.1vh;
+      font-size: 2.2vh;
       margin-right: 1vh;
     }
   }
@@ -118,6 +127,7 @@ header {
     height: auto;
     background: $color1;
     border-radius: 15px;
+    position: absolute; 
 
     .nav-item {
       display: flex;
@@ -130,7 +140,12 @@ header {
       padding-bottom: 0px;
 
       i {
-        font-size: 2.5vh;
+        font-size: 3.5vh;
+        color: $color3;
+      }
+
+      i:hover {
+        font-size: 4.4vh;
         color: $color3;
       }
 
@@ -138,7 +153,15 @@ header {
         text-decoration: none;
         color: $color2;
         border-right: slategray;
+        font-size: 2.5vh;
       }
+
+     p{
+        font-size: 2.5vh;
+        color:#0a0a0a;
+      }
+
+
     }
     
   }

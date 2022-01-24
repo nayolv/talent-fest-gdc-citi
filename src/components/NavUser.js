@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 
 export const NavUser = () => {
     return (
-        <section className="shadow p-3 mb-5 bg-white container-nav-user">
+  
+        <section className="shadow p-3 mb-5 bg-white container-nav-user">  
         <ul className="nav nav-pills nav-fill">
           <li className="nav-item">
           <i className="bi bi-house-door"></i>
@@ -25,21 +26,21 @@ export const NavUser = () => {
           </li>
           <li className="nav-item">
           <i className="bi bi-credit-card"></i>
-            <a className="nav-others" href="#">
+            <p className="nav-others">
              Otros productos
-            </a>
+            </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-gear"></i>
-            <a className="nav-setting" href="#">
+            <p className="nav-setting">
               Configuración
-            </a>
+            </p>
           </li>
           <li className="nav-item">
           <i className="bi bi-question-circle"></i>
-            <a className="nav-help" href="#">
+            <p className="nav-help">
               Ayuda
-            </a>
+            </p>
           </li>
         </ul>
       </section>
