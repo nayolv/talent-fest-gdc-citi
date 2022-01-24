@@ -1,7 +1,12 @@
-import React from 'react';
+import React from 'react'
+import { Maintooltip } from '../components/MainTooltip'
 
-export const HomeTootltip = () => {
-  return <div>
-      Soy una prueba
-  </div>;
-};
+
+export const HomeTootltip = ({ isTooltipOn }) => {
+
+    return (
+        < >
+        < Maintooltip isTooltipOn={ isTooltipOn } />
+        </>
+    )
+}

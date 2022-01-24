@@ -4,7 +4,7 @@ import { ModalSia } from "./modal/ModalSia";
 import { OfertasHome } from "./OfertasHome";
  import { ThemeContext} from "./modal/Context" 
 
-export const Main = ({ resultRetirement }) => {
+export const Main = ({ resultRetirement, isTooltipOn }) => {
 
   const {changeColor, setChangeColor} = React.useContext(ThemeContext);
 
@@ -14,7 +14,7 @@ export const Main = ({ resultRetirement }) => {
       <div className="main-container" >
       <OfertasHome resultRetirement={resultRetirement} />
       <LateralMenuHome />
-      <ModalSia />
+      <ModalSia isTooltipOn={ isTooltipOn } />
       </div>
       
     </main>

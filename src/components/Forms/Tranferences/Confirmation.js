@@ -2,6 +2,8 @@ import React from "react";
 import SideBar from "../../SideBar";
 import "../../../Scss/Layout/Confirmation.scss";
 import { useNavigate } from "react-router-dom";
+import { ModalSia } from "../../modal/ModalSia";
+import "../../../Scss/Layout/Modal.scss"
 
 export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance, patchApiOwn, patchApiOwnDep }) => {
   const navigate = useNavigate();
@@ -83,6 +85,7 @@ export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance,
             </button>
           </section>
         </section>
+        <ModalSia />
       </section>
     </>
   );

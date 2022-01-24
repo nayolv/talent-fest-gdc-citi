@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import { ThemeContext } from "./Context"
 /* import {Body} from "./Body" */
 
-export const ModalSia = () => {
+export const ModalSia = ({ isTooltipOn }) => {
+
   let clickedClass = "clicked";
   const body = document.body;
   const lightTheme = "light";
@@ -84,7 +85,7 @@ const switchTheme = (e) => {
                 <br />
                 (Contraste)
               </button>
-              <button className="btn-sia">
+              <button className="btn-sia"  data-bs-dismiss="modal" onClick={(e)=>{e.preventDefault(); isTooltipOn(); }}>
                 <img
                   src="https://i.ibb.co/wgpxC7D/Dise-o-sin-t-tulo-17-1.png"
                   alt="zoom al texto"
@@ -103,14 +104,15 @@ const switchTheme = (e) => {
         </div>
       </div>
 
-      <div className ="modal fade" id="modal2" tabIndex="-1" aria-hidden="true" aria-labelledby="modalTitle2">
+      <div className ="modal fade" id="modal2" tabIndex="-1" aria-hidden="true" >
       <div className ="modal-dialog modal-dialog-centered /* modal-dialog-scrollable */">
         <div className ="modal-content">
           <div className ="modal-header">
             <button type= "button" className= "btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
           <div className ="modal-body">
-          <input type="color" onChange={e => setChangeColor({...changeColor, background: e.target.value})}></input> 
+            <p>Selecciona el color de tu preferencia</p>
+          <input aria-label="EligeColor"  type="color" onChange={e => setChangeColor({...changeColor, background: e.target.value})}></input> 
  
             </div>  
           <div className ="modal-footer">

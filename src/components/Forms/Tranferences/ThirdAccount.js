@@ -12,12 +12,13 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
   const [errorMayorImporte, setErrorMayorImporte] = useState("");
 
   const handleClick = () => {
+
     if (importe === 0) {
       setErrorVacio("El campo no puede quedar vacío");
       throw Error("El campo no puede quedar vacío");
     }
-    if (parseInt(importe) > mapeoDep.balance) {
-      setErrorMayorImporte(
+    if (parseInt(importe) > mapeoRet.balance) {
+        setErrorMayorImporte(
         "El importe no puede ser mayor al total de la cuenta"
       );
       throw Error("El importe no puede ser mayor al total de la cuenta");
@@ -37,9 +38,10 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
           <p>Indica los datos de la transferencia y da click en continuar</p>
           <div className="container">
             <div className="col-md-5">
-              <label>Cuenta de retiro:</label>
+              <label aria-label="cuenta de retiro">Cuenta de retiro:</label>
 
               <select
+                aria-label="seleccione una opcion"
                 name="seleccione una opción"
                 className="form-select"
                 id="inputGroupSelect01"
@@ -53,9 +55,10 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
             </div>
 
             <div className="col-md-5">
-              <label>Cuenta de déposito:</label>
+              <label aria-label="cuenta de deposito">Cuenta de déposito:</label>
 
               <select
+                aria-label="seleccione una opcion"
                 name="seleccione una opción"
                 className="form-select"
                 id="inputGroupSelect01"
@@ -72,7 +75,7 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
               <span className="input-group-text">$</span>
               <input
                 type="text"
-                aria-label="Amount (to the nearest dollar)"
+                aria-label="cantidad"
                 onChange={handleChange}
               />
               <p>{errorVacio}</p>
@@ -80,40 +83,54 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
             </div>
             <div className="form-check">
               <input
+                aria-label="check"
                 className="form-check-input"
                 type="checkbox"
                 id="flexCheckDefault"
               />
-              <label className="form-check-label">
+              <label aria-label="futura fecha" className="form-check-label">
                 Programar a fecha futura:
               </label>
             </div>
             <div className="form-check">
               <input
+                aria-label="check"
                 className="form-check-input"
                 type="checkbox"
                 id="flexCheckChecked"
               />
-              <label className="form-check-label">Cuenta concentradora</label>
+              <label
+                aria-label=" check Cuenta consentradora"
+                className="form-check-label"
+              >
+                Cuenta concentradora
+              </label>
             </div>
             <div className="form-check">
               <input
+                aria-label="check"
                 className="form-check-input"
                 type="checkbox"
                 id="flexCheckChecked"
               />
-              <label className="form-check-label">Referencias</label>
+              <label aria-label="check referencia" className="form-check-label">
+                Referencias
+              </label>
             </div>
             <p>Descripción para identificar la transferencia</p>
             <span className="opcion">(opcional)</span>
-            <input className="form-control"></input>
+            <input
+              aria-label="Escribe descripcion"
+              className="form-control"
+            ></input>
             <div className="form-check">
               <input
+                aria-label="check"
                 className="form-check-input"
                 type="checkbox"
                 id="flexCheckChecked"
               />
-              <label className="form-check-label">
+              <label aria-label="check notificar" className="form-check-label">
                 Notificar al beneficiario(opcional):
               </label>
             </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Scss/Layout/home.scss";
@@ -18,10 +18,13 @@ import AccountRegister from "./components/Forms/Register/AccountRegister";
 import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 import { useTransfers } from "./hooks/useTransfers";
 import useRegister from "./hooks/Register/UseRegister";
-import DataVerification from "./components/Forms/Register/DataVerification";
 import { Verification } from "./components/Forms/Tranferences/Verification";
 import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
 import { Context } from "./components/modal/Context";
+import { HomeTootltip } from "./pages/HomeTootltip";
+import DataVerification from "./components/Forms/Register/DataVerification";
+import { HeaderNavTooltip } from "./components/HeaderNavTooltip";
+import FooterTooltip from "./components/FooterTooltip";
 
 function App() {
   const {
@@ -56,16 +59,25 @@ function App() {
     patchApiOwnDep,
   } = useTransfers();
 
+  const [tooltipOn, setTooltipOn] = useState(true);
+
+    const isTooltipOn = () => {
+        setTooltipOn(!tooltipOn);
+    }
+
   return (
     <>
     <Context>
       <Router>
-        <HeaderNav getDataTransfer={getDataTransfer} />
+        {tooltipOn ? (<HeaderNav getDataTransfer={getDataTransfer} />):(<HeaderNavTooltip getDataTransfer={getDataTransfer} />)}
         <Routes>
-          <Route
+         {tooltipOn ? ( <Route
             path="/"
-            element={<Home resultRetirement={resultRetirement} />}
-          />
+            element={<Home resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
+          />) : ( <Route
+            path="/"
+            element={<HomeTootltip resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
+          />)}
           <Route path="services/" element={<Services />}>
             <Route
               index
@@ -166,7 +178,7 @@ function App() {
             />
           </Route>
         </Routes>
-        <Footer />
+        {tooltipOn ? (<Footer />):(<FooterTooltip />)}
       </Router>
       </Context>
     </>

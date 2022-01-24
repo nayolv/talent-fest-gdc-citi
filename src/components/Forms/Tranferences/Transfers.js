@@ -69,13 +69,13 @@ const Transfers = ({
           <br />
           <div className="container">
             <div className="col-md-5">
-              <label htmlFor="inputGroupSelect01" className="form-label">
+              <label htmlFor="seleccione una opción" className="form-label">
                 Cuenta de retiro:
               </label>
               <select
                 name="seleccione una opción"
                 className="form-select"
-                id="inputGroupSelect01"
+                id="seleccione una opción"
                 placeholder="Seleccione una opción"
                 onChange={(e) => {
                   recoverySelectValueRet(e);
@@ -99,10 +99,10 @@ const Transfers = ({
             </div>
 
             <div className="col-md-5">
-              <label>Cuenta de deposito:</label>
+              <label htmlFor="seleccione una cuenta">Cuenta de deposito:</label>
               <select
                 className="form-select"
-                id="inputGroupSelect01"
+                id="seleccione una cuenta"
                 placeholder="Seleccione una opción"
                 onChange={(e) => {
                   recoverySelectValue(e);
