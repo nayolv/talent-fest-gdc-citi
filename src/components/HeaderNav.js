@@ -29,12 +29,12 @@ export const HeaderNav = ({ getDataTransfer }) => {
               SUCURSALES
             </a>
           </li>
-          <li className="float-left">|</li>
+          <li className="float-left" aria-hidden="true">|</li>
           <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
               data-bs-toggle="dropdown"
-              href="#"
+              href="link"
               role="button"
               aria-expanded="false"
             >
@@ -60,7 +60,7 @@ export const HeaderNav = ({ getDataTransfer }) => {
               </li>
             </ul>
           </li>
-          <li className="float-left">|</li>
+          <li className="float-left" aria-hidden="true">|</li>
           <li className="nav-item">
             <a
               className="nav-link nav-help"
@@ -79,7 +79,7 @@ export const HeaderNav = ({ getDataTransfer }) => {
         />
 
         <ul>
-          <li className="float">
+          <li className="float" aria-hidden="true">
             |
             <a className="bancanet" href="https://www.banamex.com/">
               BancaNet
