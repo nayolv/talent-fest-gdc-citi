@@ -2,11 +2,11 @@ import React from 'react'
 import { Maintooltip } from '../components/MainTooltip'
 
 
-export const HomeTootltip = () => {
+export const HomeTootltip = ({ isTooltipOn }) => {
 
     return (
         < >
-        < Maintooltip />
+        < Maintooltip isTooltipOn={ isTooltipOn } />
         </>
     )
 }

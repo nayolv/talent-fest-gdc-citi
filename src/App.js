@@ -76,7 +76,7 @@ function App() {
             element={<Home resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
           />) : ( <Route
             path="/"
-            element={<HomeTootltip />}
+            element={<HomeTootltip resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
           />)}
           <Route path="services/" element={<Services />}>
             <Route
