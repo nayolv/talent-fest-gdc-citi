@@ -11,9 +11,7 @@ export const HeaderNav = ({ getDataTransfer }) => {
         user = item.client;
       }
     });
-    console.log(user);
   };
-
   getUser();
 
   return (

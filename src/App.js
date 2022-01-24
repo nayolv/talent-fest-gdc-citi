@@ -52,8 +52,7 @@ function App() {
     newBalance,
     patchApiOwnDep,
   } = useTransfers();
-
-
+  
   return (
     <>
       <Router>
