@@ -63,16 +63,16 @@ export const OfertasHomeTooltip = () => {
         <section className="avalaible-container">
           <p id="tooltip" data-info="Disponible:">Disponible:</p>
           <section>
-            <p className="balance" id="tooltip" data-info={`${item.maximumAmount}`}>{item.maximumAmount}</p> 
-            <p id="tooltip" data-info="MXN">MXN</p>
+            <p className="balance" id="tooltip" data-info={`${item.maximumAmount}MXN`}>{item.maximumAmount}</p> 
+            <p /* id="tooltip" data-info="MXN" */>MXN</p>
           </section>
         </section>
 
         <section className="avalaible-container">
           <p id="tooltip" data-info="Saldo:">Saldo:</p>
           <section>
-            <p className="balance" id="tooltip" data-info={`${item.balance}`}>{item.balance}</p> 
-            <p id="tooltip" data-info="MXN">MXN</p>
+            <p className="balance" id="tooltip" data-info={`${item.balance}MXN`}>{item.balance}</p> 
+            <p /* id="tooltip" data-info="MXN" */>MXN</p>
           </section>
         </section>
       </section>
