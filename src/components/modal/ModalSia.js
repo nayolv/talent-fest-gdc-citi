@@ -19,6 +19,7 @@ export const ModalSia = () => {
   } else {
     body.classList.add(lightTheme);
   }
+
     
 const switchTheme = (e) => {
         if(theme ===  darkTheme ) {
@@ -40,7 +41,9 @@ const switchTheme = (e) => {
 
       const {changeColor, setChangeColor} = React.useContext(ThemeContext)
 
-
+      const refreshPage = ()=>{
+        window.location.reload();
+     }
 
   return (
     <>
@@ -111,8 +114,8 @@ const switchTheme = (e) => {
  
             </div>  
           <div className ="modal-footer">
-          <button type= "button" className= "btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a className ="btn btn-primary" href="#accesibilityModal" data-bs-toggle="modal" data-bs-dismiss="modal" role="button"> regresar</a>
+          <button type= "button" className= "btn btn-secondary" data-bs-dismiss="modal" >cerrar</button>
+          <a className ="btn btn-primary" href="#accesibilityModal" data-bs-toggle="modal" data-bs-dismiss="modal" role="button"onClick={refreshPage} >Limpiar</a>
           </div>
 
         </div>
