@@ -75,7 +75,8 @@ function App() {
     <>
     <Context>
       <Router>
-        {tooltipOn ? (<HeaderNav getDataTransfer={getDataTransfer} />):(<HeaderNavTooltip getDataTransfer={getDataTransfer} />)}
+        {/* {tooltipOn ? (<HeaderNav getDataTransfer={getDataTransfer} />):(<HeaderNavTooltip getDataTransfer={getDataTransfer} />)} */}
+        <HeaderNav getDataTransfer={getDataTransfer} tooltipOn={tooltipOn} />
         <Routes>
          {tooltipOn ? ( <Route
             path="/"

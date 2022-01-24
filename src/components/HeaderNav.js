@@ -1,6 +1,6 @@
 import { NavUser } from "./NavUser";
 
-export const HeaderNav = ({ getDataTransfer }) => {
+export const HeaderNav = ({ getDataTransfer, tooltipOn }) => {
   const date = new Date();
 
   let user;
@@ -24,11 +24,12 @@ export const HeaderNav = ({ getDataTransfer }) => {
               className="nav-link active"
               aria-current="page"
               href="https://www.banamex.com/es/localizador-sucursales.html"
+              id={tooltipOn ? "" : "tooltipHeader"} data-info={tooltipOn ? "": 'SUCURSALES'}
             >
               SUCURSALES
             </a>
           </li>
-          <li className="float-left" aria-hidden="true">|</li>
+          <li className="float-left" aria-hidden="true" >|</li>
           <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
