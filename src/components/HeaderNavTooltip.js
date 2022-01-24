@@ -1,6 +1,7 @@
-import { NavUser } from "./NavUser";
+import { NavUserTooltip } from "./NavUserTooltip";
+import '../Scss/Layout/Tooltip.scss'
 
-export const HeaderNav = ({ getDataTransfer }) => {
+export const HeaderNavTooltip = ({ getDataTransfer }) => {
   const date = new Date();
 
   let user;
@@ -16,7 +17,7 @@ export const HeaderNav = ({ getDataTransfer }) => {
   return (
     <header className="header-nav">
       <section className="section-nav">
-        <p className ="date">{date.toUTCString()}</p>
+        <p className="date" id="tooltip" data-info={date.toUTCString()}>{date.toUTCString()}</p>
 
         <ul className="nav nav-pills">
           <li className="nav-item">
@@ -93,7 +94,7 @@ export const HeaderNav = ({ getDataTransfer }) => {
         <h2 className="welcome"> ¡Hola {user}!</h2>
         {/* <p className= "last-access">último acceso {date.toDateString()}</p> */}
       </section>
-      <NavUser />
+      <NavUserTooltip />
     </header>
   );
 };
