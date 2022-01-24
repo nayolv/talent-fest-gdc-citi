@@ -12,12 +12,13 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
   const [errorMayorImporte, setErrorMayorImporte] = useState("");
 
   const handleClick = () => {
+
     if (importe === 0) {
       setErrorVacio("El campo no puede quedar vacío");
       throw Error("El campo no puede quedar vacío");
     }
-    if (parseInt(importe) > mapeoDep.balance) {
-      setErrorMayorImporte(
+    if (parseInt(importe) > mapeoRet.balance) {
+        setErrorMayorImporte(
         "El importe no puede ser mayor al total de la cuenta"
       );
       throw Error("El importe no puede ser mayor al total de la cuenta");

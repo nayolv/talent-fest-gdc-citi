@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Scss/Layout/home.scss";
@@ -22,6 +22,9 @@ import DataVerification from "./components/Forms/Register/DataVerification";
 import { Verification } from "./components/Forms/Tranferences/Verification";
 import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
 import { Context } from "./components/modal/Context";
+import { useTooltip } from "./hooks/Tooltip/useTooltip";
+import { HomeTootltip } from "./pages/HomeTootltip";
+
 
 function App() {
   const {
@@ -56,16 +59,25 @@ function App() {
     patchApiOwnDep,
   } = useTransfers();
 
+  const [tooltipOn, setTooltipOn] = useState(true);
+
+    const isTooltipOn = () => {
+        setTooltipOn(!tooltipOn);
+    }
+
   return (
     <>
     <Context>
       <Router>
         <HeaderNav getDataTransfer={getDataTransfer} />
         <Routes>
-          <Route
+         {tooltipOn ? ( <Route
             path="/"
-            element={<Home resultRetirement={resultRetirement} />}
-          />
+            element={<Home resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
+          />) : ( <Route
+            path="/"
+            element={<HomeTootltip />}
+          />)}
           <Route path="services/" element={<Services />}>
             <Route
               index

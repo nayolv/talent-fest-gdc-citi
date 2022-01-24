@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import { ThemeContext } from "./Context"
 /* import {Body} from "./Body" */
 
-export const ModalSia = () => {
+export const ModalSia = ({ isTooltipOn }) => {
+
   let clickedClass = "clicked";
   const body = document.body;
   const lightTheme = "light";
@@ -84,7 +85,7 @@ const switchTheme = (e) => {
                 <br />
                 (Contraste)
               </button>
-              <button className="btn-sia">
+              <button className="btn-sia"  data-bs-dismiss="modal" onClick={(e)=>{e.preventDefault(); isTooltipOn(); }}>
                 <img
                   src="https://i.ibb.co/wgpxC7D/Dise-o-sin-t-tulo-17-1.png"
                   alt="zoom al texto"
