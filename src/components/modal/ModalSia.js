@@ -187,7 +187,7 @@ export const ModalSia = ({ isTooltipOn }) => {
               >
                 Limpiar
               </a>
-            </div>
+            </div
           </div>
         </div>
       </div>

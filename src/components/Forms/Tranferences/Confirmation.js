@@ -4,6 +4,8 @@ import "../../../Scss/Layout/Confirmation.scss";
 import "../../../Scss/Layout/Modal.scss";
 import { useNavigate } from "react-router-dom";
 import { ModalSia } from "../../modal/ModalSia";
+import "../../../Scss/Layout/Modal.scss"
+
 
 export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance, patchApiOwn, patchApiOwnDep }) => {
   const navigate = useNavigate();

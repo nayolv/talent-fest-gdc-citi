@@ -34,7 +34,7 @@ header {
       background: none;
     }
 
-    .nav-link,
+  
     .float-left {
       color: $color1;
     }
@@ -123,11 +123,19 @@ header {
   .container-nav-user {
     margin-left: 5%;
     margin-right: 5%;
-    width: 90%;
-    height: auto;
     background: $color1;
     border-radius: 15px;
     position: absolute; 
+    width: 90vw;
+
+    .nav-user {
+      display: flex;
+      flex-direction: row !important;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+      flex-wrap: nowrap;
+    }
 
     .nav-item {
       display: flex;
@@ -138,6 +146,7 @@ header {
       border-right: 2px solid rgb(168, 187, 199);
       padding-right: 3.5vh;
       padding-bottom: 0px;
+      
 
       i {
         font-size: 3.5vh;
@@ -160,8 +169,10 @@ header {
         font-size: 2.5vh;
         color:#0a0a0a;
       }
-
-
+    }
+    .help{
+      border-right: none;
+      width:20vh;
     }
     
   }

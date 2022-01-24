@@ -29,20 +29,22 @@ const AccountRegister = ({
           className="all-form"
           onSubmit={(e) => {
             sendData(e);
-            navigate('/services/verification')
+            navigate("/services/verification");
           }}
         >
-
           <h1>Alta de cuenta Citibanamex</h1>
           <p>Indica los datos del alta y da click en "Continuar</p>
           <br />
           <br />
           <div className="container">
             <div className="col-md-5">
-              <label>¿Qué dato tienes de la cuenta para darla de alta?</label>
+              <label htmlFor="name" aria-label="datoCuenta">
+                ¿Qué dato tienes de la cuenta para darla de alta?
+              </label>
               <select
                 className="form-select"
-                id="inputGroupSelect01"
+                aria-label="SeleccionaTarjeta"
+                id="name"
                 placeholder="Tarjeta de debito o crédito"
                 name="name"
                 onChange={handleInputChange}
@@ -60,6 +62,7 @@ const AccountRegister = ({
             <input
               className="form-control"
               type="number"
+              aria-label="numero de tarjeta"
               name="displayAccountNumber"
               onChange={handleInputChange}
               required
@@ -67,19 +70,21 @@ const AccountRegister = ({
             <div className="form-check">
               <input
                 className="form-check-input"
+                aria-label="check cuenta Propia"
                 type="checkbox"
                 id="flexCheckChecked"
                 name="controlled"
                 checked={checked}
                 onChange={(e) => {
                   handleChecked();
-                  console.log(!checked)//Negar check
+                  console.log(!checked); //Negar check
                 }}
               />
-              <label className="form-check-label">Cuenta propia</label>
+              <label aria-label="cuenta propia" className="form-check-label">Cuenta propia</label>
             </div>
             <p className="pLabels">Titular de la cuenta</p>
             <input
+              aria-label="titular de Cuenta"
               className="form-control"
               type="text"
               name="client"
@@ -94,7 +99,7 @@ const AccountRegister = ({
               <span className="input-group-text">MXN</span>
               <input
                 type="text"
-                aria-label="Amount (to the nearest dollar)"
+                aria-label="cantidad"
                 name="maximumAmount"
                 onChange={handleInputChange}
                 required
@@ -106,12 +111,12 @@ const AccountRegister = ({
               type="email"
               className="form-control"
               name="email"
+              aria-label="correo electronico"
               onChange={handleInputChange}
               required
             ></input>
             <p className="pLabels">Confirmar correo electrónico:</p>
-            <input type="email" className="form-control"
-            required></input>
+            <input type="email" aria-label="confirmar correo electronico" className="form-control" required></input>
           </div>
           <div className="transferButtons">
             <button type="submit" className="continue">

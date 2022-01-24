@@ -97,7 +97,7 @@ export const Verification = ({
             </button>
           </section>
         </section>
-        <ModalSia />
+      <ModalSia />
       </section>
       <ModalAlert body={"Transferencia exitosa"} />
     </>
