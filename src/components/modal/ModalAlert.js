@@ -6,8 +6,7 @@ export const ModalAlert = ({ body }) => {
     <div
       className="modal fade"
       id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
+      tabIndex="-1"
       aria-hidden="true"
     >
       <div className="modal-dialog">

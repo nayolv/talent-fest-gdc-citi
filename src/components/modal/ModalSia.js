@@ -104,14 +104,15 @@ const switchTheme = (e) => {
         </div>
       </div>
 
-      <div className ="modal fade" id="modal2" tabIndex="-1" aria-hidden="true" aria-labelledby="modalTitle2">
+      <div className ="modal fade" id="modal2" tabIndex="-1" aria-hidden="true" >
       <div className ="modal-dialog modal-dialog-centered /* modal-dialog-scrollable */">
         <div className ="modal-content">
           <div className ="modal-header">
             <button type= "button" className= "btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
           <div className ="modal-body">
-          <input type="color" onChange={e => setChangeColor({...changeColor, background: e.target.value})}></input> 
+            <p>Selecciona el color de tu preferencia</p>
+          <input aria-label="EligeColor"  type="color" onChange={e => setChangeColor({...changeColor, background: e.target.value})}></input> 
  
             </div>  
           <div className ="modal-footer">
