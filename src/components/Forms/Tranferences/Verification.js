@@ -1,12 +1,14 @@
 import React from "react";
 import SideBar from "../../SideBar";
-import "../../../Scss/Layout/VerificationOwnTransference.scss";
 import { useNavigate } from "react-router-dom";
-
-export const VerificationOwnTransference = ({
-  result,
-  resultRetirement,
+import { ModalAlert } from "../../modal/ModalAlert";
+import '../../../Scss/Layout/Verification.scss'
+export const Verification = ({
   importe,
+  mapeoRet,
+  mapeoDep,
+  balanceDeposito,
+  newBalance,
 }) => {
   const navigate = useNavigate();
 
@@ -28,22 +30,17 @@ export const VerificationOwnTransference = ({
               <tbody>
                 <tr>
                   <td>Cuenta de retiro:</td>
-                  {result.map((item) => (
-                    <td key={item.id}>
-                      {item.name} - {item.displayAccountNumber.slice(-3)}
-                      <br />
-                      <span>MXN {item.balance}</span>
-                    </td>
-                  ))}
+                  <td>
+                    {mapeoRet.name} - {mapeoRet.displayAccountNumber.slice(-3)}{" "}
+                    <span>MXN{mapeoRet.balance}</span>
+                  </td>
                 </tr>
                 <tr>
                   <td>Cuenta de despósito:</td>
-                  {resultRetirement.map((item) => (
-                    <td key={item.id}>
-                      {item.client} - {item.name} -
-                      {item.displayAccountNumber.slice(-3)}
-                    </td>
-                  ))}
+                  <td>
+                    {mapeoDep.client} - {mapeoDep.name} -{" "}
+                    {mapeoDep.displayAccountNumber.slice(-3)}
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -71,8 +68,12 @@ export const VerificationOwnTransference = ({
           <section className="btns-ver-own">
             <button
               id="aceptar"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
               onClick={() => {
-                navigate("/services/confirmation-own-account");
+                navigate("/services/confirmation");
+                balanceDeposito(mapeoRet.balance, importe);
+                newBalance(mapeoDep.balance, importe);
               }}
             >
               Aceptar
@@ -92,6 +93,7 @@ export const VerificationOwnTransference = ({
           </section>
         </section>
       </section>
+      <ModalAlert body={"Transferencia exitosa"} />
     </>
   );
 };

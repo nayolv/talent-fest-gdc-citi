@@ -45,6 +45,9 @@ header {
   }
 
   .conteiner-nav-bar {
+    padding: {
+      top: 5vh
+    };
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -99,11 +102,11 @@ header {
   .container-welcome {
     display: flex;
     color: $color1;
-    justify-content: space-around;
+    justify-content: flex-end;
     height: 6vh;
 
     .welcome {
-      margin-right:50vw;
+      margin-right:5vw;
     }
 
     p {

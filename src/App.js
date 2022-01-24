@@ -4,7 +4,8 @@ import "./Scss/Layout/home.scss";
 import "./Scss/Layout/footer.scss";
 import "./Scss/Layout/sidebar.scss";
 import "./Scss/Layout/HeaderNav.scss";
-import "../src/App.css"
+import "../src/App.css";
+import './Scss/Layout/CorfimRegister.scss'
 import { Home } from "./pages/Home";
 import { HeaderNav } from "./components/HeaderNav";
 import Footer from "./components/Footer";
@@ -17,8 +18,8 @@ import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 import { useTransfers } from "./hooks/useTransfers";
 import useRegister from "./hooks/Register/UseRegister";
 import DataVerification from "./components/Forms/Register/DataVerification";
-import { VerificationOwnTransference } from "./components/Forms/Tranferences/VerificationOwnTransference";
-import { ConfirmationOwn } from "./components/Forms/Tranferences/ConfirmationOwn";
+import { Verification } from "./components/Forms/Tranferences/Verification";
+import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
 
 function App() {
   const {
@@ -41,14 +42,27 @@ function App() {
     resultRetirement,
     handleChange,
     importe,
+    mapeoRetirement,
+    mapeoRet,
+    mapeo,
+    mapeoDep,
+    balanceDep,
+    balanceDeposito,
+    patchApiOwn,
+    balance,
+    newBalance,
+    patchApiOwnDep,
   } = useTransfers();
-
+  
   return (
     <>
       <Router>
-        <HeaderNav />
+        <HeaderNav getDataTransfer={getDataTransfer} />
         <Routes>
-          <Route path="/" element={<Home resultRetirement={resultRetirement} />} />
+          <Route
+            path="/"
+            element={<Home resultRetirement={resultRetirement} />}
+          />
           <Route path="services/" element={<Services />}>
             <Route
               index
@@ -60,6 +74,8 @@ function App() {
                   getDataTransfer={getDataTransfer}
                   result={result}
                   resultRetirement={resultRetirement}
+                  mapeoRetirement={mapeoRetirement}
+                  mapeo={mapeo}
                 />
               }
             />
@@ -77,42 +93,52 @@ function App() {
               path="own-account"
               element={
                 <OwnAccount
-                  result={result}
-                  resultRetirement={resultRetirement}
                   handleChange={handleChange}
                   importe={importe}
+                  mapeoRet={mapeoRet}
+                  mapeoDep={mapeoDep}
                 />
               }
             />
             <Route
-              path="verification-own-account"
+              path="verification-transfer"
               element={
-                <VerificationOwnTransference
-                  result={result}
-                  resultRetirement={resultRetirement}
+                <Verification
+                  mapeoRet={mapeoRet}
+                  mapeoDep={mapeoDep}
                   importe={importe}
+                  balanceDeposito={balanceDeposito}
+                  newBalance={newBalance}
                 />
               }
             />
-             <Route
-              path="confirmation-own-account"
+            <Route
+              path="confirmation"
               element={
-                <ConfirmationOwn
-                  result={result}
-                  resultRetirement={resultRetirement}
+                <Confirmation
+                  mapeoRet={mapeoRet}
+                  mapeoDep={mapeoDep}
                   importe={importe}
+                  balanceDep={balanceDep}
+                  balance={balance}
+                  patchApiOwn={patchApiOwn}
+                  patchApiOwnDep={patchApiOwnDep}
                 />
               }
             />
+
             <Route
               path="third-account"
               element={
                 <ThirdAccount
-                  result={result}
-                  resultRetirement={resultRetirement}
+                  handleChange={handleChange}
+                  importe={importe}
+                  mapeoRet={mapeoRet}
+                  mapeoDep={mapeoDep}
                 />
               }
             />
+
             <Route
               path="formRegister"
               element={

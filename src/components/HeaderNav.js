@@ -1,9 +1,19 @@
-import React from "react";
 import logOut from "../assets/img/logOut.png";
 import { NavUser } from "./NavUser";
 
-export const HeaderNav = () => {
+export const HeaderNav = ({ getDataTransfer }) => {
   const date = new Date();
+
+  let user;
+  const getUser = () => {
+    getDataTransfer.map((item) => {
+      if (item.typeAccount) {
+        user = item.client;
+      }
+    });
+  };
+  getUser();
+
   return (
     <header>
       <section className="section-nav">
@@ -63,10 +73,11 @@ export const HeaderNav = () => {
       </section>
       <section className="conteiner-nav-bar">
         <img
-          src="https://bancanet.banamex.com/JFP/regional/images/layout/brand-citibanamex-full-color-reversed.svg"
+          src="https://i.ibb.co/p0SR7nc/by-GDC.png"
           alt="link-Citibanamex"
           className="Brand-citibanamex"
         />
+
         <ul>
           <li className="float">
             |
@@ -74,15 +85,16 @@ export const HeaderNav = () => {
               BancaNet
             </a>
           </li>
+
         </ul>
-        <img src={logOut} alt="logOut" className="logo-out" />
-        <p className="text-logout">Cerrar sesión</p>
+        {/* <img src={logOut} alt="logOut" className="logo-out" />
+        <p className="text-logout">Cerrar sesión</p> */}
       </section>
       <section className="container-welcome">
-        <h2 className="welcome"> ¡Hola usuario!</h2>
-        <p className= "last-access">último acceso {date.toDateString()}</p>
+        <h2 className="welcome"> ¡Hola {user}!</h2>
+        {/* <p className= "last-access">último acceso {date.toDateString()}</p> */}
       </section>
-      <NavUser/>
+      <NavUser />
     </header>
   );
 };

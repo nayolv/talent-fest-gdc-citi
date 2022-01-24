@@ -22,7 +22,7 @@ export const useTransfers = () => {
   const recoverySelectValueRet = (e) => {
     setSelectValueRetirement(e.target.value);
   };
-//------------Filter para obtener objeto
+  //------------Filter para obtener objeto
   const result = getDataTransfer.filter(
     (item) => item.id === parseInt(selectValue)
   );
@@ -35,6 +35,75 @@ export const useTransfers = () => {
     setImporte(e.target.value);
   };
 
+  const [mapeoRet, setMapeoRet] = useState({
+    id: "",
+    name: "",
+    balance: "",
+    client: "",
+    typeAccount: "",
+    maximumAmount: "",
+    displayAccountNumber: "",
+    email: "",
+  });
+  const [mapeoDep, setMapeoDep] = useState({
+    id: "",
+    name: "",
+    balance: "",
+    client: "",
+    typeAccount: "",
+    maximumAmount: "",
+    displayAccountNumber: "",
+    email: "",
+  });
+  const mapeoRetirement = () => {
+    resultRetirement.map((item) =>
+      setMapeoRet({
+        id: item.id,
+        name: item.name,
+        balance: item.balance,
+        client: item.client,
+        typeAccount: item.typeAccount,
+        maximumAmount: item.maximumAmount,
+        displayAccountNumber: item.displayAccountNumber,
+        email: item.email,
+      })
+    );
+  };
+  const mapeo = () => {
+    result.map((item) =>
+      setMapeoDep({
+        id: item.id,
+        name: item.name,
+        balance: item.balance,
+        client: item.client,
+        typeAccount: item.typeAccount,
+        maximumAmount: item.maximumAmount,
+        displayAccountNumber: item.displayAccountNumber,
+        email: item.email,
+      })
+    );
+  };
+  //----------Refleja cuenta de retiro(Patch)
+  const [balanceDep, setBalanceDep] = useState("");
+  const balanceDeposito = (balance, retiro ) =>{
+    setBalanceDep(balance-parseInt(retiro));
+  }
+  const patchApiOwn = async(id) => {
+    await dataApi.patch(`/clientData/${id}`, {
+     balance: balanceDep,
+    });
+  }
+  //----------Refleja cuenta de deposito(Patch)
+  const [balance, setBalance] = useState("");
+  const newBalance = (balance, deposito ) =>{
+    setBalance(balance+parseInt(deposito));
+  }
+  const patchApiOwnDep = async(id) => {
+     await dataApi.patch(`/clientData/${id}`, {
+      balance: balance,
+     });
+  }
+
   return {
     selectValue,
     recoverySelectValue,
@@ -44,6 +113,16 @@ export const useTransfers = () => {
     result,
     resultRetirement,
     handleChange,
-    importe
+    importe,
+    mapeoRetirement,
+    mapeoRet,
+    mapeo,
+    mapeoDep,
+    balanceDep,
+    balanceDeposito,
+    patchApiOwn,
+    balance,
+    newBalance,
+    patchApiOwnDep
   };
 };

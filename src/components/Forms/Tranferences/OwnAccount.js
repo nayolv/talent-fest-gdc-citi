@@ -2,30 +2,27 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../Scss/Layout/DataTranfer.scss";
 import "../../../Scss/Layout/transfer.scss";
-import "../../../Scss/Layout/Modal.scss"
+import "../../../Scss/Layout/Modal.scss";
 import SideBar from "../../SideBar";
-import { useTransfers } from "../../../hooks/useTransfers";
 import { ModalSia } from "../../modal/ModalSia";
 
-
-const OwnAccount = ({ result, resultRetirement, handleChange, importe }) => {
+const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
   const navigate = useNavigate();
   const [errorVacio, setErrorVacio] = useState("");
   const [errorMayorImporte, setErrorMayorImporte] = useState("");
 
   const handleClick = () => {
-    const balance = parseInt(result.map((item) => item.balance).toString());
     if (importe === 0) {
       setErrorVacio("El campo no puede quedar vacío");
       throw Error("El campo no puede quedar vacío");
     }
-    if (parseInt(importe) > balance) {
+    if (parseInt(importe) > mapeoDep.balance) {
       setErrorMayorImporte(
         "El importe no puede ser mayor al total de la cuenta"
       );
       throw Error("El importe no puede ser mayor al total de la cuenta");
-    }else{
-      navigate("/services/verification-own-account");
+    } else {
+      navigate("/services/verification-transfer");
     }
   };
 
@@ -49,17 +46,10 @@ const OwnAccount = ({ result, resultRetirement, handleChange, importe }) => {
                 id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
-                {resultRetirement.map((item) => (
-                  <option
-                    key={item.id}
-                    defaultValue={`${
-                      item.name
-                    } - ${item.displayAccountNumber.slice(-3)}`}
-                  >
-                    {item.name} - {item.displayAccountNumber.slice(-3)}{" "}
-                    Disponible: MXN{item.balance}
-                  </option>
-                ))}
+                <option>
+                  {mapeoRet.name} - {mapeoRet.displayAccountNumber.slice(-3)}
+                  Disponible: MXN{mapeoRet.balance}
+                </option>
               </select>
             </div>
 
@@ -72,12 +62,9 @@ const OwnAccount = ({ result, resultRetirement, handleChange, importe }) => {
                 id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
-                {result.map((item) => (
-                  <option key={item.id} defaultValue={item.name}>
-                    {item.client} - {item.name} -
-                    {item.displayAccountNumber.slice(-3)}
-                  </option>
-                ))}
+                <option>
+                  {mapeoDep.name} - {mapeoDep.displayAccountNumber.slice(-3)}
+                </option>
               </select>
             </div>
           </div>

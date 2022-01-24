@@ -1,11 +1,10 @@
-
-    .table-container {
+.table-container {
         
         display: flex;
         flex-direction: column;
         width: 100%;
         margin: {
-            top: 1.5rem;
+            top: 2rem;
             bottom: 1rem;
         };
         table {
@@ -42,10 +41,10 @@ button{
         style: none;
     };
     background-color: transparent;
-    color: #40698A;
+    color: #0d6efd;
 }
 #aceptar{
-    background-color: #40698A;
+    background-color: #0d6efd;
     color: white;
     
 }

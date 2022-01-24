@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 // import UseRegister from "../../../hooks/Register/useRegister";
 import "../../../Scss/Layout/transfer.scss";
@@ -11,6 +11,7 @@ const DataRegister = ({
   typeRegister,
   newRegister
 }) => {
+  const [error, setError] = useState("");
   // const { typeRegister, newRegister } = UseRegister();
   const navigate = useNavigate();
   return (
@@ -43,6 +44,7 @@ const DataRegister = ({
                   Cuenta Bancaria CitiBanamex
                 </option>
               </select>
+              <p>{error}</p>
             </div>
           </div>
           <div className="transferButtons">
@@ -50,8 +52,8 @@ const DataRegister = ({
               type="button"
               className="continue"
               onClick={() => {
-                if (typeRegister === "") {
-                  alert("selecciona uan opción");
+                if (!typeRegister) {
+                  setError("Este campo no puede quedar vacio");
                 } else if (typeRegister === "Registro de cuenta") {
                   navigate("/services/formRegister");
                 }

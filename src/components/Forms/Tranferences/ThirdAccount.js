@@ -1,30 +1,39 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useTransfers } from '../../../hooks/useTransfers'
-import "../../../Scss/Layout/DataTranfer.scss"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../../../Scss/Layout/DataTranfer.scss";
 import "../../../Scss/Layout/transfer.scss";
 import "../../../Scss/Layout/Modal.scss";
-import { ModalSia } from '../../modal/ModalSia';
-import SideBar from '../../SideBar'
+import { ModalSia } from "../../modal/ModalSia";
+import SideBar from "../../SideBar";
 
-const ThirdAccount = ({ result, resultRetirement }) => {
-    const navigate = useNavigate();
-/*
-    const resultRetirement = getDataTransfer.filter(
-        (item) => item.id === parseInt(selectValueRetirement)
+const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
+  const navigate = useNavigate();
+  const [errorVacio, setErrorVacio] = useState("");
+  const [errorMayorImporte, setErrorMayorImporte] = useState("");
+
+  const handleClick = () => {
+    if (importe === 0) {
+      setErrorVacio("El campo no puede quedar vacío");
+      throw Error("El campo no puede quedar vacío");
+    }
+    if (parseInt(importe) > mapeoDep.balance) {
+      setErrorMayorImporte(
+        "El importe no puede ser mayor al total de la cuenta"
       );
-      const result = getDataTransfer.filter(
-        (item) => item.id === parseInt(selectValue)
-      );*/
+      throw Error("El importe no puede ser mayor al total de la cuenta");
+    } else {
+      navigate("/services/verification-transfer");
+    }
+  };
 
-    return (
-      <>
-      <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
+  return (
+    <>
+      <h1 className="entry-question">¿Qué deseas hacer?</h1>
       <hr />
       <section className="container-saider-form">
-              <SideBar />
+        <SideBar />
         <form className="all-form">
-          <h1>Cuentas Citibanamex</h1>
+          <h2>Cuentas Citibanamex(Terceros)</h2>
           <p>Indica los datos de la transferencia y da click en continuar</p>
           <div className="container">
             <div className="col-md-5">
@@ -36,13 +45,11 @@ const ThirdAccount = ({ result, resultRetirement }) => {
                 id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
-                {resultRetirement.map(item=>(
-                    <option key={item.id} defaultValue={`${item.name} - ${item.displayAccountNumber.slice(-3)}`}>
-                    {item.name} - {item.displayAccountNumber.slice(-3)}
+                <option>
+                  {mapeoRet.name} - {mapeoRet.displayAccountNumber.slice(-3)}
+                  Disponible: MXN{mapeoRet.balance}
                 </option>
-                ))}
               </select>
-
             </div>
 
             <div className="col-md-5">
@@ -54,11 +61,11 @@ const ThirdAccount = ({ result, resultRetirement }) => {
                 id="inputGroupSelect01"
                 placeholder="Seleccione una opción"
               >
-                 {result.map((item) => (
-                  <option key={item.id} defaultValue={item.name}>{item.client} - {item.name} - {item.displayAccountNumber.slice(-3)}</option>
-                ))}
+                <option>
+                  {mapeoDep.client}-{mapeoDep.name} -{" "}
+                  {mapeoDep.displayAccountNumber.slice(-3)}
+                </option>
               </select>
-
             </div>
 
             <div className="input-group mb-3 input-amount">
@@ -66,13 +73,15 @@ const ThirdAccount = ({ result, resultRetirement }) => {
               <input
                 type="text"
                 aria-label="Amount (to the nearest dollar)"
+                onChange={handleChange}
               />
+              <p>{errorVacio}</p>
+              <p>{errorMayorImporte}</p>
             </div>
             <div className="form-check">
               <input
                 className="form-check-input"
                 type="checkbox"
-                value=""
                 id="flexCheckDefault"
               />
               <label className="form-check-label">
@@ -83,7 +92,6 @@ const ThirdAccount = ({ result, resultRetirement }) => {
               <input
                 className="form-check-input"
                 type="checkbox"
-                value=""
                 id="flexCheckChecked"
               />
               <label className="form-check-label">Cuenta concentradora</label>
@@ -92,18 +100,17 @@ const ThirdAccount = ({ result, resultRetirement }) => {
               <input
                 className="form-check-input"
                 type="checkbox"
-                value=""
                 id="flexCheckChecked"
               />
               <label className="form-check-label">Referencias</label>
             </div>
-            <p>Descripción para identificar la transferencia</p><span className='opcion'>(opcional)</span>
+            <p>Descripción para identificar la transferencia</p>
+            <span className="opcion">(opcional)</span>
             <input className="form-control"></input>
             <div className="form-check">
               <input
                 className="form-check-input"
                 type="checkbox"
-                value=""
                 id="flexCheckChecked"
               />
               <label className="form-check-label">
@@ -112,10 +119,23 @@ const ThirdAccount = ({ result, resultRetirement }) => {
             </div>
           </div>
           <div className="transferButtons">
-            <button type="button" className="continue">
+            <button
+              type="button"
+              className="continue"
+              onClick={(e) => {
+                e.preventDefault();
+                handleClick();
+              }}
+            >
               Continuar
             </button>
-            <button type="button" className="cancel" onClick={()=>{navigate("/services")}}>
+            <button
+              type="button"
+              className="cancel"
+              onClick={() => {
+                navigate("/services");
+              }}
+            >
               Cancelar
             </button>
           </div>
