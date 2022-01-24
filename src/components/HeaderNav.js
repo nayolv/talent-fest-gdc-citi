@@ -7,7 +7,7 @@ export const HeaderNav = () => {
   return (
     <header className="header-nav">
       <section className="section-nav">
-        <p>{date.toUTCString()}</p>
+        <p className ="date">{date.toUTCString()}</p>
 
         <ul className="nav nav-pills">
           <li className="nav-item">

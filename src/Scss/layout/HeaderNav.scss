@@ -2,11 +2,11 @@ $color1: #ffffff;
 $color2: #0a0a0a;
 $color3: #056dae;
 
+
 header {
   background: $color3;
   width: 100%;
   height: 23vh;
-
   .section-nav {
     display: flex;
     justify-content: space-between;
@@ -23,6 +23,10 @@ header {
       margin-top: 2vh;
       margin: 7vw;
     
+    }
+
+    .date{
+      color:white;
     }
     .nav-pills .nav-link.active {
       color: $color1;
@@ -119,6 +123,7 @@ header {
     height: auto;
     background: $color1;
     border-radius: 15px;
+    position: absolute; 
 
     .nav-item {
       display: flex;

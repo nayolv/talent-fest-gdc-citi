@@ -1,6 +1,8 @@
 import React from 'react';
 import SideBar from '../../SideBar';
 import '../../../Scss/Layout/ConfirmationOwn.scss'
+import "../../../Scss/Layout/Modal.scss"
+import {ModalSia} from "../../modal/ModalSia"
 
 export const ConfirmationOwn = ({ result, importe, resultRetirement }) => {
   return (
@@ -63,6 +65,7 @@ export const ConfirmationOwn = ({ result, importe, resultRetirement }) => {
           </section>
 
           </section>
+          <ModalSia />
           </section>
   </>
   );

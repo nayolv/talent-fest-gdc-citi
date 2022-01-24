@@ -19,6 +19,8 @@ import useRegister from "./hooks/Register/UseRegister";
 import DataVerification from "./components/Forms/Register/DataVerification";
 import { VerificationOwnTransference } from "./components/Forms/Tranferences/VerificationOwnTransference";
 import { ConfirmationOwn } from "./components/Forms/Tranferences/ConfirmationOwn";
+import { Context } from "./components/modal/Context";
+import React from "react";
 
 function App() {
   const {
@@ -43,8 +45,12 @@ function App() {
     importe,
   } = useTransfers();
 
+
+
+
   return (
     <>
+    <Context>
       <Router>
         <HeaderNav />
         <Routes>
@@ -139,6 +145,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      </Context>
     </>
   );
 }

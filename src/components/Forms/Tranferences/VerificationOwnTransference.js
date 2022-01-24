@@ -2,6 +2,8 @@ import React from "react";
 import SideBar from "../../SideBar";
 import "../../../Scss/Layout/VerificationOwnTransference.scss";
 import { useNavigate } from "react-router-dom";
+import "../../../Scss/Layout/Modal.scss"
+import {ModalSia} from "../../modal/ModalSia"
 
 export const VerificationOwnTransference = ({
   result,
@@ -91,6 +93,7 @@ export const VerificationOwnTransference = ({
             </button>
           </section>
         </section>
+        <ModalSia />
       </section>
     </>
   );

@@ -6,6 +6,7 @@ import "../../../Scss/Layout/Modal.scss";
 import { ModalSia } from "../../modal/ModalSia";
 import SideBar from "../../SideBar";
 
+
 const Transfers = ({
   recoverySelectValue,
   recoverySelectValueRet,
@@ -39,10 +40,12 @@ const Transfers = ({
   const handleCancel = () => {
     navigate("/");
   };
+
+
   return (
     <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
-      <hr className="line" />
+      <hr className="line" /> 
       <section className="container-saider-form">
         <SideBar />
         <form
