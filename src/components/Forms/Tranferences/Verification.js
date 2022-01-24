@@ -2,9 +2,9 @@ import React from "react";
 import SideBar from "../../SideBar";
 import { useNavigate } from "react-router-dom";
 import { ModalAlert } from "../../modal/ModalAlert";
-import '../../../Scss/Layout/Verification.scss'
-import "../../../Scss/Layout/Modal.scss"
-import {ModalSia} from "../../modal/ModalSia"
+import "../../../Scss/Layout/Verification.scss";
+import "../../../Scss/Layout/Modal.scss";
+import { ModalSia } from "../../modal/ModalSia";
 
 export const Verification = ({
   importe,
@@ -12,8 +12,12 @@ export const Verification = ({
   mapeoDep,
   balanceDeposito,
   newBalance,
+  descriptionTransfer,
+  hora,
+  getHour
 }) => {
   const navigate = useNavigate();
+  
 
   return (
     <>
@@ -62,12 +66,17 @@ export const Verification = ({
                 </tr>
                 <tr>
                   <td>Hora de aplicación:</td>
-                  <td>18:16:25</td>
+                  <td>{hora}</td>
                 </tr>
+                {mapeoDep.typeAccount === false ? (
+                  <tr>
+                    <td>Descripción:</td>
+                    <td>{descriptionTransfer}</td>
+                  </tr>
+                ) : null}
               </tbody>
             </table>
           </section>
-
           <section className="btns-ver-own">
             <button
               id="aceptar"
@@ -77,6 +86,7 @@ export const Verification = ({
                 navigate("/services/confirmation");
                 balanceDeposito(mapeoRet.balance, importe);
                 newBalance(mapeoDep.balance, importe);
+                getHour(hora)
               }}
             >
               Aceptar
@@ -95,7 +105,7 @@ export const Verification = ({
             </button>
           </section>
         </section>
-      <ModalSia />
+        <ModalSia />
       </section>
       <ModalAlert body={"Transferencia exitosa"} />
     </>

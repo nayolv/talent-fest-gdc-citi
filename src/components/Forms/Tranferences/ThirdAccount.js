@@ -6,7 +6,7 @@ import "../../../Scss/Layout/Modal.scss";
 import { ModalSia } from "../../modal/ModalSia";
 import SideBar from "../../SideBar";
 
-const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
+const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep, recoveryDescription }) => {
   const navigate = useNavigate();
   const [errorVacio, setErrorVacio] = useState("");
   const [errorMayorImporte, setErrorMayorImporte] = useState("");
@@ -122,8 +122,9 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
             <input
               aria-label="Escribe descripcion"
               className="form-control"
-            ></input>
-            <div className="form-check">
+              onChange={recoveryDescription}
+            />
+            {/* <div className="form-check">
               <input
                 aria-label="check"
                 className="form-check-input"
@@ -133,7 +134,7 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
               <label aria-label="check notificar" className="form-check-label">
                 Notificar al beneficiario(opcional):
               </label>
-            </div>
+            </div> */}
           </div>
           <div className="transferButtons">
             <button

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { dataApi } from "../../../api/dataApi";
 import { ModalTransf } from "../../modal/ModalTransf";
 import { ModalSia } from "../../modal/ModalSia";
-import "../../../Scss/Layout/Modal.scss"
+import "../../../Scss/Layout/Modal.scss";
 
 const DataVerification = ({ dataRegister, checked }) => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const DataVerification = ({ dataRegister, checked }) => {
       maximumAmount: dataRegister.maximumAmount,
       email: dataRegister.email,
       typeAccount: checked,
-      balance: 10000
+      balance: 10000,
     });
   };
 
@@ -63,8 +63,15 @@ const DataVerification = ({ dataRegister, checked }) => {
             </tbody>
           </table>
           <div className="transferButtons">
-            <button type="button" className="accept" onClick={postDataAccount} data-bs-toggle="modal"
-              data-bs-target="#exampleModal">
+            <button
+              type="button"
+              className="accept"
+              onClick={() => {
+                postDataAccount();
+              }}
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
               Aceptar
             </button>
             <button
@@ -89,7 +96,7 @@ const DataVerification = ({ dataRegister, checked }) => {
         </section>
         <ModalSia />
       </section>
-      <ModalTransf body={'Registro de cuenta exitoso'} />
+      <ModalTransf body={"Registro de cuenta exitoso"} />
     </>
   );
 };

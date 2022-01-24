@@ -57,6 +57,12 @@ function App() {
     balance,
     newBalance,
     patchApiOwnDep,
+    descriptionTransfer,
+    recoveryDescription,
+    hora,
+    hour,
+    getHour
+
   } = useTransfers();
 
   const [tooltipOn, setTooltipOn] = useState(true);
@@ -112,6 +118,7 @@ function App() {
                   importe={importe}
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
+                  hora={hora}
                 />
               }
             />
@@ -124,6 +131,9 @@ function App() {
                   importe={importe}
                   balanceDeposito={balanceDeposito}
                   newBalance={newBalance}
+                  descriptionTransfer={descriptionTransfer}
+                  getHour={getHour}
+                  hora={hora}
                 />
               }
             />
@@ -138,6 +148,8 @@ function App() {
                   balance={balance}
                   patchApiOwn={patchApiOwn}
                   patchApiOwnDep={patchApiOwnDep}
+                  descriptionTransfer={descriptionTransfer}
+                  hour={hour}
                 />
               }
             />
@@ -150,6 +162,7 @@ function App() {
                   importe={importe}
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
+                  recoveryDescription={recoveryDescription}
                 />
               }
             />
@@ -172,7 +185,7 @@ function App() {
                 <DataVerification
                 dataRegister={dataRegister}
                 checked={checked}
-                postDataAccount ={postDataAccount }
+                postDataAccount ={postDataAccount}
                 />
               }
             />
