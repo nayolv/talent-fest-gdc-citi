@@ -1,7 +1,9 @@
 import React from "react";
 import SideBar from "../../SideBar";
 import "../../../Scss/Layout/Confirmation.scss";
+import "../../../Scss/Layout/Modal.scss";
 import { useNavigate } from "react-router-dom";
+import { ModalSia } from "../../modal/ModalSia";
 
 export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance, patchApiOwn, patchApiOwnDep }) => {
   const navigate = useNavigate();
@@ -18,11 +20,11 @@ export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance,
           <h2>Pago a tarjetas Citibanamex</h2>
 
           <section className="table-container">
-            <p>
+            <p className="sm">
               <i id="check" className="bi bi-check-lg" /> Tu pago ha sido
               aplicado
             </p>
-            <p>Número de autorización 112545</p>
+            <p className="sm">Número de autorización 112545</p>
 
             <table className="table">
               <tbody>
@@ -71,6 +73,7 @@ export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance,
           </section>
           <section className="btns-confirmation-own">
             <button
+            className="continue"
               onClick={() => {
                 navigate("/services");
               }}
@@ -83,6 +86,7 @@ export const Confirmation = ({ importe, mapeoRet, mapeoDep, balanceDep, balance,
             </button>
           </section>
         </section>
+        <ModalSia />
       </section>
     </>
   );
