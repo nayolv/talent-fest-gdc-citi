@@ -2,9 +2,9 @@ import React from "react";
 import SideBar from "../../SideBar";
 import { useNavigate } from "react-router-dom";
 import { ModalAlert } from "../../modal/ModalAlert";
-import '../../../Scss/Layout/Verification.scss'
-import "../../../Scss/Layout/Modal.scss"
-import {ModalSia} from "../../modal/ModalSia"
+import "../../../Scss/Layout/Verification.scss";
+import "../../../Scss/Layout/Modal.scss";
+import { ModalSia } from "../../modal/ModalSia";
 
 export const Verification = ({
   importe,
@@ -70,6 +70,7 @@ export const Verification = ({
 
           <section className="btns-ver-own">
             <button
+              className="continue"
               id="aceptar"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
@@ -81,11 +82,12 @@ export const Verification = ({
             >
               Aceptar
             </button>
-            <button onClick={() => navigate(-1)}>
+            <button className="cancel" onClick={() => navigate(-1)}>
               <i className="bi bi-caret-right-fill" />
               Regresar
             </button>
             <button
+              className="cancel"
               onClick={() => {
                 navigate("/services");
               }}

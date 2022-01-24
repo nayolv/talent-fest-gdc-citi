@@ -4,6 +4,7 @@
     --claros: #ead7ba;
     --navBarlight: #056dae;
     --navBarDark: #213946;
+    --gray: #6c757d;
     
 }
 
@@ -20,6 +21,8 @@ body.light{
 
 --color-td:var(--oscuros)
 
+--autor-color:var(--gray)
+
 }
 
 body.dark{
@@ -31,6 +34,8 @@ body.dark{
     --background-color-nav:var(--navBarDark);
  
     --color-td:var(--claros) 
+
+    --autor-color:var(--claros)
 }
 
 header {
@@ -41,4 +46,14 @@ td{
     color:var(--color-td)
 }
 
+h3{
+    width: 60vh;
+}
 
+.sm{
+    width: 60vh;
+}
+
+.text-muted{
+    color:var(--autor-color) !important;
+}
