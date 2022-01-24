@@ -6,6 +6,7 @@ export const HeaderNavTooltip = ({ getDataTransfer }) => {
 
   let user;
   const getUser = () => {
+    // eslint-disable-next-line array-callback-return
     getDataTransfer.map((item) => {
       if (item.typeAccount) {
         user = item.client;
