@@ -18,13 +18,13 @@ import AccountRegister from "./components/Forms/Register/AccountRegister";
 import ThirdAccount from "./components/Forms/Tranferences/ThirdAccount";
 import { useTransfers } from "./hooks/useTransfers";
 import useRegister from "./hooks/Register/UseRegister";
-import DataVerification from "./components/Forms/Register/DataVerification";
 import { Verification } from "./components/Forms/Tranferences/Verification";
 import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
 import { Context } from "./components/modal/Context";
-import { useTooltip } from "./hooks/Tooltip/useTooltip";
+// import { useTooltip } from "./hooks/Tooltip/useTooltip";
 import { HomeTootltip } from "./pages/HomeTootltip";
 
+import DataVerification from "./components/Forms/Register/DataVerification";
 
 function App() {
   const {
