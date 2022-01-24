@@ -78,13 +78,14 @@ function App() {
         {/* {tooltipOn ? (<HeaderNav getDataTransfer={getDataTransfer} />):(<HeaderNavTooltip getDataTransfer={getDataTransfer} />)} */}
         <HeaderNav getDataTransfer={getDataTransfer} tooltipOn={tooltipOn} />
         <Routes>
-         {tooltipOn ? ( <Route
+      {/*    {tooltipOn ? ( <Route
             path="/"
             element={<Home resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
           />) : ( <Route
             path="/"
             element={<HomeTootltip resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} />}
-          />)}
+          />)} */}
+          <Route path="/" element={<Home resultRetirement={resultRetirement} isTooltipOn={isTooltipOn} tooltipOn={tooltipOn} />}/>
           <Route path="services/" element={<Services />}>
             <Route
               index
@@ -192,7 +193,7 @@ function App() {
             />
           </Route>
         </Routes>
-        {tooltipOn ? (<Footer />):(<FooterTooltip />)}
+        <Footer tooltipOn={tooltipOn} />
       </Router>
       </Context>
     </>
