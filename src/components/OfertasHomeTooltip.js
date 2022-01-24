@@ -64,7 +64,7 @@ export const OfertasHomeTooltip = () => {
           <p id="tooltip" data-info="Disponible:">Disponible:</p>
           <section>
             <p className="balance">{item.maximumAmount}</p> 
-            <p id="tooltip" data-info="MXN">MXN</p>
+            <p id="tooltip" data-info={`${item.maximumAmount}MXN`}>MXN</p>
           </section>
         </section>
 
