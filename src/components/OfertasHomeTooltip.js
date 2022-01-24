@@ -30,8 +30,8 @@ export const OfertasHomeTooltip = () => {
               alt="Oferta pase anual 6 meses sin intereses al inscribirte"
             />
             <section className="text-promotion-container">
-              <p className="title-card-home">Pase Anual Citibanamex</p>
-              <p>Inscríbete y obtén 6 MSI</p>
+              <p className="title-card-home" id="tooltip" data-info="Pase Anual Citibanamex">Pase Anual Citibanamex</p>
+              <p id="tooltip" data-info="Inscríbete y obtén 6 MSI">Inscríbete y obtén 6 MSI</p>
             </section>
           </section>
         </section>
@@ -45,7 +45,7 @@ export const OfertasHomeTooltip = () => {
       </section>
 
       <section className="container-acconts">
-      <p>Cuentas de efectivo</p>
+      <p id="tooltip" data-info="Cuentas de efectivo">Cuentas de efectivo</p>
 
       {ownAccounts.map(item=>(
         <section key={item.id} className="acconts-client-home-container">
@@ -61,18 +61,18 @@ export const OfertasHomeTooltip = () => {
         </section>
 
         <section className="avalaible-container">
-          <p>Disponible:</p>
+          <p id="tooltip" data-info="Disponible:">Disponible:</p>
           <section>
             <p className="balance">{item.maximumAmount}</p> 
-            <p>MXN</p>
+            <p id="tooltip" data-info="MXN">MXN</p>
           </section>
         </section>
 
         <section className="avalaible-container">
-          <p>Saldo:</p>
+          <p id="tooltip" data-info="Saldo:">Saldo:</p>
           <section>
             <p className="balance">{item.balance}</p> 
-            <p>MXN</p>
+            <p id="tooltip" data-info="MXN">MXN</p>
           </section>
         </section>
       </section>
