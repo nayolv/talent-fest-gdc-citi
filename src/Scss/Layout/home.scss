@@ -58,7 +58,7 @@ main {
             p {
               width: 100%;
               margin-bottom: -5px;
-              
+              color:black;
             }
             .title-card-home {
               font: {
@@ -103,7 +103,7 @@ main {
             }
           }
           padding: 1rem;
-          height: 80px;
+          height: 10rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -129,7 +129,7 @@ main {
               a {
                 color: $banamex-blue;
                 font: {
-                  size: 0.8rem;
+                  size: 1rem;
                   weight: bold;
                 }
                 margin: {
@@ -147,13 +147,17 @@ main {
           }
 
           .avalaible-container {
+            
             p {
               text-align: end;
+              color:black;
               margin: {
                 bottom: -5px;
+            
               }
               font: {
-                size: 0.8rem;
+                size: 1.3rem;
+
               }
             }
             section {
@@ -234,10 +238,11 @@ main {
             top: 10px;
           }
           font: {
-            size: 0.9rem;
+            size: 1.2rem;
             weight: 500;
           }
-          width: 100%;
+          width: 23.6rem;
+          height: 4.1rem;
           text-align: start;
           padding: {
             right: 1rem;
@@ -288,14 +293,3 @@ a:focus-visible {
   outline: 3px solid;
 }
 
-.btn-accesibility {
-  border: none;
-  background-color: transparent;
-  width: 8vw;
-  height: 8vw;
-
-  img {
-    width: 7vw;
-    height: 7vw;
-  }
-}

@@ -3,6 +3,9 @@ import SideBar from "../../SideBar";
 import { useNavigate } from "react-router-dom";
 import { ModalAlert } from "../../modal/ModalAlert";
 import '../../../Scss/Layout/Verification.scss'
+import "../../../Scss/Layout/Modal.scss"
+import {ModalSia} from "../../modal/ModalSia"
+
 export const Verification = ({
   importe,
   mapeoRet,
@@ -92,6 +95,7 @@ export const Verification = ({
             </button>
           </section>
         </section>
+        <ModalSia />
       </section>
       <ModalAlert body={"Transferencia exitosa"} />
     </>
