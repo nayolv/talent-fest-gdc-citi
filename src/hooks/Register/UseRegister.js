@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { dataApi } from "../../api/dataApi";
 
 function useRegister() {
     const [typeRegister, setTypeRegiste] = useState('')
@@ -41,7 +40,6 @@ function useRegister() {
       handleInputChange,
       checked,
       handleChecked,
-      postDataAccount 
   }
 }
 
