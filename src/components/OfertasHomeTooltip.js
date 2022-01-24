@@ -56,7 +56,7 @@ export const OfertasHomeTooltip = () => {
           />
           <section>
             <a href="./cualquiercosa" id="tooltip" data-info={`${item.name}-MXN`}>{item.name}-MXN</a>
-            <p className="account-number" id="tooltip" data-info={`**${item.displayAccountNumber.slice(-3)}`}>**{item.displayAccountNumber.slice(-3)}</p>
+            <p className="account-number" id="tooltip" data-info={`**${item.displayAccountNumber.slice(-3)}`}>{item.displayAccountNumber.slice(-3)}</p>
           </section>
         </section>
 
