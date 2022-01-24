@@ -17,7 +17,7 @@
     position: absolute; /* Lo posicionamos de modo absoluto dentro del span */
      top: -2em;
      left: 2px;
-    min-width: 500px;
+    min-width: 350px;
     z-index: 999;
 }
 #tooltip:hover::before {

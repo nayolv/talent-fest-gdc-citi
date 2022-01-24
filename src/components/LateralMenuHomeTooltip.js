@@ -21,7 +21,7 @@ export const LateralMenuHomeTooltip = () => {
             <section className='image-lateral-container'>
                 <img src="https://i.ibb.co/ck9c3yY/oficina.png" alt="Ofertas citibanamex" />
                 <section>
-                <p>Las ofertas Citibanamex están pensadas en ti. ¡Conócelas!</p>
+                <p id="tooltip" data-info="Las ofertas Citibanamex están pensadas en ti. ¡Conócelas!">Las ofertas Citibanamex están pensadas en ti. ¡Conócelas!</p>
                 </section>
                 <section>
                 <button>Me interesa</button>

@@ -23,7 +23,6 @@ import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
 import { Context } from "./components/modal/Context";
 // import { useTooltip } from "./hooks/Tooltip/useTooltip";
 import { HomeTootltip } from "./pages/HomeTootltip";
-
 import DataVerification from "./components/Forms/Register/DataVerification";
 
 function App() {
