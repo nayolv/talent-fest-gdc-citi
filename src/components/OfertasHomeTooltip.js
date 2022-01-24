@@ -63,7 +63,7 @@ export const OfertasHomeTooltip = () => {
         <section className="avalaible-container">
           <p id="tooltip" data-info="Disponible:">Disponible:</p>
           <section>
-            <p className="balance">{item.maximumAmount}</p> 
+            <p className="balance" id="tooltip" data-info={`**${item.maximumAmount}`}>{item.maximumAmount}</p> 
             <p id="tooltip" data-info="MXN">MXN</p>
           </section>
         </section>
@@ -71,7 +71,7 @@ export const OfertasHomeTooltip = () => {
         <section className="avalaible-container">
           <p id="tooltip" data-info="Saldo:">Saldo:</p>
           <section>
-            <p className="balance">{item.balance}</p> 
+            <p className="balance" id="tooltip" data-info={`**${item.balance}`}>{item.balance}</p> 
             <p id="tooltip" data-info="MXN">MXN</p>
           </section>
         </section>
