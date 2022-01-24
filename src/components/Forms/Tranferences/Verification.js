@@ -1,9 +1,18 @@
 import React from "react";
 import SideBar from "../../SideBar";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD:src/components/Forms/Tranferences/Verification.js
 import { ModalAlert } from "../../modal/ModalAlert";
 import '../../../Scss/Layout/Verification.scss'
 export const Verification = ({
+=======
+import "../../../Scss/Layout/Modal.scss"
+import {ModalSia} from "../../modal/ModalSia"
+
+export const VerificationOwnTransference = ({
+  result,
+  resultRetirement,
+>>>>>>> 31bc7b78ea0d7725bee3b6e4dce04dccae269ed9:src/components/Forms/Tranferences/VerificationOwnTransference.js
   importe,
   mapeoRet,
   mapeoDep,
@@ -92,6 +101,7 @@ export const Verification = ({
             </button>
           </section>
         </section>
+        <ModalSia />
       </section>
       <ModalAlert body={"Transferencia exitosa"} />
     </>

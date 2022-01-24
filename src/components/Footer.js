@@ -1,9 +1,13 @@
 import React from "react";
+import { ThemeContext } from "./modal/Context";
 
 const Footer = () => {
+
+  const {changeColor, setChangeColor} = React.useContext(ThemeContext)
+
   return (
     <div>
-      <footer>
+      <footer style = { {background: changeColor.background} }>
         <div className="col-md-4 d-flex align-items-center ">
           <a href="https://www.banamex.com/es/" className="link-primary">
             Citibanamex.com

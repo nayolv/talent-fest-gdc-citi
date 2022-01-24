@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Scss/Layout/home.scss";
@@ -20,6 +21,7 @@ import useRegister from "./hooks/Register/UseRegister";
 import DataVerification from "./components/Forms/Register/DataVerification";
 import { Verification } from "./components/Forms/Tranferences/Verification";
 import { Confirmation } from "./components/Forms/Tranferences/Confirmation";
+import { Context } from "./components/modal/Context";
 
 function App() {
   const {
@@ -53,9 +55,10 @@ function App() {
     newBalance,
     patchApiOwnDep,
   } = useTransfers();
-  
+
   return (
     <>
+    <Context>
       <Router>
         <HeaderNav getDataTransfer={getDataTransfer} />
         <Routes>
@@ -165,6 +168,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
+      </Context>
     </>
   );
 }
