@@ -194,7 +194,11 @@ main {
           align-items: center;
           background-color: $banamex-blue;
           color: white;
-          padding: 5px;
+          padding: {
+            left: 0.5rem;
+            right: 0.5rem;
+            top: 0.5rem;
+          };
           font: {
             size: 1rem;
             weight: 500;
@@ -211,9 +215,7 @@ main {
             style: none;
           }
           i {
-            margin: {
-              top: 1.5rem;
-            };
+            
             font: {
               size: 30px;
             }
