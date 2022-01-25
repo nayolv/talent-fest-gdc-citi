@@ -98,7 +98,7 @@ export const HeaderNav = ({ getDataTransfer, tooltipOn }) => {
         />
 
         <ul>
-          <li className="float" aria-hidden="true">
+          <li className="float" >
             |
             <a
               className="bancanet"
