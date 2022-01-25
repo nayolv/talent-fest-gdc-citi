@@ -6,7 +6,6 @@ import "../../../Scss/Layout/Modal.scss";
 import { ModalSia } from "../../modal/ModalSia";
 import SideBar from "../../SideBar";
 
-
 const Transfers = ({
   recoverySelectValue,
   recoverySelectValueRet,
@@ -15,8 +14,11 @@ const Transfers = ({
   resultRetirement,
   mapeoRetirement,
   mapeo,
+  tooltipOn,
+  isTooltipOn,
 }) => {
   const navigate = useNavigate();
+
   const [errorRet, setErrorRet] = useState("");
   const [error, setError] = useState("");
 
@@ -44,11 +46,16 @@ const Transfers = ({
     navigate("/");
   };
 
-
   return (
     <>
-      <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
-      <hr className="line" /> 
+      <h1
+        className="entry-question"
+        id={tooltipOn ? "" : "tooltip"}
+        data-info={tooltipOn ? "" : "¿Qué deseas hacer?"}
+      >
+        ¿Qué deseas hacer?
+      </h1>
+      <hr className="line" />
       <section className="container-saider-form">
         <SideBar />
         <form
@@ -60,8 +67,21 @@ const Transfers = ({
             mapeo();
           }}
         >
-          <h1>Ingresa los datos de la operación</h1>
-          <p className="transfer-p">
+          <h1
+            id={tooltipOn ? "" : "tooltip"}
+            data-info={tooltipOn ? "" : "Ingresa los datos de la operación"}
+          >
+            Ingresa los datos de la operación
+          </h1>
+          <p
+            className="transfer-p"
+            id={tooltipOn ? "" : "tooltip"}
+            data-info={
+              tooltipOn
+                ? ""
+                : "Podrás transferir a cualquier banco, pagar tarjetas de crédito y servicios, y órdenes de pago."
+            }
+          >
             Podrás transferir a cualquier banco, pagar tarjetas de crédito y
             servicios, y órdenes de pago.
           </p>
@@ -69,7 +89,12 @@ const Transfers = ({
           <br />
           <div className="container">
             <div className="col-md-5">
-              <label htmlFor="seleccione una opción" className="form-label">
+              <label
+                htmlFor="seleccione una opción"
+                className="form-label"
+                id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : "Cuenta de retiro:"}
+              >
                 Cuenta de retiro:
               </label>
               <select
@@ -81,25 +106,51 @@ const Transfers = ({
                   recoverySelectValueRet(e);
                 }}
               >
-                <option defaultValue="">Seleccione una opción</option>
+                <option
+                  defaultValue=""
+                  id={tooltipOn ? "" : "tooltip"}
+                  data-info={tooltipOn ? "" : "Seleccione una opción"}
+                >
+                  Seleccione una opción
+                </option>
                 {getDataTransfer.map(
                   (item) =>
                     item.typeAccount && (
-                      <option key={item.id} value={item.id}>
+                      <option
+                        key={item.id}
+                        value={item.id}
+                        id={tooltipOn ? "" : "tooltip"}
+                        data-info={
+                          tooltipOn
+                            ? ""
+                            : `${item.name} - ${item.displayAccountNumber.slice(
+                                -3
+                              )}
+                      Disponible: MXN${item.balance}`
+                        }
+                      >
                         {item.name} - {item.displayAccountNumber.slice(-3)}
                         Disponible: MXN{item.balance}
                       </option>
                     )
                 )}
               </select>
-              <p>{errorRet}</p>
-              <div className="invalid-feedback">
-                Please select a valid state.
-              </div>
+              <p
+                id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : `${errorRet}`}
+              >
+                {errorRet}
+              </p>
             </div>
 
             <div className="col-md-5">
-              <label htmlFor="seleccione una cuenta">Cuenta de deposito:</label>
+              <label
+                htmlFor="seleccione una cuenta"
+                id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : "Cuenta de deposito:"}
+              >
+                Cuenta de deposito:
+              </label>
               <select
                 className="form-select"
                 id="seleccione una cuenta"
