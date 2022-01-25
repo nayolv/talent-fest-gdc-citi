@@ -97,6 +97,8 @@ function App() {
                   resultRetirement={resultRetirement}
                   mapeoRetirement={mapeoRetirement}
                   mapeo={mapeo}
+                  isTooltipOn={isTooltipOn}
+                  tooltipOn={tooltipOn}
                 />
               }
             />
@@ -107,6 +109,8 @@ function App() {
                 <DataRegister
                   typeRegister={typeRegister}
                   newRegister={newRegister}
+                  isTooltipOn={isTooltipOn}
+                  tooltipOn={tooltipOn}
                 />
               }
             />
@@ -119,6 +123,8 @@ function App() {
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
                   hora={hora}
+                  isTooltipOn={isTooltipOn}
+                  tooltipOn={tooltipOn}
                 />
               }
             />
@@ -134,6 +140,8 @@ function App() {
                   descriptionTransfer={descriptionTransfer}
                   getHour={getHour}
                   hora={hora}
+                  isTooltipOn={isTooltipOn}
+                  tooltipOn={tooltipOn}
                 />
               }
             />
@@ -150,6 +158,8 @@ function App() {
                   patchApiOwnDep={patchApiOwnDep}
                   descriptionTransfer={descriptionTransfer}
                   hour={hour}
+                  isTooltipOn={isTooltipOn}
+                  tooltipOn={tooltipOn}
                 />
               }
             />
@@ -163,6 +173,8 @@ function App() {
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
                   recoveryDescription={recoveryDescription}
+                  isTooltipOn={isTooltipOn}
+                  tooltipOn={tooltipOn}
                 />
               }
             />
@@ -176,6 +188,8 @@ function App() {
                   handleInputChange={handleInputChange}
                   checked={checked}
                   handleChecked={handleChecked}
+                  isTooltipOn={isTooltipOn}
+                  tooltipOn={tooltipOn}
                 />
               }
             />
@@ -186,6 +200,8 @@ function App() {
                 dataRegister={dataRegister}
                 checked={checked}
                 postDataAccount ={postDataAccount}
+                isTooltipOn={isTooltipOn}
+                tooltipOn={tooltipOn}
                 />
               }
             />

@@ -12,6 +12,7 @@ const AccountRegister = ({
   checked,
   handleChecked,
   tooltipOn,
+  isTooltipOn,
 }) => {
   const navigate = useNavigate();
   /*   const [checked, setChecked] = useState(false);
@@ -81,7 +82,7 @@ const AccountRegister = ({
             <p className="pLabels"
             id={tooltipOn ? "" : "tooltip"}
             data-info={tooltipOn ? "" : 'Numero de tarjeta:'}>Numero de tarjeta:</p>
-        ------    <input
+             <input
               className="form-control"
               type="number"
               aria-label="numero de tarjeta"
@@ -90,7 +91,7 @@ const AccountRegister = ({
               required
             ></input>
             <div className="form-check">
-              <input
+            <input
                 className="form-check-input"
                 aria-label="check cuenta Propia"
                 type="checkbox"
@@ -101,7 +102,7 @@ const AccountRegister = ({
                   handleChecked();
                   console.log(!checked); //Negar check
                 }}
-      --------        />
+            />
               <label aria-label="cuenta propia" className="form-check-label"
                id={tooltipOn ? "" : "tooltip"}
                data-info={tooltipOn ? "" : 'Cuenta propia'} >Cuenta propia</label>
@@ -109,7 +110,7 @@ const AccountRegister = ({
             <p className="pLabels"
             id={tooltipOn ? "" : "tooltip"}
             data-info={tooltipOn ? "" : 'Titular de la cuenta'}>Titular de la cuenta</p>
-       ----     <input
+           <input
               aria-label="titular de Cuenta"
               className="form-control"
               type="text"
@@ -127,7 +128,7 @@ const AccountRegister = ({
               <span className="input-group-text"
                id={tooltipOn ? "" : "tooltip"}
                data-info={tooltipOn ? "" : 'MXN'}>MXN</span>
-        -----      <input
+           <input
                 type="text"
                 aria-label="cantidad"
                 name="maximumAmount"
@@ -139,7 +140,7 @@ const AccountRegister = ({
             <p className="pLabels"
             id={tooltipOn ? "" : "tooltip"}
             data-info={tooltipOn ? "" : 'Correo electrónico (opcional)'}>Correo electrónico (opcional):</p>
-     ------       <input
+          <input
               type="email"
               className="form-control"
               name="email"
@@ -150,10 +151,12 @@ const AccountRegister = ({
             <p className="pLabels"
              id={tooltipOn ? "" : "tooltip"}
              data-info={tooltipOn ? "" : 'Confirmar correo electrónico:'}>Confirmar correo electrónico:</p>
-            <input type="email" aria-label="confirmar correo electronico" className="form-control" required></input>
+         <input type="email" aria-label="confirmar correo electronico" className="form-control" required></input>
           </div>
           <div className="transferButtons">
-            <button type="submit" className="continue">
+            <button type="submit" className="continue"
+             id={tooltipOn ? "" : "tooltip"}
+             data-info={tooltipOn ? "" : 'Continuar'}>
               Continuar
             </button>
             <button
@@ -162,12 +165,14 @@ const AccountRegister = ({
               onClick={() => {
                 navigate("/services");
               }}
+              id={tooltipOn ? "" : "tooltip"}
+              data-info={tooltipOn ? "" : 'Cancelar'}
             >
               Cancelar
             </button>
           </div>
         </form>
-        <ModalSia />
+        <ModalSia isTooltipOn= {isTooltipOn}/>
       </section>
     </>
   );

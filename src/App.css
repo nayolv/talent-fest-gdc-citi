@@ -5,6 +5,7 @@
     --navBarlight: #056dae;
     --navBarDark: #213946;
     --gray: #6c757d;
+/*     --link: #004FA3; */
     
 }
 
@@ -23,6 +24,8 @@ body.light{
 
 --autor-color:var(--gray)
 
+/* --footer-color:var(#004FA3) */
+
 }
 
 body.dark{
@@ -36,6 +39,8 @@ body.dark{
     --color-td:var(--claros) 
 
     --autor-color:var(--claros)
+
+    --footer-color:var(--navBarlight)
 }
 
 header {
@@ -57,3 +62,8 @@ h3{
 .text-muted{
     color:var(--autor-color) !important;
 }
+
+/* .link-primary{
+    color:var(--footer-color)
+}
+ */
