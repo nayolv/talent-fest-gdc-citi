@@ -99,7 +99,7 @@ function App() {
                   mapeo={mapeo}
                   isTooltipOn={isTooltipOn}
                   tooltipOn={tooltipOn}
-                />
+
               }
             />
             <Route
@@ -160,6 +160,7 @@ function App() {
                   hour={hour}
                   isTooltipOn={isTooltipOn}
                   tooltipOn={tooltipOn}
+
                 />
               }
             />

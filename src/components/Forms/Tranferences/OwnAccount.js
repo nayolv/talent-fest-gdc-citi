@@ -6,7 +6,12 @@ import "../../../Scss/Layout/Modal.scss";
 import SideBar from "../../SideBar";
 import { ModalSia } from "../../modal/ModalSia";
 
-const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
+const OwnAccount = ({
+  handleChange,
+  importe,
+  mapeoRet,
+  mapeoDep,
+}) => {
   const navigate = useNavigate();
   const [errorVacio, setErrorVacio] = useState("");
   const [errorMayorImporte, setErrorMayorImporte] = useState("");
