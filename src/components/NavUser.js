@@ -6,7 +6,7 @@ export const NavUser = ({ tooltipOn }) => {
     <section className="shadow p-3 mb-5 bg-white container-nav-user">
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
-          <i className="bi bi-house-door"></i>
+          <i className="bi bi-house-door" aria-hidden="true"></i>
           <p
             className="nav-home"
             aria-current="page"
@@ -17,7 +17,7 @@ export const NavUser = ({ tooltipOn }) => {
           </p>
         </li>
         <li className="nav-item">
-          <i className="bi bi-coin"></i>
+          <i className="bi bi-coin"aria-hidden="true"></i>
           <p
             className="nav-transfer"
             id={tooltipOn ? "" : "tooltip"}
@@ -27,7 +27,7 @@ export const NavUser = ({ tooltipOn }) => {
           </p>
         </li>
         <li className="nav-item">
-          <i className="bi bi-graph-up-arrow"></i>
+          <i className="bi bi-graph-up-arrow"aria-hidden="true"></i>
           <Link
             className="nav-investment"
             to="#"
@@ -38,7 +38,7 @@ export const NavUser = ({ tooltipOn }) => {
           </Link>
         </li>
         <li className="nav-item">
-          <i className="bi bi-credit-card"></i>
+          <i className="bi bi-credit-card"aria-hidden="true"></i>
           <p
             className="nav-others"
             id={tooltipOn ? "" : "tooltip"}
@@ -48,7 +48,7 @@ export const NavUser = ({ tooltipOn }) => {
           </p>
         </li>
         <li className="nav-item">
-          <i className="bi bi-gear"></i>
+          <i className="bi bi-gear" aria-hidden="true"></i>
           <p
             className="nav-setting"
             id={tooltipOn ? "" : "tooltip"}
@@ -58,7 +58,7 @@ export const NavUser = ({ tooltipOn }) => {
           </p>
         </li>
         <li className="nav-item">
-          <i className="bi bi-question-circle"></i>
+          <i className="bi bi-question-circle"aria-hidden="true"></i>
           <p
             className="nav-help"
             id={tooltipOn ? "" : "tooltip"}
