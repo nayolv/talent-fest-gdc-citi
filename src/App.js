@@ -119,6 +119,8 @@ function App() {
                   mapeoRet={mapeoRet}
                   mapeoDep={mapeoDep}
                   hora={hora}
+                  tooltipOn={tooltipOn}
+                  isTooltipOn={isTooltipOn}
                 />
               }
             />
@@ -150,6 +152,8 @@ function App() {
                   patchApiOwnDep={patchApiOwnDep}
                   descriptionTransfer={descriptionTransfer}
                   hour={hour}
+                  tooltipOn={tooltipOn}
+                  isTooltipOn={isTooltipOn}
                 />
               }
             />
