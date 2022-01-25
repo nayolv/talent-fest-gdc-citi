@@ -97,6 +97,8 @@ function App() {
                   resultRetirement={resultRetirement}
                   mapeoRetirement={mapeoRetirement}
                   mapeo={mapeo}
+                  tooltipOn={tooltipOn}
+                  isTooltipOn={isTooltipOn}
                 />
               }
             />
@@ -150,6 +152,8 @@ function App() {
                   patchApiOwnDep={patchApiOwnDep}
                   descriptionTransfer={descriptionTransfer}
                   hour={hour}
+                  tooltipOn={tooltipOn}
+                  isTooltipOn={isTooltipOn}
                 />
               }
             />
