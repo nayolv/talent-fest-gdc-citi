@@ -1,7 +1,6 @@
 #tooltip {
   cursor: pointer;
   position: relative;
-  line-height: 2rem;
 }
 #tooltip::before {
     visibility: hidden;

@@ -75,10 +75,11 @@ const OwnAccount = ({
           </div>
 
           <label>Importe:</label>
-          <label>Otra cantidad:</label>
+          <label htmlFor="cantidad">Indica la cantidad:</label>
           <div className="input-group mb-3 input-amount">
             <span className="input-group-text">MXN</span>
             <input
+            id="cantidad"
               type="number"
               aria-label="Amount (to the nearest dollar)"
               onChange={handleChange}

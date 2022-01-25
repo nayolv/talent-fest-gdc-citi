@@ -6,19 +6,24 @@ import "../../../Scss/Layout/Modal.scss";
 import { ModalSia } from "../../modal/ModalSia";
 import SideBar from "../../SideBar";
 
-const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep, recoveryDescription }) => {
+const ThirdAccount = ({
+  handleChange,
+  importe,
+  mapeoRet,
+  mapeoDep,
+  recoveryDescription,
+}) => {
   const navigate = useNavigate();
   const [errorVacio, setErrorVacio] = useState("");
   const [errorMayorImporte, setErrorMayorImporte] = useState("");
 
   const handleClick = () => {
-
     if (importe === 0) {
       setErrorVacio("El campo no puede quedar vacío");
       throw Error("El campo no puede quedar vacío");
     }
     if (parseInt(importe) > mapeoRet.balance) {
-        setErrorMayorImporte(
+      setErrorMayorImporte(
         "El importe no puede ser mayor al total de la cuenta"
       );
       throw Error("El importe no puede ser mayor al total de la cuenta");
@@ -39,7 +44,6 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep, recoveryDescr
           <div className="container">
             <div className="col-md-5">
               <label aria-label="cuenta de retiro">Cuenta de retiro:</label>
-
               <select
                 aria-label="seleccione una opcion"
                 name="seleccione una opción"
@@ -56,7 +60,6 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep, recoveryDescr
 
             <div className="col-md-5">
               <label aria-label="cuenta de deposito">Cuenta de déposito:</label>
-
               <select
                 aria-label="seleccione una opcion"
                 name="seleccione una opción"
@@ -71,10 +74,14 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep, recoveryDescr
               </select>
             </div>
 
+            <label>Importe:</label>
+            <br />
+            <label htmlFor="cantidad">Indica la cantidad:</label>
             <div className="input-group mb-3 input-amount">
               <span className="input-group-text">$</span>
               <input
                 type="text"
+                id="cantidad"
                 aria-label="cantidad"
                 onChange={handleChange}
               />
@@ -124,17 +131,6 @@ const ThirdAccount = ({ handleChange, importe, mapeoRet, mapeoDep, recoveryDescr
               className="form-control"
               onChange={recoveryDescription}
             />
-            {/* <div className="form-check">
-              <input
-                aria-label="check"
-                className="form-check-input"
-                type="checkbox"
-                id="flexCheckChecked"
-              />
-              <label aria-label="check notificar" className="form-check-label">
-                Notificar al beneficiario(opcional):
-              </label>
-            </div> */}
           </div>
           <div className="transferButtons">
             <button

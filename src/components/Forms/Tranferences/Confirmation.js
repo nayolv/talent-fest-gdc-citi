@@ -45,15 +45,12 @@ export const Confirmation = ({
 
           <section className="table-container">
             <p
-              className="sm"
               id={tooltipOn ? "" : "tooltip"}
               data-info={tooltipOn ? "" : "Tu pago ha sido aplicado"}
             >
-              <i id="check" className="bi bi-check-lg" />
-              Tu pago ha sido aplicado
+              <i id="check" className="bi bi-check-lg" />Tu pago ha sido aplicado
             </p>
             <p
-              className="sm"
               id={tooltipOn ? "" : "tooltip"}
               data-info={tooltipOn ? "" : "Número de autorización 112545"}
             >
