@@ -32,6 +32,7 @@ const DataRegister = ({
               <select
                 className="form-select"
                 id="inputGroupSelect01"
+                aria-label="Seleccioneunaopcion"
                 placeholder="Seleccione una opción"
                 onChange={(e) => {
                   newRegister(e);

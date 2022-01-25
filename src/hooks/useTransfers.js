@@ -10,7 +10,7 @@ export const useTransfers = () => {
 
   useEffect(() => {
     API();
-  }, []);
+  }, [getDataTransfer]);
 
   //------------Recuperando ID
   const [selectValue, setSelectValue] = useState("");
@@ -85,24 +85,39 @@ export const useTransfers = () => {
   };
   //----------Refleja cuenta de retiro(Patch)
   const [balanceDep, setBalanceDep] = useState("");
-  const balanceDeposito = (balance, retiro ) =>{
-    setBalanceDep(balance-parseInt(retiro));
-  }
-  const patchApiOwn = async(id) => {
+  const balanceDeposito = (balance, retiro) => {
+    setBalanceDep(balance - parseInt(retiro));
+  };
+  const patchApiOwn = async (id) => {
     await dataApi.patch(`/clientData/${id}`, {
-     balance: balanceDep,
+      balance: balanceDep,
     });
-  }
+  };
   //----------Refleja cuenta de deposito(Patch)
   const [balance, setBalance] = useState("");
-  const newBalance = (balance, deposito ) =>{
-    setBalance(balance+parseInt(deposito));
-  }
-  const patchApiOwnDep = async(id) => {
-     await dataApi.patch(`/clientData/${id}`, {
+  const newBalance = (balance, deposito) => {
+    setBalance(balance + parseInt(deposito));
+  };
+  const patchApiOwnDep = async (id) => {
+    await dataApi.patch(`/clientData/${id}`, {
       balance: balance,
-     });
+    });
+  };
+
+  const [descriptionTransfer, setDescriptionTransfer] = useState("");
+
+  const recoveryDescription = (e) => {
+    setDescriptionTransfer(e.target.value);
+  };
+  const hoy = new Date();
+  const hora = hoy.getHours() + ":" + hoy.getMinutes();
+
+  const [hour, setHour] = useState("");
+
+  const getHour = (time) => {
+    setHour(time)
   }
+
 
   return {
     selectValue,
@@ -123,6 +138,11 @@ export const useTransfers = () => {
     patchApiOwn,
     balance,
     newBalance,
-    patchApiOwnDep
+    patchApiOwnDep,
+    descriptionTransfer,
+    recoveryDescription,
+    hora,
+    hour,
+    getHour
   };
 };
