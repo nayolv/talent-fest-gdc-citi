@@ -48,7 +48,7 @@ const Transfers = ({
   return (
     <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
-      <hr className="line" /> 
+      <hr className="line" aria-hidden="true" /> 
       <section className="container-saider-form">
         <SideBar />
         <form

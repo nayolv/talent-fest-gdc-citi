@@ -14,13 +14,13 @@ const SideBar = () => {
                 Transferir o pagar
               </Link>
             </li>
-            <hr />
+            <hr aria-hidden="true" />
             <li>
               <Link  className="nav-link" to="/services/register">
                 Dar de alta cuenta, tarjeta, servicio, otros
               </Link>
             </li>
-            <hr />
+            <hr aria-hidden="true" />
           </ul>
         </div>
       </section>

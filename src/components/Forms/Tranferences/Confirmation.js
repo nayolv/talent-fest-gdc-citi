@@ -24,7 +24,7 @@ export const Confirmation = ({
   return (
     <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
-      <hr />
+      <hr aria-hidden="true" />
       <section className="container-saider-form">
         <SideBar />
         <section className="all-form">

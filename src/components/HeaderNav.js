@@ -59,7 +59,7 @@ export const HeaderNav = ({ getDataTransfer, tooltipOn }) => {
                   id={tooltipOn ? "" : "tooltip"}
                   data-info={tooltipOn ? "" : "Llámanos"}
                 >
-                  <i className="bi bi-chat-right-fill"></i>Llámanos
+                  <i className="bi bi-chat-right-fill" aria-hidden="true"></i>Llámanos
                 </a>
               </li>
               <li>
@@ -69,7 +69,7 @@ export const HeaderNav = ({ getDataTransfer, tooltipOn }) => {
                   id={tooltipOn ? "" : "tooltip"}
                   data-info={tooltipOn ? "" : "Queremos escucharte"}
                 >
-                  <i className="bi bi-telephone-outbound-fill"></i>Queremos
+                  <i className="bi bi-telephone-outbound-fill"aria-hidden="true"></i>Queremos
                   escucharte
                 </a>
               </li>
