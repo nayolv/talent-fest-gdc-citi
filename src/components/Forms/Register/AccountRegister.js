@@ -11,6 +11,7 @@ const AccountRegister = ({
   handleInputChange,
   checked,
   handleChecked,
+  tooltipOn,
 }) => {
   const navigate = useNavigate();
   /*   const [checked, setChecked] = useState(false);
@@ -21,7 +22,11 @@ const AccountRegister = ({
 
   return (
     <>
-      <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
+      <h1 className="entry-question"
+      id={tooltipOn ? "" : "tooltip"}
+      data-info={tooltipOn ? "" : "¿Qué deseas hacer?"}
+
+      > ¿Qué deseas hacer?</h1>
       <hr />
       <section className="container-saider-form">
         <SideBar />
@@ -32,13 +37,21 @@ const AccountRegister = ({
             navigate("/services/verification");
           }}
         >
-          <h1>Alta de cuenta Citibanamex</h1>
-          <p>Indica los datos del alta y da click en "Continuar</p>
+          <h1
+          id={tooltipOn ? "" : "tooltip"}
+          data-info={tooltipOn ? "" : "Alta de cuenta Citibanamex"}
+          >Alta de cuenta Citibanamex</h1>
+          <p
+          id={tooltipOn ? "" : "tooltip"}
+          data-info={tooltipOn ? "" : 'Indica los datos del alta y da click en "Continuar"'}>
+            Indica los datos del alta y da click en "Continuar"</p>
           <br />
           <br />
           <div className="container">
             <div className="col-md-5">
-              <label htmlFor="name" aria-label="datoCuenta">
+              <label htmlFor="name" aria-label="datoCuenta"
+              id={tooltipOn ? "" : "tooltip"}
+              data-info={tooltipOn ? "" : '¿Qué dato tienes de la cuenta para darla de alta?'}>
                 ¿Qué dato tienes de la cuenta para darla de alta?
               </label>
               <select
@@ -50,16 +63,25 @@ const AccountRegister = ({
                 onChange={handleInputChange}
                 required
               >
-                <option defaultValue="Seleccione una opción">
+                <option defaultValue="Seleccione una opción"
+                 id={tooltipOn ? "" : "tooltip"}
+                 data-info={tooltipOn ? "" : 'Seleccione una opción'}
+                 >
                   Seleccione una opción
                 </option>
-                <option>Mi Cuenta CitiBanamex</option>
-                <option>Cuenta Priority CitiBanamex</option>
+                <option
+                id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : 'Mi Cuenta Citibanamex'}>Mi Cuenta CitiBanamex</option>
+                <option
+                id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : 'Cuenta Priority CitiBanamex'}>Cuenta Priority CitiBanamex</option>
               </select>
             </div>
             <br />
-            <p className="pLabels">Numero de tarjeta:</p>
-            <input
+            <p className="pLabels"
+            id={tooltipOn ? "" : "tooltip"}
+            data-info={tooltipOn ? "" : 'Numero de tarjeta:'}>Numero de tarjeta:</p>
+        ------    <input
               className="form-control"
               type="number"
               aria-label="numero de tarjeta"
@@ -79,11 +101,15 @@ const AccountRegister = ({
                   handleChecked();
                   console.log(!checked); //Negar check
                 }}
-              />
-              <label aria-label="cuenta propia" className="form-check-label">Cuenta propia</label>
+      --------        />
+              <label aria-label="cuenta propia" className="form-check-label"
+               id={tooltipOn ? "" : "tooltip"}
+               data-info={tooltipOn ? "" : 'Cuenta propia'} >Cuenta propia</label>
             </div>
-            <p className="pLabels">Titular de la cuenta</p>
-            <input
+            <p className="pLabels"
+            id={tooltipOn ? "" : "tooltip"}
+            data-info={tooltipOn ? "" : 'Titular de la cuenta'}>Titular de la cuenta</p>
+       ----     <input
               aria-label="titular de Cuenta"
               className="form-control"
               type="text"
@@ -92,12 +118,16 @@ const AccountRegister = ({
               required
             ></input>
             <br />
-            <p className="pLabels">
+            <p className="pLabels"
+             id={tooltipOn ? "" : "tooltip"}
+             data-info={tooltipOn ? "" : 'Monto máximo que autorizas pagar a este beneficiario:'}>
               Monto máximo que autorizas pagar a este beneficiario:
             </p>
             <div className="input-group mb-3 input-amount">
-              <span className="input-group-text">MXN</span>
-              <input
+              <span className="input-group-text"
+               id={tooltipOn ? "" : "tooltip"}
+               data-info={tooltipOn ? "" : 'MXN'}>MXN</span>
+        -----      <input
                 type="text"
                 aria-label="cantidad"
                 name="maximumAmount"
@@ -106,8 +136,10 @@ const AccountRegister = ({
               />
             </div>
             <br />
-            <p className="pLabels">Correo electrónico (opcional):</p>
-            <input
+            <p className="pLabels"
+            id={tooltipOn ? "" : "tooltip"}
+            data-info={tooltipOn ? "" : 'Correo electrónico (opcional)'}>Correo electrónico (opcional):</p>
+     ------       <input
               type="email"
               className="form-control"
               name="email"
@@ -115,7 +147,9 @@ const AccountRegister = ({
               onChange={handleInputChange}
               required
             ></input>
-            <p className="pLabels">Confirmar correo electrónico:</p>
+            <p className="pLabels"
+             id={tooltipOn ? "" : "tooltip"}
+             data-info={tooltipOn ? "" : 'Confirmar correo electrónico:'}>Confirmar correo electrónico:</p>
             <input type="email" aria-label="confirmar correo electronico" className="form-control" required></input>
           </div>
           <div className="transferButtons">
