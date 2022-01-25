@@ -32,7 +32,7 @@ export const Confirmation = ({
       >
         ¿Qué deseas hacer?
       </h1>
-      <hr />
+      <hr aria-hidden="true" />
       <section className="container-saider-form">
         <SideBar />
         <section className="all-form">
@@ -201,8 +201,8 @@ export const Confirmation = ({
             >
               Hacer otra transferencia
             </button>
-            data-info={tooltipOn ? "" : "Imprimir"}
-            <button>
+            <button id={tooltipOn ? "" : "tooltip"}
+              data-info={tooltipOn ? "" : "Imprimir"}>
               <i className="bi bi-caret-right-fill" />
               Imprimir
             </button>

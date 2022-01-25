@@ -94,7 +94,7 @@ export const OfertasHome = ({ tooltipOn }) => {
                 >
                   {item.name}-MXN
                 </a>
-                <p
+                <p aria-level="3"
                   className="account-number"
                   id={tooltipOn ? "" : "tooltip"}
                   data-info={

@@ -6,7 +6,12 @@ import "../../../Scss/Layout/Modal.scss";
 import SideBar from "../../SideBar";
 import { ModalSia } from "../../modal/ModalSia";
 
-const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
+const OwnAccount = ({
+  handleChange,
+  importe,
+  mapeoRet,
+  mapeoDep,
+}) => {
   const navigate = useNavigate();
   const [errorVacio, setErrorVacio] = useState("");
   const [errorMayorImporte, setErrorMayorImporte] = useState("");
@@ -29,7 +34,7 @@ const OwnAccount = ({ handleChange, importe, mapeoRet, mapeoDep }) => {
   return (
     <>
       <h1 className="entry-question"> ¿Qué deseas hacer?</h1>
-      <hr />
+      <hr aria-hidden="true"/>
       <section className="container-saider-form">
         <SideBar />
         <form className="all-form">
