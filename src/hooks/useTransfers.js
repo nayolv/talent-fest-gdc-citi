@@ -9,8 +9,11 @@ export const useTransfers = () => {
   };
 
   useEffect(() => {
-    API();
-  }, [getDataTransfer]);
+    const interval = setInterval(() => {
+      API();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   //------------Recuperando ID
   const [selectValue, setSelectValue] = useState("");

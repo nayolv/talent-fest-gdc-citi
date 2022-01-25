@@ -106,31 +106,15 @@ const Transfers = ({
                   recoverySelectValueRet(e);
                 }}
               >
-                <option
-                  defaultValue=""
-                  id={tooltipOn ? "" : "tooltip"}
-                  data-info={tooltipOn ? "" : "Seleccione una opción"}
-                >
-                  Seleccione una opción
-                </option>
+                <option defaultValue="">Seleccione una opción</option>
                 {getDataTransfer.map(
                   (item) =>
                     item.typeAccount && (
-                      <option
-                        key={item.id}
-                        value={item.id}
-                        id={tooltipOn ? "" : "tooltip"}
-                        data-info={
-                          tooltipOn
-                            ? ""
-                            : `${item.name} - ${item.displayAccountNumber.slice(
-                                -3
-                              )}
-                      Disponible: MXN${item.balance}`
-                        }
-                      >
+                      <option key={item.id} value={item.id}>
+
                         {item.name} - {item.displayAccountNumber.slice(-3)}
                         Disponible: MXN{item.balance}
+                      
                       </option>
                     )
                 )}
@@ -169,20 +153,25 @@ const Transfers = ({
                   </option>
                 ))}
               </select>
-              <p>{error}</p>
+              <p id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : `${error}`}>{error}</p>
             </div>
           </div>
-          <button className="update-account">
+          <button className="update-account" id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : "Actualizar cuenta(s)"}>
             <i className="bi bi-caret-right-fill"></i> Actualizar cuenta(s)
           </button>
 
           <div className="transferButtons">
-            <button type="submit" className="continue">
+            <button type="submit" className="continue" id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : "Coninue"}>
               Continuar
             </button>
             <button
               type="button"
               className="cancel"
+              id={tooltipOn ? "" : "tooltip"}
+                data-info={tooltipOn ? "" : "Cancelar"}
               onClick={() => {
                 handleCancel();
               }}
@@ -191,7 +180,7 @@ const Transfers = ({
             </button>
           </div>
         </form>
-        <ModalSia />
+        <ModalSia isTooltipOn={isTooltipOn} />
       </section>
     </>
   );
